@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public int addUser(User user) {
         user.setUserState(1);
-        user.setUserTypeId(1);
+        user.setUserTypeId(4);
         user.setUserName("you");
         user.setIdNumber("241242142141");
         int count = userMapper.insert(user);
