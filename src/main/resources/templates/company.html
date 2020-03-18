@@ -9,10 +9,20 @@
     <meta name="en_widget_show" content="true">
     <title>装修公司</title>
     <script src="js/jquery-1.10.2.js"></script>
+
     <link rel="stylesheet" type="text/css" href="css/vendor.77aefd7a.css">
     <link rel="stylesheet" type="text/css" href="css/commonChunk.ffa504e9.css">
     <link rel="stylesheet" type="text/css" href="css/companyList.28e13f0a.css">
-    <script type='text/javascript'>window.BWEUM||(BWEUM={});BWEUM.info = {"stand":true,"agentType":"browser","agent":"browsercollector.oneapm.com/static/js/bw-send-415.6.31.js","beaconUrl":"browsercollector.oneapm.com/beacon","licenseKey":"ybQyA~amzqzFbEmn","applicationID":9990143};</script><script type="text/javascript" src="js/bw-loader-415.6.31.js"></script>
+    <script type='text/javascript'>window.BWEUM || (BWEUM = {});
+    BWEUM.info = {
+        "stand": true,
+        "agentType": "browser",
+        "agent": "browsercollector.oneapm.com/static/js/bw-send-415.6.31.js",
+        "beaconUrl": "browsercollector.oneapm.com/beacon",
+        "licenseKey": "ybQyA~amzqzFbEmn",
+        "applicationID": 9990143
+    };</script>
+    <script type="text/javascript" src="js/bw-loader-415.6.31.js"></script>
     <!--[if (gte IE 9)|!IE]><!--><!--<![endif]-->
     <script src="js/clickStream-4d542fe875.js" type="text/javascript"></script>
     <script src="js/t8t_count.min-20180820.js"></script>
@@ -31,16 +41,18 @@
     <script src="layui.js" type="text/javascript"></script>
     <script>
         //注意：导航 依赖 element 模块，否则无法进行功能性操作
-        layui.use('element', function(){
+        layui.use('element', function () {
             var element = layui.element;
         });
     </script>
     <script>
         jQuery('body').addClass('narrow_1220');
     </script>
-    <script src="js/vendor.4b524a09.js"></script>
-    <script src="js/commonChunk.595031d2.js"></script>
-    <script src="js/companyList.e74f8f03.js"></script>
+    <script src="js/vendor.4b524a09.js" type="text/javascript"></script>
+    <script src="js/commonChunk.595031d2.js" type="text/javascript"></script>
+    <script src="js/companyList.e74f8f03.js" type="text/javascript"></script>
+    <script src="js/hm.js"></script>
+    <script src="js/T8TTracker.min-0.2.1.js"></script>
 </head>
 
 <body>
@@ -72,12 +84,19 @@
                     <dl class="list-item">
                         <dt>施工方式</dt>
                         <dd>
-                            <a href="javascript:void(0)" class="filter--item choose--item active" data-key="construction" data-value="0" data-widget_uid="select_decorate_way" data-widget_value="全部">全部</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item" data-key="construction" data-value="1" data-widget_uid="select_decorate_way" data-widget_value="半包装修">半包装修</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item" data-key="construction" data-value="2" data-widget_uid="select_decorate_way" data-widget_value="全包装修">全包装修</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item" data-key="construction" data-value="3" data-widget_uid="select_decorate_way" data-widget_value="纯设计">纯设计</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item" data-key="construction" data-value="4" data-widget_uid="select_decorate_way" data-widget_value="软装">软装</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item" data-key="construction" data-value="5" data-widget_uid="select_decorate_way" data-widget_value="全屋装修">全屋装修</a>
+                            <a href="javascript:void(0)" class="filter--item choose--item active"
+                               data-key="construction" data-value="0" data-widget_uid="select_decorate_way"
+                               data-widget_value="全部">全部</a>
+                            <a href="javascript:void(0)" class="filter--item choose--item" data-key="construction"
+                               data-value="1" data-widget_uid="select_decorate_way" data-widget_value="半包装修">半包装修</a>
+                            <a href="javascript:void(0)" class="filter--item choose--item" data-key="construction"
+                               data-value="2" data-widget_uid="select_decorate_way" data-widget_value="全包装修">全包装修</a>
+                            <a href="javascript:void(0)" class="filter--item choose--item" data-key="construction"
+                               data-value="3" data-widget_uid="select_decorate_way" data-widget_value="纯设计">纯设计</a>
+                            <a href="javascript:void(0)" class="filter--item choose--item" data-key="construction"
+                               data-value="4" data-widget_uid="select_decorate_way" data-widget_value="软装">软装</a>
+                            <a href="javascript:void(0)" class="filter--item choose--item" data-key="construction"
+                               data-value="5" data-widget_uid="select_decorate_way" data-widget_value="全屋装修">全屋装修</a>
                         </dd>
                     </dl>
                     <dl class="list-item">
@@ -87,96 +106,155 @@
                             <a class="top-type type-build">家装</a>
                             <a class="top-type type-build">工装</a>
                             <div class="type-select ">
-                                <a href="javascript:void(0)" class="filter--item type--item active" data-key="homeType" data-value="-1" data-widget_uid="select_decorate_type" data-widget_value="全部">全部</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="homeType" data-value="1" data-widget_uid="select_decorate_type" data-widget_value="小户型">小户型</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="homeType" data-value="4" data-widget_uid="select_decorate_type" data-widget_value="普通住宅">普通住宅</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="homeType" data-value="19" data-widget_uid="select_decorate_type" data-widget_value="复式">复式</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="homeType" data-value="3" data-widget_uid="select_decorate_type" data-widget_value="别墅">别墅</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="homeType" data-value="5" data-widget_uid="select_decorate_type" data-widget_value="局部装修">局部装修</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="homeType" data-value="0" data-widget_uid="select_decorate_type" data-widget_value="其他">其他</a>
+                                <a href="javascript:void(0)" class="filter--item type--item active" data-key="homeType"
+                                   data-value="-1" data-widget_uid="select_decorate_type" data-widget_value="全部">全部</a>
+                                <a href="javascript:void(0)" class="filter--item type--item" data-key="homeType"
+                                   data-value="1" data-widget_uid="select_decorate_type" data-widget_value="小户型">小户型</a>
+                                <a href="javascript:void(0)" class="filter--item type--item" data-key="homeType"
+                                   data-value="4" data-widget_uid="select_decorate_type"
+                                   data-widget_value="普通住宅">普通住宅</a>
+                                <a href="javascript:void(0)" class="filter--item type--item" data-key="homeType"
+                                   data-value="19" data-widget_uid="select_decorate_type" data-widget_value="复式">复式</a>
+                                <a href="javascript:void(0)" class="filter--item type--item" data-key="homeType"
+                                   data-value="3" data-widget_uid="select_decorate_type" data-widget_value="别墅">别墅</a>
+                                <a href="javascript:void(0)" class="filter--item type--item" data-key="homeType"
+                                   data-value="5" data-widget_uid="select_decorate_type"
+                                   data-widget_value="局部装修">局部装修</a>
+                                <a href="javascript:void(0)" class="filter--item type--item" data-key="homeType"
+                                   data-value="0" data-widget_uid="select_decorate_type" data-widget_value="其他">其他</a>
                             </div>
                             <div class="type-select ">
-                                <a href="javascript:void(0)" class="filter--item type--item active" data-key="publicType" data-value="-1" data-widget_uid="select_decorate_type" data-widget_value="全部">全部</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="publicType" data-value="3" data-widget_uid="select_decorate_type" data-widget_value="餐厅">餐厅</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="publicType" data-value="2" data-widget_uid="select_decorate_type" data-widget_value="商铺">商铺</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="publicType" data-value="7" data-widget_uid="select_decorate_type" data-widget_value="展厅">展厅</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="publicType" data-value="8" data-widget_uid="select_decorate_type" data-widget_value="办公室">办公室</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="publicType" data-value="5" data-widget_uid="select_decorate_type" data-widget_value="休闲娱乐">休闲娱乐</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="publicType" data-value="6" data-widget_uid="select_decorate_type" data-widget_value="酒店">酒店</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="publicType" data-value="0" data-widget_uid="select_decorate_type" data-widget_value="其他">其他</a>
+                                <a href="javascript:void(0)" class="filter--item type--item active"
+                                   data-key="publicType" data-value="-1" data-widget_uid="select_decorate_type"
+                                   data-widget_value="全部">全部</a>
+                                <a href="javascript:void(0)" class="filter--item type--item" data-key="publicType"
+                                   data-value="3" data-widget_uid="select_decorate_type" data-widget_value="餐厅">餐厅</a>
+                                <a href="javascript:void(0)" class="filter--item type--item" data-key="publicType"
+                                   data-value="2" data-widget_uid="select_decorate_type" data-widget_value="商铺">商铺</a>
+                                <a href="javascript:void(0)" class="filter--item type--item" data-key="publicType"
+                                   data-value="7" data-widget_uid="select_decorate_type" data-widget_value="展厅">展厅</a>
+                                <a href="javascript:void(0)" class="filter--item type--item" data-key="publicType"
+                                   data-value="8" data-widget_uid="select_decorate_type" data-widget_value="办公室">办公室</a>
+                                <a href="javascript:void(0)" class="filter--item type--item" data-key="publicType"
+                                   data-value="5" data-widget_uid="select_decorate_type"
+                                   data-widget_value="休闲娱乐">休闲娱乐</a>
+                                <a href="javascript:void(0)" class="filter--item type--item" data-key="publicType"
+                                   data-value="6" data-widget_uid="select_decorate_type" data-widget_value="酒店">酒店</a>
+                                <a href="javascript:void(0)" class="filter--item type--item" data-key="publicType"
+                                   data-value="0" data-widget_uid="select_decorate_type" data-widget_value="其他">其他</a>
                             </div>
                         </dd>
                     </dl>
                     <dl class="list-item">
                         <dt>商户位置</dt>
                         <dd>
-                            <a href="javascript:void(0)" class="choose--item area--item active" data-value="" data-widget_uid="company_location" data-widget_value="全部">全部</a>
-                            <a href="javascript:void(0)" class="choose--item area--item" data-value="nanshanqu" data-widget_uid="company_location" data-widget_value="南山区">南山区</a>
-                            <a href="javascript:void(0)" class="choose--item area--item" data-value="baoanqu" data-widget_uid="company_location" data-widget_value="宝安区">宝安区</a>
-                            <a href="javascript:void(0)" class="choose--item area--item" data-value="futianqu" data-widget_uid="company_location" data-widget_value="福田区">福田区</a>
-                            <a href="javascript:void(0)" class="choose--item area--item" data-value="longgangqu" data-widget_uid="company_location" data-widget_value="龙岗区">龙岗区</a>
-                            <a href="javascript:void(0)" class="choose--item area--item" data-value="luohuqu" data-widget_uid="company_location" data-widget_value="罗湖区">罗湖区</a>
-                            <a href="javascript:void(0)" class="choose--item area--item" data-value="yantianqu" data-widget_uid="company_location" data-widget_value="盐田区">盐田区</a>
-                            <a href="javascript:void(0)" class="choose--item area--item" data-value="longhuaqu" data-widget_uid="company_location" data-widget_value="龙华区">龙华区</a>
-                            <a href="javascript:void(0)" class="choose--item area--item" data-value="guangmingqu" data-widget_uid="company_location" data-widget_value="光明区">光明区</a>
-                            <a href="javascript:void(0)" class="choose--item area--item" data-value="pingshanqu" data-widget_uid="company_location" data-widget_value="坪山区">坪山区</a>
+                            <a href="javascript:void(0)" class="choose--item area--item active" data-value=""
+                               data-widget_uid="company_location" data-widget_value="全部">全部</a>
+                            <a href="javascript:void(0)" class="choose--item area--item" data-value="nanshanqu"
+                               data-widget_uid="company_location" data-widget_value="南山区">南山区</a>
+                            <a href="javascript:void(0)" class="choose--item area--item" data-value="baoanqu"
+                               data-widget_uid="company_location" data-widget_value="宝安区">宝安区</a>
+                            <a href="javascript:void(0)" class="choose--item area--item" data-value="futianqu"
+                               data-widget_uid="company_location" data-widget_value="福田区">福田区</a>
+                            <a href="javascript:void(0)" class="choose--item area--item" data-value="longgangqu"
+                               data-widget_uid="company_location" data-widget_value="龙岗区">龙岗区</a>
+                            <a href="javascript:void(0)" class="choose--item area--item" data-value="luohuqu"
+                               data-widget_uid="company_location" data-widget_value="罗湖区">罗湖区</a>
+                            <a href="javascript:void(0)" class="choose--item area--item" data-value="yantianqu"
+                               data-widget_uid="company_location" data-widget_value="盐田区">盐田区</a>
+                            <a href="javascript:void(0)" class="choose--item area--item" data-value="longhuaqu"
+                               data-widget_uid="company_location" data-widget_value="龙华区">龙华区</a>
+                            <a href="javascript:void(0)" class="choose--item area--item" data-value="guangmingqu"
+                               data-widget_uid="company_location" data-widget_value="光明区">光明区</a>
+                            <a href="javascript:void(0)" class="choose--item area--item" data-value="pingshanqu"
+                               data-widget_uid="company_location" data-widget_value="坪山区">坪山区</a>
                         </dd>
                     </dl>
                     <dl class="list-item">
                         <dt>服务保障</dt>
                         <dd>
-                            <a href="javascript:void(0)" class="filter--item choose--item active" data-key="label" data-value="0" data-widget_uid="service_guarantee" data-widget_value="全部">全部</a>
-                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="label" data-value="18" data-widget_uid="service_guarantee" data-widget_value="先装修后支付">先装修后支付</a>
-                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="label" data-value="21" data-widget_uid="service_guarantee" data-widget_value="延期保赔">延期保赔</a>
-                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="label" data-value="20" data-widget_uid="service_guarantee" data-widget_value="免息分期">免息分期</a>
-                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="label" data-value="4" data-widget_uid="service_guarantee" data-widget_value="土巴兔质检">土巴兔质检</a>
+                            <a href="javascript:void(0)" class="filter--item choose--item active" data-key="label"
+                               data-value="0" data-widget_uid="service_guarantee" data-widget_value="全部">全部</a>
+                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="label" data-value="18"
+                               data-widget_uid="service_guarantee" data-widget_value="先装修后支付">先装修后支付</a>
+                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="label" data-value="21"
+                               data-widget_uid="service_guarantee" data-widget_value="延期保赔">延期保赔</a>
+                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="label" data-value="20"
+                               data-widget_uid="service_guarantee" data-widget_value="免息分期">免息分期</a>
+                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="label" data-value="4"
+                               data-widget_uid="service_guarantee" data-widget_value="土巴兔质检">土巴兔质检</a>
                         </dd>
                     </dl>
                     <dl class="list-item more">
                         <dt>承接价位</dt>
                         <dd>
-                            <a href="javascript:void(0)" class="filter--item choose--item active" data-key="price" data-value="0" data-widget_uid="service_budget" data-widget_value="全部">全部</a>
-                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="price" data-value="1" data-widget_uid="service_budget" data-widget_value="3万以下">3万以下</a>
-                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="price" data-value="2" data-widget_uid="service_budget" data-widget_value="3-5万">3-5万</a>
-                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="price" data-value="3" data-widget_uid="service_budget" data-widget_value="5-8万">5-8万</a>
-                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="price" data-value="4" data-widget_uid="service_budget" data-widget_value="8-12万">8-12万</a>
-                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="price" data-value="5" data-widget_uid="service_budget" data-widget_value="12-18万">12-18万</a>
-                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="price" data-value="6" data-widget_uid="service_budget" data-widget_value="18-30万">18-30万</a>
-                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="price" data-value="7" data-widget_uid="service_budget" data-widget_value="30-100万">30-100万</a>
-                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="price" data-value="8" data-widget_uid="service_budget" data-widget_value="100万以上">100万以上</a>
+                            <a href="javascript:void(0)" class="filter--item choose--item active" data-key="price"
+                               data-value="0" data-widget_uid="service_budget" data-widget_value="全部">全部</a>
+                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="price" data-value="1"
+                               data-widget_uid="service_budget" data-widget_value="3万以下">3万以下</a>
+                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="price" data-value="2"
+                               data-widget_uid="service_budget" data-widget_value="3-5万">3-5万</a>
+                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="price" data-value="3"
+                               data-widget_uid="service_budget" data-widget_value="5-8万">5-8万</a>
+                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="price" data-value="4"
+                               data-widget_uid="service_budget" data-widget_value="8-12万">8-12万</a>
+                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="price" data-value="5"
+                               data-widget_uid="service_budget" data-widget_value="12-18万">12-18万</a>
+                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="price" data-value="6"
+                               data-widget_uid="service_budget" data-widget_value="18-30万">18-30万</a>
+                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="price" data-value="7"
+                               data-widget_uid="service_budget" data-widget_value="30-100万">30-100万</a>
+                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="price" data-value="8"
+                               data-widget_uid="service_budget" data-widget_value="100万以上">100万以上</a>
                         </dd>
                     </dl>
                     <dl class="list-item more">
                         <dt>服务区域</dt>
                         <dd>
-                            <a href="javascript:void(0)" class="filter--item choose--item  active" data-key="serviceArea" data-value="0" data-widget_uid="service_district" data-widget_value="全部">全部</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea" data-value="1124" data-widget_uid="service_district" data-widget_value="南山区">南山区</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea" data-value="1125" data-widget_uid="service_district" data-widget_value="宝安区">宝安区</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea" data-value="1126" data-widget_uid="service_district" data-widget_value="福田区">福田区</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea" data-value="1127" data-widget_uid="service_district" data-widget_value="龙岗区">龙岗区</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea" data-value="1128" data-widget_uid="service_district" data-widget_value="罗湖区">罗湖区</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea" data-value="1129" data-widget_uid="service_district" data-widget_value="盐田区">盐田区</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea" data-value="3162" data-widget_uid="service_district" data-widget_value="龙华区">龙华区</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea" data-value="3163" data-widget_uid="service_district" data-widget_value="光明区">光明区</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea" data-value="3164" data-widget_uid="service_district" data-widget_value="坪山区">坪山区</a>
+                            <a href="javascript:void(0)" class="filter--item choose--item  active"
+                               data-key="serviceArea" data-value="0" data-widget_uid="service_district"
+                               data-widget_value="全部">全部</a>
+                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea"
+                               data-value="1124" data-widget_uid="service_district" data-widget_value="南山区">南山区</a>
+                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea"
+                               data-value="1125" data-widget_uid="service_district" data-widget_value="宝安区">宝安区</a>
+                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea"
+                               data-value="1126" data-widget_uid="service_district" data-widget_value="福田区">福田区</a>
+                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea"
+                               data-value="1127" data-widget_uid="service_district" data-widget_value="龙岗区">龙岗区</a>
+                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea"
+                               data-value="1128" data-widget_uid="service_district" data-widget_value="罗湖区">罗湖区</a>
+                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea"
+                               data-value="1129" data-widget_uid="service_district" data-widget_value="盐田区">盐田区</a>
+                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea"
+                               data-value="3162" data-widget_uid="service_district" data-widget_value="龙华区">龙华区</a>
+                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea"
+                               data-value="3163" data-widget_uid="service_district" data-widget_value="光明区">光明区</a>
+                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea"
+                               data-value="3164" data-widget_uid="service_district" data-widget_value="坪山区">坪山区</a>
                         </dd>
                     </dl>
-                    <p class="more-type"><a href="javascript:void(0)"><sapn>更多<em></em></sapn></a></p>
+                    <p class="more-type"><a href="javascript:void(0)">
+                        <sapn>更多<em></em></sapn>
+                    </a></p>
                 </div>
             </div>
             <div class="content--left__sort">
                 <ul>
-                    <li class="filter--item choose--item sort-item active" data-key="sortType" data-value="8" data-widget_uid="multi_rank" data-widget_value="综合排序">
+                    <li class="filter--item choose--item sort-item active" data-key="sortType" data-value="8"
+                        data-widget_uid="multi_rank" data-widget_value="综合排序">
                         <a href="javascript:void(0)" rel="nofollow">
                             <em class="sort-text">综合排序<i class="icon-sort"></i></em>
                         </a>
                     </li>
-                    <li class="filter--item choose--item sort-item" data-key="sortType" data-value="5" data-widget_uid="reputation_rank" data-widget_value="口碑优先">
+                    <li class="filter--item choose--item sort-item" data-key="sortType" data-value="5"
+                        data-widget_uid="reputation_rank" data-widget_value="口碑优先">
                         <a href="javascript:void(0)" rel="nofollow">
                             <em class="sort-text">口碑优先<i class="icon-sort"></i></em>
                         </a>
                     </li>
-                    <li class="filter--item choose--item sort-item" data-key="sortType" data-value="2" data-widget_uid="public_rank" data-widget_value="人气优先">
+                    <li class="filter--item choose--item sort-item" data-key="sortType" data-value="2"
+                        data-widget_uid="public_rank" data-widget_value="人气优先">
                         <a href="javascript:void(0)" rel="nofollow">
                             <em class="sort-text">人气优先<i class="icon-sort"></i></em>
                         </a>
@@ -187,16 +265,23 @@
             <div class="company__list">
                 <div class="company__list--content">
                     <ul>
+                        <script type="text/javascript">
+                            $(".show-table").click(function(){
+                                $("#lianxishangjia").show();
+                            })
+                        </script>
+
                         <li>
-                            <span class="tag list">推荐商家</span>
-                            <a class="company-item" target="_blank" href="javascript:;" tracker-widget="" data-widget_uid="cmp_list" data-widget_index="10" data-cmp_type="cmp" data-cmp_id="5676390" data-cmp_title="深圳市叁品空间设计装饰工程有限公司" data-cmp_sort_method="综合排序" data-cmp_sort_index="10" data-ad_tag="" data-ad_type="" data-ad_id="">
-                                <div class="contents--item clearfix" dest-url="">
+                            <span class="tag fantastic">广告</span>
+                            <a class="company-item" target="_blank" href="javascript:;" tracker-widget="" data-widget_uid="cmp_list" data-widget_index="1" data-cmp_type="cmp" data-cmp_id="10715277" data-cmp_title="深圳广田家科技有限公司" data-cmp_sort_method="综合排序" data-cmp_sort_index="1" data-ad_tag="cpt" data-ad_type="cmp1" data-ad_id="384">
+                                <div class="contents--item clearfix fantastic" dest-url="">
                                     <div class="company__logo">
-                                        <img data-original="static/picture/headphoto_5676390_s-1583846375.jpg" class="img--lazy">
+                                        <img data-original="static/picture/headphoto_s_10715277_s-155979032.jpg" class="img--lazy">
                                     </div>
                                     <div class="company__info">
                                         <div class="company__info--top">
-                                            <p class="company__info--name">深圳市叁品空间设计装饰工程有限公司</p>
+                                            <p class="company__info--name">深圳广田家科技有限公司</p>
+                                            <img src="static/picture/3fb052d624e15ff0d126bdb436750fdc.png" class="img--lazy top-chain">
                                         </div>
                                         <div class="company__info--all">
 <span class="tag-star">
@@ -206,40 +291,38 @@
 <i class="ystar_fill_three"></i>
 <i class="ystar_half_three"></i>
 </span>
-                                            <span class="comment-count">851条</span>
+                                            <span class="comment-count">78条</span>
                                             <div class="info-num">
-                                                <span class="recent-signing">近期签约78户</span>
-                                                <span class="average-price">均价6-9万</span>
+                                                <span class="recent-signing">近期签约24户</span>
+                                                <span class="average-price">均价21-34万</span>
                                             </div>
-                                            <span class="owner-diary">日记19篇</span>
+                                            <span class="owner-diary">日记58篇</span>
                                         </div>
                                         <div class="company__info--tag">
-                                            <span class="tag-rank" style="color:#FF5921;background:#FFF0EC">深圳健康守护承诺商家</span>
-                                            <span>先装修后支付</span>
+                                            <span class="tag-rank" style="color:#FF5921;background:#FFF0EC">深圳本地人气商家榜</span>
                                             <span>无接触量房</span>
-                                            <span>环保严选材料</span>
-                                            <span>多方案对比</span>
+                                            <span>私人定制</span>
                                         </div>
                                         <div class="company__info--activity">
-                                            <p><i class="icon-promotion"></i>交1000抵3500</p>
-                                            <p><i class="icon-promotion"></i>满100000减5000</p>
+                                            <p><i class="icon-coupon"></i>预约送全景效果图</p>
+                                            <p><i class="icon-coupon"></i>预约送定制高档遮阳伞</p>
                                         </div>
-                                        <div class="company__info--contact company__data__btn js-list-contact__btn" data-cid="5676390" data-logo="http://pic.to8to.com//user/90/headphoto_5676390_s.jpg?v=1583846375" data-cname="叁品空间" data-url="http://sz.to8to.com/zs/5676390" data-type="forever" data-phone="171-5489-0428">
+                                        <div class="company__info--contact company__data__btn js-list-contact__btn" data-cid="10715277" data-logo="http://pic.to8to.com//user/77/headphoto_s_10715277_s.jpg?v=1559790326?v=1583845718" data-cname="广田家装饰" data-url="http://sz.to8to.com/zs/10715277" data-type="forever" data-phone="171-5087-6207">
                                             <div class="contact-bth contact__btn">
                                                 <span><em class="icon-contact"></em>联系商家</span></div>
                                         </div>
                                         <div class="company__info--case clearfix">
                                             <div class="case-item">
-                                                <img data-original="static/picture/a9bc71636ce184ab1caa48590cb6a06b.png" class="img--lazy case-img">
+                                                <img data-original="static/picture/4993887aefa3bad530fe9e2e6bb863ec.jpg" class="img--lazy case-img">
                                             </div>
                                             <div class="case-item">
-                                                <img data-original="static/picture/b98aa83ef8565dedaff94e6e6253a9f4.png" class="img--lazy case-img">
+                                                <img data-original="static/picture/b03028e75b00485365ee5067a369591f.jpg" class="img--lazy case-img">
                                             </div>
                                             <div class="case-item">
-                                                <img data-original="static/picture/eca73a0ede276d68c0d7d2b17926e174.png" class="img--lazy case-img">
+                                                <img data-original="static/picture/74b0631994a9046fdd8b0cdd4fa94adc.jpg" class="img--lazy case-img">
                                             </div>
                                             <div class="case-item">
-                                                <img data-original="static/picture/5fb046b7553c5028fafbec301dcdea3b.png" class="img--lazy case-img">
+                                                <img data-original="static/picture/9f7de8873be85d395916e3417b3815ea.jpg" class="img--lazy case-img">
                                             </div>
                                         </div>
                                     </div>
@@ -247,69 +330,16 @@
                             </a>
                         </li>
                         <li>
-                            <span class="tag list">推荐商家</span>
-                            <a class="company-item" target="_blank" href="javascript:;" tracker-widget="" data-widget_uid="cmp_list" data-widget_index="11" data-cmp_type="cmp" data-cmp_id="12114666" data-cmp_title="深圳家简呈出科技有限公司" data-cmp_sort_method="综合排序" data-cmp_sort_index="11" data-ad_tag="" data-ad_type="" data-ad_id="">
-                                <div class="contents--item clearfix" dest-url="">
-                                    <div class="company__logo">
-                                        <img data-original="static/picture/headphoto_s_12114666_s-157165499.jpg" class="img--lazy">
-                                    </div>
-                                    <div class="company__info">
-                                        <div class="company__info--top">
-                                            <p class="company__info--name">深圳家简呈出科技有限公司</p>
-                                        </div>
-                                        <div class="company__info--all">
-<span class="tag-star">
-<i class="ystar_fill_four"></i>
-<i class="ystar_fill_four"></i>
-<i class="ystar_fill_four"></i>
-<i class="ystar_fill_four"></i>
-<i class="ystar_fill_four"></i>
-</span>
-                                            <span class="comment-count">20条</span>
-                                            <div class="info-num">
-                                                <span class="recent-signing">近期签约1户</span>
-                                                <span class="average-price">均价17-27万</span>
-                                            </div>
-                                            <span class="owner-diary">日记21篇</span>
-                                        </div>
-                                        <div class="company__info--tag">
-                                            <span class="tag-rank" style="color:#FF5921;background:#FFF0EC">深圳精选案例装企榜</span>
-                                            <span>拎包入住</span>
-                                            <span>大师设计</span>
-                                            <span>全程管家</span>
-                                        </div>
-                                        <div class="company__info--activity">
-                                            <p><i class="icon-coupon"></i>预约送免费专车到店</p>
-                                            <p><i class="icon-coupon"></i>预约送砸金蛋1次</p>
-                                        </div>
-                                        <div class="company__info--contact company__data__btn js-list-contact__btn" data-cid="12114666" data-logo="http://pic.to8to.com//user/66/headphoto_s_12114666_s.jpg?v=1571654994?v=1583846382" data-cname="家简呈出整装" data-url="http://sz.to8to.com/zs/12114666" data-type="forever" data-phone="171-5489-0414">
-                                            <div class="contact-bth contact__btn">
-                                                <span><em class="icon-contact"></em>联系商家</span></div>
-                                        </div>
-                                        <div class="company__info--case clearfix">
-                                            <div class="case-item">
-                                                <img data-original="static/picture/9400e40a6a8b5d214de457308ef79487.jpg" class="img--lazy case-img">
-                                            </div>
-                                            <div class="case-item">
-                                                <img data-original="static/picture/5474c1d7426297ed178649e282885019.jpg" class="img--lazy case-img">
-                                            </div>
-                                            <div class="case-item">
-                                                <img data-original="static/picture/466c9dae98a4972137d6db8b705003c5.jpg" class="img--lazy case-img">
-                                            </div>
-                                            <div class="case-item">
-                                                <img data-original="static/picture/8d9356c4b072e93af515f3330e880574.jpg" class="img--lazy case-img">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
                         <li>
                             <span class="tag list">推荐商家</span>
-                            <a class="company-item" target="_blank" href="javascript:;" tracker-widget="" data-widget_uid="cmp_list" data-widget_index="12" data-cmp_type="cmp" data-cmp_id="306332" data-cmp_title="深圳尚泰装饰设计工程有限公司" data-cmp_sort_method="综合排序" data-cmp_sort_index="12" data-ad_tag="" data-ad_type="" data-ad_id="">
+                            <a class="company-item" target="_blank" href="javascript:;" tracker-widget=""
+                               data-widget_uid="cmp_list" data-widget_index="12" data-cmp_type="cmp"
+                               data-cmp_id="306332" data-cmp_title="深圳尚泰装饰设计工程有限公司" data-cmp_sort_method="综合排序"
+                               data-cmp_sort_index="12" data-ad_tag="" data-ad_type="" data-ad_id="">
                                 <div class="contents--item clearfix" dest-url="">
                                     <div class="company__logo">
-                                        <img data-original="static/picture/headphoto_306332_s-1583846411.jpg" class="img--lazy">
+                                        <img data-original="static/picture/headphoto_306332_s-1583846411.jpg"
+                                             class="img--lazy">
                                     </div>
                                     <div class="company__info">
                                         <div class="company__info--top">
@@ -325,22 +355,30 @@
 </span>
                                             <span class="owner-diary">日记1篇</span>
                                         </div>
-                                        <div class="company__info--contact company__data__btn js-list-contact__btn" data-cid="306332" data-logo="http://pic.to8to.com//user/32/headphoto_306332_s.jpg?v=1583846411" data-cname="尚泰装饰" data-url="http://sz.to8to.com/zs/306332" data-type="forever" data-phone="171-5489-2095">
+                                        <div class="company__info--contact company__data__btn js-list-contact__btn"
+                                             data-cid="306332"
+                                             data-logo="http://pic.to8to.com//user/32/headphoto_306332_s.jpg?v=1583846411"
+                                             data-cname="尚泰装饰" data-url="http://sz.to8to.com/zs/306332"
+                                             data-type="forever" data-phone="171-5489-2095">
                                             <div class="contact-bth contact__btn">
                                                 <span><em class="icon-contact"></em>联系商家</span></div>
                                         </div>
                                         <div class="company__info--case clearfix">
                                             <div class="case-item">
-                                                <img data-original="static/picture/5df1904106c6b52fae0f2d253dfa77fc.png" class="img--lazy case-img">
+                                                <img data-original="static/picture/5df1904106c6b52fae0f2d253dfa77fc.png"
+                                                     class="img--lazy case-img">
                                             </div>
                                             <div class="case-item">
-                                                <img data-original="static/picture/247996a36447925d3ac4902a7fa49233.png" class="img--lazy case-img">
+                                                <img data-original="static/picture/247996a36447925d3ac4902a7fa49233.png"
+                                                     class="img--lazy case-img">
                                             </div>
                                             <div class="case-item">
-                                                <img data-original="static/picture/d443b39167d4dceaaf13c72374e50898.png" class="img--lazy case-img">
+                                                <img data-original="static/picture/d443b39167d4dceaaf13c72374e50898.png"
+                                                     class="img--lazy case-img">
                                             </div>
                                             <div class="case-item">
-                                                <img data-original="static/picture/1c28c82755a88b673e0df5882850e3c0.png" class="img--lazy case-img">
+                                                <img data-original="static/picture/1c28c82755a88b673e0df5882850e3c0.png"
+                                                     class="img--lazy case-img">
                                             </div>
                                         </div>
                                     </div>
@@ -349,8 +387,40 @@
                         </li>
                     </ul>
                 </div>
-                <div class="pages"><em>共有<b>7203</b>条</em><strong>1</strong><a href="javascript:;">2</a><a href="javascript:;">3</a><a href="javascript:;">4</a><a href="javascript:;">5</a><i>...</i> <a href="javascript:;" class="last">481</a><a href="javascript:;" class="next" id="nextpageid">下一页<b></b></a></div>
+                <div class="pages"><em>共有<b>7203</b>条</em><strong>1</strong><a href="javascript:;">2</a><a
+                        href="javascript:;">3</a><a href="javascript:;">4</a><a href="javascript:;">5</a><i>...</i> <a
+                        href="javascript:;" class="last">481</a><a href="javascript:;" class="next"
+                                                                   id="nextpageid">下一页<b></b></a></div>
             </div>
+
+            <div class="layui-layer layui-layer-page t8t-layer layer-anim" id="lianxishangjia" type="page" times="2"
+                 showtime="0" contype="string"
+                 style="z-index: 19891016; width: 340px; height: 330px; top: 155px; left: 82px;" hidden>
+                <div id="" class="layui-layer-content" style="height: 330px;">
+                    <div class="virtual__phone__pop__list">
+                        <div class="virtual__logo">
+                            <img src="http://pic.to8to.com//user/26/headphoto_s_11062226_s.jpg?v=1560137642?v=1583845718">
+                        </div>
+                        <p class="virtual__company__name">
+                            <b>深圳居众装饰</b>
+                        </p>
+                        <div class="virtual__phone">
+                                <span>
+                                    <i class="virtual__phone__icon"></i>
+                                    <b>171-5087-3740</b>
+                                </span>
+                        </div>
+
+                        <a href="http://sz.to8to.com/zs/11062226" class="virtual__link home__btn" target="_blank"
+                           tracker-widget="" data-widget_uid="enter_cmp_btn" data-cmp_type="cmp" data-cmp_id="11062226"
+                           data-cmp-title="深圳居众装饰">进入店铺</a>
+                        <span class="virtual__close"></span>
+                    </div>
+                </div>
+                <span class="layui-layer-setwin"><a class="layui-layer-ico layui-layer-close layui-layer-close2"
+                                                    href="javascript:;"></a></span><span
+                    class="layui-layer-resize"></span></div>
+
             <!--公司列表 End-->
         </div>
         <div class="content--right">
@@ -384,7 +454,7 @@
                         <em>"装修保"免费帮你保障，满意了才付装修款。</em>
                     </li>
                 </ul>
-                <input type="button" value="享受省心的装修服务" >
+                <input type="button" value="享受省心的装修服务">
             </div>
         </div>
     </div>
@@ -394,8 +464,7 @@
 <!--脚部 Begin-->
 <div th:replace="footer::footer"></div>
 <!--脚部 End-->
-<script src="../static/js/hm.js"></script>
-<script src="../static/js/T8TTracker.min-0.2.1.js"></script>
+
 <script>
     T8TTracker.init({
         app_name: 'to8to_pc'
