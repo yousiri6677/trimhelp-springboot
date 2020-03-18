@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <title>注册-装修邦</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="css/v=1564394174.css">
+    <link rel="stylesheet" type="text/css" href="css/v=1545652717.css">
+    <link rel="stylesheet" type="text/css" href="css/v=1553168322.css">
+    <link rel="stylesheet" href="css/v=1563420477.css">
+    <link type="text/css" rel="stylesheet" href="css/adLoader-bc38998ed9.css">
+    <link type="text/css" rel="stylesheet" href="css/v=1419877120.css">
+    <link rel="stylesheet" type="text/css" href="css/footer-0bf5e5a4f3.css" charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="css/index-f4503241d8.css">
+    <link rel="stylesheet" type="text/css" href="css/index-63ede39d43.css">
+
+
+    <link rel="stylesheet" type="text/css" href="css/Gd_common-6515590370.css" charset="utf-8">
+
+    <link href="css/layui.css" rel="stylesheet" type="text/css"/>
+    <script src="layui.js" type="text/javascript"></script>
+    <script>
+        //注意：导航 依赖 element 模块，否则无法进行功能性操作
+        layui.use('element', function () {
+            var element = layui.element;
+        });
+    </script>
+
+    <style>
+        .service-bar {
+            display: none;
+        }
+    </style>
+    <style>
+        .service-bar{
+            display: none;
+        }
+        .merchant-pop-up .mod_pagetip{
+            margin-top: 50px;
+        }
+        .merchant-pop-up  .mod_pagetip_bd {
+            margin-top: 10px;
+        }
+        .merchant-pop-up .go-merchant-btn{
+            display: block;
+            width: 200px;
+            height: 36px;
+            margin: 0 auto;
+            font-size: 14px;
+            line-height: 36px;
+            text-align: center;
+            color: #fff;
+            background: #17C692;
+            border: 0;
+            cursor: pointer;
+            margin-top: 45px;
+        }
+    </style> <div id="small_window"></div>
+  <!--  <style type="text/css">#YSF-BTN-HOLDER{position: fixed;max-width:70px;max-height:70px;right: 30px; bottom: 24px; cursor: pointer; overflow: visible; filter: alpha(opacity=100);opacity:1;z-index: 9990} #YSF-BTN-HOLDER:hover{filter: alpha(opacity=95);opacity:.95} #YSF-BTN-HOLDER img{ display: block;overflow: hidden; } #YSF-BTN-CIRCLE{display: none;position: absolute;right: -5px;top: -6px;width: auto;min-width: 12px;height: 20px;padding: 0 4px;background-color: #f00;font-size: 12px;line-height: 20px;color: #fff;text-align: center;white-space: nowrap;font-family: sans-serif;border-radius: 10px;z-index:1;} #YSF-BTN-BUBBLE{display: none;position: absolute;left: -274px;bottom:-15px;width: 278px;height: 80px;box-sizing: border-box;padding: 14px 22px;filter: alpha(opacity=100);opacity:1;background: url(https://qiyukf.com/sdk//res/img/sdk/bg_floatMsg2x.png) no-repeat;background:url(https://qiyukf.com/sdk//res/img/sdk/bg_floatMsg.png)9; background-size: 278px 80px; z-index: 1;} #YSF-BTN-HOLDER.layer-6{bottom:0;} #YSF-BTN-HOLDER.layer-1 #YSF-BTN-BUBBLE{top:0} #YSF-BTN-HOLDER.layer-6 #YSF-BTN-BUBBLE{bottom:-6px;} #YSF-BTN-BUBBLE:hover{filter: alpha(opacity=95);opacity:.95} #YSF-BTN-CONTENT{height:45px;padding: 0;white-space: normal;word-break: break-all;text-align: left;font-size: 14px;line-height: 1.6;color: #222;overflow: hidden;z-index: 0;} #YSF-BTN-ARROW{ display: none; } #YSF-BTN-CLOSE{position: absolute; width:15px; height:15px;right: 4px;top: -3px; filter: alpha(opacity=90); opacity:.9; cursor: pointer; background: url(https://qiyukf.com/sdk//res/img/sdk/btn-close.png) no-repeat;z-index: 1} #YSF-BTN-CLOSE:hover{filter: alpha(opacity=100); opacity: 1;} #YSF-PANEL-CORPINFO.ysf-chat-layeropen{ width: 511px; height: 500px; border-radius: 8px; box-shadow: 0 0 20px 0 rgba(0, 0, 0, .15);} #YSF-PANEL-CORPINFO{ position: fixed; bottom: 0px; right: 20px; width: 0; height: 0; z-index: 99999; } #YSF-PANEL-INFO.ysf-chat-layeropen{ width: 360px; height: 500px; border-radius: 8px; filter: alpha(opacity=100);opacity:1; box-shadow: 0 0 20px 0 rgba(0, 0, 0, .15);} #YSF-PANEL-INFO{ position: fixed; bottom: 0px; right: 20px; width: 0px; height: 0px; filter: alpha(opacity=0);opacity:0;z-index: 99999;} #YSF-PANEL-INFO .u-btn{background-color: #46be8a} #YSF-CUSTOM-ENTRY{background-color: #F96868;} #YSF-CUSTOM-ENTRY-0{position: relative;width:auto;background-color: #46be8a;box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-1{position: relative;width:auto;background-color: #46be8a;border-radius: 14px; box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-2{position: relative;width:auto;background-color: #46be8a;border-radius: 8px;box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-3{position: relative;width:auto;background-color: #46be8a;border-radius: 50%;box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-4{position: relative;width:auto;background-color: #46be8a;border-radius: 50%;box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-5{position: relative;width:auto;background-color: #46be8a;border-radius: 8px;box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-6{position: relative;width:auto;background-color: #46be8a;border-radius: 8px;box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-7{position: relative;width:auto;background-color: #46be8a;border-radius: 50%;box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-8{position: relative;width:auto;background-color: #46be8a;border-radius: 8px;box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-0 img{max-width: 300px;height:auto;} #YSF-CUSTOM-ENTRY-1 img{width:28px;height:auto;} #YSF-CUSTOM-ENTRY-2 img{width:58px;height:auto;} #YSF-CUSTOM-ENTRY-3 img{width:60px;height:auto;} #YSF-CUSTOM-ENTRY-4 img{width:60px;height:auto;} #YSF-CUSTOM-ENTRY-5 img{width:60px;height:auto;} #YSF-CUSTOM-ENTRY-6 img{width:58px;height:auto;} #YSF-CUSTOM-ENTRY-7 img{width:60px;height:auto;} #YSF-CUSTOM-ENTRY-8 img{width:60px;height:auto;} #YSF-IFRAME-LAYER{ border:0; outline:none; } .ysf-online-invite-wrap{z-index:10001;position:fixed;_position:absolute;top:50%;left:50%;} .ysf-online-invite{position:relative;top:-50%;left:-50%;cursor:pointer;} .ysf-online-invite img{display:block;width:250px;} .ysf-online-invite .ysf-online-invite-img{width:100%;height:100%} .ysf-online-invite .text{position:absolute;top:-11px;left:0;right:0;overflow:hidden;margin: 36px 20px 0 67px;line-height:140%;color:#526069;font-size:14px;font-family:"Microsoft YaHei","微软雅黑",tahoma,arial,simsun,"宋体";text-align:left;white-space:normal;word-wrap:break-word;} .ysf-online-invite .close{position:absolute;top:-6px;right:-6px;width:32px;height:32px;background:url(https://qiyukf.com/sdk/res/img/invite-close.png) no-repeat;cursor:pointer;} .ysf-online-invite .close.custom{top:-16px;right:-16px;} #YSF-PANEL-MOBILE{ background: rgba(46,47,49,0.7); position: fixed; bottom: 0px; right: 0px; width: 100%; height: 0px; transition-property: height,bottom; transition-duration: 0.3s; transition-timing-function: ease; transition-delay: 0s; z-index: 99999; } #YSF-PANEL-MOBILE.ysf-chat-layeropen{ width: 100%; height: 100%; transition-property:height,bottom; transition-duration: 0.3s; transition-timing-function: ease; transition-delay: 0s; } #YSF-IFRAME-LAYER.ysf-chat-mobile-layeropen{ height: 90% !important; transition-property: height,bottom; transition-duration: 0.3s; transition-timing-function: ease; transition-delay: 0s; } #YSF-IFRAME-LAYER{ position: absolute; bottom: 0px;left: 0; right: 0px; width: 0px; height: 0px; transition-property: height,bottom; transition-duration: 0.3s; transition-timing-function: ease; transition-delay: 0s; z-index: 9999; } .YSF-PANEL-BODY-FIXED{ position: fixed !important; left: 0; right: 0;}</style>
+--></head>
+<body class="narrow_980" style="">
+<div class="global_wrap" id="gloWrap">
+
+    <ul th:replace="Navigation::nav"></ul>
+<div class="login_img fl">
+    <img src="//img.to8to.com/decorate_gallery/images/confirm/zcdl_img.jpg?v=20141104" width="390" height="310" alt="美好生活从这里开始">
+</div>
+<div class="login_box reg_box fl new-login-box">
+    <div class="reg_tab">
+        <ul>
+            <li class="on">
+                <a href="javascript:void(0)">个人用户</a>
+            </li>
+   <!--         <li>
+                <a href="javascript:void(0)">商家<b></b></a>
+            </li>-->
+        </ul>
+    </div>
+    <form method="post" action="/register" class="new_reg_form reg_form yezhu_reg" id="reg_form">
+        <input type="hidden" value="" name="indentity" id="indentity">
+        <div class="weixin-reg-boxer" style="display: block;">
+            <div class="login_wrap" style="display: block;">
+                <div class="login_select cl height_auto">
+                    <input type="text" name="" id="emailAndPhone" autocomplete="off" value="" style="border-color: rgb(255, 103, 103);">
+                    <input type="hidden" id="" name="mobile">
+                    <span style="display: block;">手机号</span>
+                    <div class="index_check"><em class=""></em><!--请输入手机号码--></div></div>
+                <div class="login_select cl">
+                    <input type="text" id="userName" name="account" autocomplete="off" value="" style="border-color: rgb(221, 221, 221);" placeholder="用户名">
+                </div>
+                <div class="login_select cl" style="margin-bottom: 20px;">
+                    <input type="password" id="useNum" name="passWord" value="" placeholder="密码" autocomplete="off" style="border-color: rgb(221, 221, 221);">
+                </div>
+                <div class="login_select cl ls_yzm">
+                    <input type="text" id="autoCode" class="autoCode" autocomplete="off" name="">
+                    <span>验证码</span>
+                    <input type="button" class="send_auto" value="发送验证码到手机" id="hqyzm">
+                    <div class="auth_code">
+                        <label>
+                            <img src="/passport.php?t=1397130477" width="93" height="24" id="passport" class="passport" onclick="newverifypic()">
+                            <a href="javascript:newverifypic()">换一张</a>
+                        </label>
+                        <label>
+                            <input type="text" value="" class="authCodeText" id="txt_mathcode" name="">
+                            <input type="button" class="autoCodeButton" value="确认" id="btn_mathcode">
+                        </label>
+                        <em class="arrow_front"></em>
+                        <em class="arrow_background"></em>
+                    </div>
+                </div>
+
+                <div class="safe accept_service cl">
+<span class="safe_login">
+<input type="checkbox" id="as_service" checked="checked">
+<label>我已阅读并接受<a href="//www.to8to.com/about/noticedetail.html?type=service" rel="nofollow" target="_blank">《土巴兔用户服务协议》</a>、<a href="//www.to8to.com/about/noticedetail.html?type=privacy" rel="nofollow" target="_blank">《隐私政策》</a></label>
+</span>
+                </div>
+                <button type="submit"  class="btn_login">立即注册</button>
+
+            </div>
+        </div>
+    </form>
+
+
+</div>
+<!--<script type="text/javascript">
+//协议弹框
+/*new Agreement({type:'reg'});*/
+
+regBegin.init();
+var times;
+var emailmobil;
+var emailmobil_val = 0;
+var setyzm;
+var supplier_reg_times, supplier_reg_phone , supplier_set_yzm;
+jq('#btn_mathcode').click(function(){
+    var rand_num=jq('#txt_mathcode').val();
+    var val = jq('#emailAndPhone').val();
+    var error_email = jq("#emailAndPhone").parent().find(".index_check");
+    if(error_email.length==1)
+    {
+        return false;
+    }
+
+    if(/*!checkSubmitEmail(jq('#emailAndPhone').val()) && */!checkSubmitMobil(jq('#emailAndPhone').val()))
+    {
+        jq('.auth_code').hide();
+        jq('#emailAndPhone').focus();
+        return false;
+    }
+    /*if(checkSubmitEmail(val))
+     {
+     times = 180;
+     emailmobil = 1;
+     }*/
+    if(checkSubmitMobil(val))
+    {
+        times = 120;
+        emailmobil = 0;
+    }
+    if(rand_num == ''){
+        jq('#txt_mathcode').focus();
+    }else{
+        jq.ajax({
+            type: "GET",
+            url: "/my/get_moblie_yz.php",
+            //data: "rand_num="+rand_num,
+            data: {ajax:1,rand_num:rand_num},
+            success:function(data){
+                if(data == 1){
+                    emailmobil_val = val;
+                    set_moblie_yz(rand_num,val,emailmobil);
+                    jq('#div_mathcode').hide();
+                }else{
+                    alert('验证码错误');
+                    jq('#txt_mathcode').focus();
+                }
+            }
+        });
+    }
+});
+
+jq("#emailAndPhone").bind("propertychange input",function(){
+    if(jq("#emailAndPhone").val()!=emailmobil_val && emailmobil_val!='0')
+    {
+        clearTimeout(setyzm);
+        jq('#hqyzm').removeAttr('disabled');
+        jq('#hqyzm').attr('value','发送验证码到手机');
+        jq('#txt_mathcode').val('');
+    }
+});
+
+function set_moblie_yz(rand_num,val,emailmobil){
+    jq('.auth_code').hide();
+    jq('.txt_mathcode').val('');
+    jq('#hqyzm').attr('disabled','disabled');
+    jq.ajax({
+        type: "GET",
+        url: "/my/get_moblie_yz.php?is_ajax=1",
+        data: {moblie:val,rand_num:rand_num,emailmobil:emailmobil},
+        success:function(data){
+            if(data=='-1' ||data=='-2')
+            {
+                addWrongTip({targ: '#autoCode', tip: '验证码申请太频繁，请稍后再试！'});
+            }
+            else
+            {
+                send_agin();
+            }
+        }
+    });
+}
+
+function send_agin(){
+    times=times-1;
+    var showtime = '';
+    if(times>0){
+        setyzm = setTimeout('send_agin()',1000);
+        showtime = times+'秒后获取';
+        jq('#hqyzm').attr('value',showtime);
+        jq(".login_text2").show();
+    }else{
+        if(getCookie('moblie_yz_num')<=10){
+            jq('#hqyzm').removeAttr('disabled');
+            jq('#hqyzm').attr('value','发送验证码到手机');
+            jq('#txt_mathcode').val('');
+            if(emailmobil=='1')
+            {
+                times = 180;
+            }
+            else
+            {
+                times=120;
+            }
+        }
+    }
+}
+jq('#yuyincode').hover(function (){
+    jq('#yuyincode').css('color','#01AF63')
+},function(){
+    jq('#yuyincode').css('color','#FF6600');
+});
+
+jq('#yuyincode').click(function(){
+    jq.ajax({
+        type: "POST",
+        url: "/my/get_moblie_yz.php",
+        data: {act:'yuyin',moblie:jq('#emailAndPhone').val()},
+        success:function(data){
+            if(data == 1){
+                jq('#daymaxtimes').hide();
+                jq('#hourmaxtimes').hide();
+                jq('#getLost').hide();
+                jq('#calling').show();
+            }else if(data == 2){
+                jq('#hourmaxtimes').show();
+                jq('#calling').hide();
+                jq('#getLost').hide();
+                jq('#daymaxtimes').hide();
+            }else if(data == 10){
+                jq('#hourmaxtimes').hide();
+                jq('#calling').hide();
+                jq('#getLost').hide();
+                jq('#daymaxtimes').show();
+            }else if(data == -1){
+                jq('#hourmaxtimes').hide();
+                jq('#calling').hide();
+                jq('#daymaxtimes').hide();
+                jq('#getLost').show();
+            }
+        }
+    });
+})
+
+
+/*/////////////////////////注册供应商逻辑begin*/
+// 输入框输入焦点事件，校验输入信息
+jq('.indentity-type3 input[name^="supplier_"]').blur(function () {
+    var name = jq(this).attr("name");
+    switch (name){
+        case "supplier_mobile": checkPhoneRepeat(); break;
+        case "supplier_password": checkPassword_supplier(); break;
+        case "supplier_password_repeat": checkPassword_supplier(); break;
+        case "supplier_mobile_yzm": checkYzm_supplier(); break;
+    }
+});
+
+jq("#supplier_mobile").bind("propertychange input",function(){
+    if(jq(this).val() != supplier_reg_phone)
+    {
+        clearTimeout(supplier_set_yzm);
+        jq('.indentity-type3 #hqyzm').removeAttr('disabled');
+        jq('.indentity-type3 #hqyzm').attr('value','发送验证码到手机');
+        jq('.indentity-type3 #txt_mathcode').val('');
+    }
+});
+
+function checkPhoneRepeat() {
+    if (checkMobile_supplier()) {
+        sendData = {
+            email_mobile: rsaString(jq('#supplier_mobile').val()),
+            ajax_reg_check: 1
+        };
+        jq.ajax({
+            type: 'post',
+            url: '//www.to8to.com/reg/reg_new.php',
+            data: sendData,
+            dataType: 'json',
+            success: function (res) {
+                if (res.email_mobile.data == -1) {//手机已注册使用
+                    if (jq('#supplier_mobile').siblings('.index_check').length == 0) {
+                        addWrongTip({targ: '#supplier_mobile', tip: res.email_mobile.message});
+                    }
+                }
+            }
+        });
+    }
+}
+
+
+//显示隐藏验证码小弹框
+jq('.indentity-type3 .sendMobilePhone').click(function () {
+    var authCode = jq('.indentity-type3 .auth_code'),
+            phone = jq('#supplier_mobile'),
+            tip = phone.parent().find('.index_check').length;
+
+    if (authCode.is(':hidden') && checkMobile_supplier()) {
+        authCode.show();
+        jq('.indentity-type3 .authCodeText').focus();
+    } else {
+        authCode.hide();
+    }
+});
+
+
+jq('.indentity-type3 input[type="password"]').focus(function () {
+    jq(this).parent().removeClass('height_auto').find('.index_check').remove();
+});
+
+jq('.indentity-type3 #yonghuxieyi').click(function () {
+    if(jq('#yonghuxieyi').is(':checked')) {
+        jq(this).parent().removeClass('height_auto').find('.index_check').remove();
+    }
+    checkXieYi_supplier();
+});
+
+jq('.indentity-type3 .autoCodeButton').click(function() {
+    var rand_num=jq('.indentity-type3 input.authCodeText').val();
+    var val = jq('.indentity-type3 #supplier_mobile').val();
+    if(!checkMobile_supplier())
+    {
+        jq('.indentity-type3 .auth_code').hide();
+        jq('.indentity-type3 #supplier_mobile').focus();
+        return false;
+    }
+
+    supplier_reg_times = 120;
+
+    if(rand_num == ''){
+        jq('.indentity-type3 input.authCodeText').focus();
+    }else{
+        jq.ajax({
+            type: "GET",
+            url: "/my/get_moblie_yz.php",
+            data: {ajax:1,rand_num:rand_num},
+            success:function(data){
+                if(data == 1){
+                    supplier_reg_phone = val;
+                    spuulier_set_moblie_yz(rand_num,val);
+                    jq('#div_mathcode').hide();
+                }else{
+                    alert('验证码错误');
+                    jq('.indentity-type3 input.authCodeText').focus();
+                }
+            }
+        });
+    }
+});
+
+function spuulier_set_moblie_yz(rand_num,val,emailmobil){
+    jq('.indentity-type3 .auth_code').hide();
+    jq('.indentity-type3 .txt_mathcode').val('');
+    jq('.indentity-type3 .sendMobilePhone').attr('disabled','disabled');
+    jq.ajax({
+        type: "GET",
+        url: "/my/get_moblie_yz.php?is_ajax=1",
+        data: {moblie: val, rand_num: rand_num, emailmobil: 0},
+        success:function(data){
+            if(data == -1 ||data == -2)
+            {
+                addWrongTip({targ: '.indentity-type3 .autoCode', tip: '验证码申请太频繁，请稍后再试！'});
+            }
+            else
+            {
+                msg_send_agin();
+            }
+        }
+    });
+}
+
+function msg_send_agin(){
+    supplier_reg_times = supplier_reg_times - 1;
+    var showtime = '';
+    if(supplier_reg_times > 0){
+        supplier_set_yzm = setTimeout('msg_send_agin()',1000);
+        showtime = supplier_reg_times+'秒后获取';
+        jq('.indentity-type3 .sendMobilePhone').attr('value',showtime);
+        jq(".login_text2").show();
+    }else{
+        if(getCookie('moblie_yz_num') <= 10){
+            jq('.indentity-type3 .sendMobilePhone').removeAttr('disabled');
+            jq('.indentity-type3 .sendMobilePhone').attr('value','发送验证码到手机');
+            jq('#txt_mathcode').val('');
+        }
+    }
+}
+
+function checkMobile_supplier() {
+    var mobileObj = jq('#supplier_mobile');
+    var mobile = jq.trim(mobileObj.val());
+    var telRegexp = /^(1[3|4|5|6|7|8|9])[\d]{9}$/
+    var flag = true;
+    if (mobile == '')
+    {
+        flag = false;
+        addWrongTip({targ: '#supplier_mobile', tip: '请输入手机号'});
+    } else if (!telRegexp.test(mobile)) {
+        flag = false;
+        addWrongTip({targ: '#supplier_mobile', tip: '手机号格式不正确'});
+    }
+    return flag;
+}
+
+function checkPassword_supplier() {
+    var passwordObj = jq('#supplier_password');
+    var repasswordObj = jq('#supplier_password_repeat');
+    var password = jq.trim(passwordObj.val().toLowerCase());
+    var repassword = jq.trim(repasswordObj.val().toLowerCase());
+    if (password === "") {
+        addWrongTip({targ: '#supplier_password', tip: '请填写账号密码'});
+        return false;
+    }
+
+    var passwordRegexp = /^(?!.*\n)(?:(?=.*\d)(?=.*\W)|(?=.*\d)(?=.*[A-Za-z])|(?=.*\W)(?=.*[A-Za-z])).{8,}$/;
+    if (!passwordRegexp.test(password)) {
+        addWrongTip({targ: '#supplier_password', tip: '密码至少8位，必须包含字母、数字、特殊字符中的任意两种'});
+        return false;
+    }
+
+    if (password != repassword) {
+        addWrongTip({targ: '#supplier_password_repeat', tip: '密码不一致'});
+        return false;
+    }
+
+
+    return true;
+}
+
+function checkXieYi_supplier() {
+    var checked = jq('#yonghuxieyi').is(':checked');
+    if (!checked) {
+        addWrongTip({targ: '#yonghuxieyi', tip: '请阅读用户协议'});
+    }
+    return checked
+}
+
+function checkYzm_supplier() {
+    var yzmObj = jq('#supplier_mobile_yzm');
+    var yzm = jq.trim(yzmObj.val());
+    if (yzm === "") {
+        addWrongTip({targ: '#supplier_mobile_yzm', tip: '请填写短信验证码'});
+    }
+    return true;
+}
+
+// 注册验证
+function checkRegisterForm_supplier() {
+    return (checkMobile_supplier() && checkPassword_supplier() && checkXieYi_supplier() && checkYzm_supplier());
+}
+
+function supplier_toLogin(){
+    window.location.href = 'http://swc.to8to.com';
+}
+
+// 建材商注册成功提示
+function register_supplier_message() {
+    var successStr = '<div class="dlzc_box merchant-pop-up"><div class="mod_pagetip"><span class="mod_pagetip_ico"><em class="ico_tip_ok"></em></span><div class="mod_pagetip_bd"><div class="mod_pagetip_title">恭喜您，注册成功！</div></div></div><span class="go-merchant-btn" onclick="supplier_toLogin()">确认并跳转至商家后台</span></div>';
+    jq('.window_box').windowBox({
+        width: 460,
+        height: 260,
+        title: " ",
+        wbcStr: successStr
+    });
+    jq('.window_box_title').hide();
+}
+
+//注册建材商
+function register_supplier() {
+    var data = {};
+    if (checkRegisterForm_supplier()) {
+        data = {
+            mobile: rsaString(jq('#supplier_mobile').val()),
+            password1: rsaString(jq('#supplier_password').val()),
+            mobile_yzm: jq('#supplier_mobile_yzm').val(),
+            indentity: 3
+        };
+        jq.ajax({
+            type: 'POST',
+            url: '//www.to8to.com/reg/reg_new.php?id='+new Date().getTime(),
+            data: data,
+            dataType: 'json',
+            success: function (res) {
+                if (res.data == 1) {
+                    register_supplier_message();
+                } else {
+                    switch(res.mark) {
+                        case 'havamobile':
+                            addWrongTip({targ: '.indentity-type3 #supplier_mobile', tip: res.message ? res.message : '手机号有误'});
+                            break;
+                        case 'badpassword':
+                            addWrongTip({targ: '.indentity-type3 #supplier_password', tip: res.message ? res.message : '密码有误'});
+                            break;
+                        case 'codeerror':
+                            addWrongTip({targ: '.indentity-type3 #supplier_mobile_yzm', tip: res.message ? res.message : '短信验证码有误'});
+                            break;
+                        default:
+                            alert(res.message ? res.message : '注册失败');
+                            break;
+                    }
+                }
+
+            },
+            error: function (e) {
+            }
+        });
+    }
+}
+
+/*/////////////////////////注册供应商逻辑end*/
+</script>-->
+    <!--引入footer部分-->
+    <div th:replace="footer::footer"></div>
+</div>
+</html>

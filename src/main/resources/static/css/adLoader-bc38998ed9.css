@@ -1,0 +1,210 @@
+.ad-banner-link, .ad-carousel-container, .ad-rabbit {
+    overflow: hidden
+}
+
+.ad-rabbit {
+    position: relative
+}
+
+.ad-mark {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 100
+}
+
+.ad-mark.normal {
+    width: 39px;
+    height: 23px;
+}
+
+.ad-mark.big {
+    width: 48px;
+    height: 30px;
+}
+
+.ad-rabbit-wap .ad-mark {
+    right: 8px;
+    bottom: 8px;
+    width: 22px;
+    height: 12px;
+}
+
+@media (-webkit-min-device-pixel-ratio :1) {
+    .ad-rabbit-wap .ad-mark {
+        background-size: cover
+    }
+}
+
+@media (min-device-width :375px) and (max-device-width :667px) and (-webkit-min-device-pixel-ratio :2) {
+    .ad-rabbit-wap .ad-mark {
+        width: 22px;
+        height: 12px
+    }
+}
+
+@media (min-device-width :414px) and (max-device-width :736px) and (-webkit-min-device-pixel-ratio :3) {
+    .ad-rabbit-wap .ad-mark {
+        right: 10px;
+        bottom: 10px;
+        width: 24.28px;
+        height: 13.25px
+    }
+}
+
+.ad-carousel-arrow-left, .ad-carousel-arrow-right {
+    display: none;
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+    background-color: #000;
+    opacity: .5
+}
+
+.ad-carousel-arrow-left {
+    left: 1px
+}
+
+.ad-carousel-arrow-right {
+    right: 1px
+}
+
+.ad-carousel-arrow-left:hover, .ad-carousel-arrow-right:hover {
+    opacity: .5
+}
+
+.ad-carousel-container:hover .ad-carousel-arrow-left, .ad-carousel-container:hover .ad-carousel-arrow-right {
+    display: block
+}
+
+.ad-carousel-arrow-icon {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -5px;
+    margin-top: -11px;
+    width: 11px;
+    height: 20px;
+}
+
+.ad-carousel-arrow-icon-left {
+    background-position: 0 0
+}
+
+.ad-carousel-arrow-icon-right {
+    background-position: -12px 0
+}
+
+.ad-carousel-swiper-slide {
+    background-color: #ccc;
+    position: relative
+}
+
+.ad-carousel-swiper-slide-link {
+    display: block;
+    position: relative
+}
+
+.ad-carousel-swiper-slide-title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 20px
+}
+
+.ad-banner-txt, .ad-script-txt {
+    top: 12px;
+    left: 12px;
+    font-size: 18px;
+    color: #fff
+}
+
+.ad-carousel-slider-btns {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    z-index: 1
+}
+
+.ad-carousel-slider-btns .swiper-pagination-switch+.swiper-pagination-switch {
+    margin-left: 8px
+}
+
+.ad-carousel-slider-btns .swiper-pagination-switch {
+    display: inline-block;
+    margin-bottom: 5px;
+    opacity: .4;
+    cursor: pointer;
+    *display: inline;
+    *zoom: 1
+}
+
+.ad-carousel-slider-btns .swiper-pagination-switch.swiper-active-switch {
+    opacity: 1
+}
+
+.ad-carousel-slider-btns.slider-btns-style-bullets .swiper-pagination-switch {
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #fff
+}
+
+.ad-carousel-slider-btns.slider-btns-style-line .swiper-pagination-switch {
+    width: 30px;
+    height: 10px;
+    border-top: 1px solid #fff
+}
+
+.ad-rabbit-wap .ad-carousel-slider-btns {
+    bottom: 5px
+}
+
+.ad-rabbit-wap .ad-carousel-container:hover .ad-carousel-arrow-left, .ad-rabbit-wap .ad-carousel-container:hover .ad-carousel-arrow-right {
+    display: none
+}
+
+.ad-rabbit-wap .ad-carousel-slider-btns .swiper-pagination-bullet {
+    width: 5px;
+    height: 5px;
+    background: #fff;
+    opacity: .6;
+    border-radius: 2.5px;
+    -webkit-transition: width .3s, opacity .3s;
+    -moz-transition: width .3s, opacity .3s;
+    transition: width .3s, opacity .3s
+}
+
+.ad-rabbit-wap .ad-carousel-slider-btns .swiper-pagination-bullet+.swiper-pagination-bullet {
+    margin-left: 9px
+}
+
+.ad-rabbit-wap .ad-carousel-slider-btns .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    width: 9px;
+    background: #fff;
+    opacity: 1;
+    -webkit-transition: width .3s, opacity .3s;
+    -moz-transition: width .3s, opacity .3s;
+    transition: width .3s, opacity .3s
+}
+
+.ad-script-iframe {
+    border: none
+}
+
+.ad-script-txt {
+    position: absolute
+}
+
+.ad-banner-link {
+    display: block;
+    position: relative
+}
+
+.ad-banner-txt {
+    position: absolute
+}
