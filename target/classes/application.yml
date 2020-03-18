@@ -1,0 +1,16 @@
+mybatis-plus:
+  type-aliases-package: cn.youfull.trimhelp.entity
+  configuration:
+    map-underscore-to-camel-case: false
+
+spring:
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/  #prefix：指定模板所在的目录
+    suffix:  .html
+    mode: LEGACYHTML5
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.105.174.82:3306/decoratestate?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: root

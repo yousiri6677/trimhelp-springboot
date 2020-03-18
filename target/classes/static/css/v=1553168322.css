@@ -1,0 +1,123 @@
+.agreement__shade {
+    position: fixed;
+    _position: absolute;
+    pointer-events: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=30);
+}
+
+.agreement__pop {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 640px;
+    z-index: 1000;
+    margin: -179px 0 0 -320px;
+    background: #ffffff;
+}
+
+.agreement__login {
+    height: 358px;
+    margin: -179px 0 0 -320px;
+}
+
+.agreement__reg {
+    height: 500px;
+    margin: -250px 0 0 -320px;
+}
+
+.agreement__close {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 12px;
+    right: 8px;
+    background-repeat: no-repeat;
+}
+
+.agreement__content {
+    padding: 0 40px;
+}
+
+.agreement__content p {
+    font-family: MicrosoftYaHei;
+    font-size: 14px;
+    color: #333333;
+    letter-spacing: 0;
+    line-height: 28px;
+}
+
+.agreement__site {
+    color: #0DB46A;
+    text-decoration: underline !important;
+}
+
+.agreement__content .agreement__site__box {
+    color: #0DB46A;
+}
+
+.agreement__content .particularly__hint {
+    margin-top: 26px;
+}
+
+.agreement__content .agreement__title {
+    margin: 40px 0 20px 0;
+    font-family: MicrosoftYaHei-Bold;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.agreement__pint__last {
+    margin-top: 26px;
+}
+
+.agreement__btn {
+    width: 220px;
+    height: 34px;
+    margin: 33px auto 37px auto;
+}
+
+.agreement__btn span {
+    float: left;
+    font-family: MicrosoftYaHei;
+    font-size: 14px;
+    letter-spacing: 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.agreement__disagree {
+    width: 98px;
+    height: 32px;
+    border: 1px solid #CCCCCC;
+    background-color: #ffffff;
+    line-height: 32px;
+    color: #999999;
+}
+
+.agreement__agree {
+    width: 100px;
+    height: 34px;
+    margin-left: 20px;
+    background-color: #f36f1f;
+    line-height: 34px;
+    color: #FFFFFF;
+}
+
+.agreement__emphasize {
+    font-family: MicrosoftYaHei-Bold;
+    font-size: 14px;
+    color: #333333;
+    letter-spacing: 0;
+    line-height: 28px;
+    font-weight: bold;
+}
