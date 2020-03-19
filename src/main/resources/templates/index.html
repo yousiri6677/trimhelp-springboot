@@ -3,8 +3,7 @@
 <head th:replace="head::head"></head>
 <body style="">
 <div class="global-wrap">
-    <!--<iframe src="Navigation.html" style="width:100%; height: 80px"  frameborder="0" noresize framespacing="6" bordercolor="#0000FF"></iframe>
-   -->
+
     <!--头部导航栏部分 Begin-->
     <ul th:replace="Navigation::nav"></ul>
     <!--头部导航栏部分 End-->
@@ -13,7 +12,30 @@
     <div class="main-container" style="margin-top: -1px">
 
         <!--轮播图 Begin-->
-        <div class="index-banner" id="index-banner-flag">
+
+        <div class="layui-carousel" id="test1">
+            <div carousel-item>
+                <div>
+                    <img src="imgs/20d61a4540697d084ca90ea4e201cd5a.jpg" style="height: 100% ;width: 100%" alt="服务保障首页"/>
+                </div>
+                <div>条目2</div>
+                <div>条目3</div>
+            </div>
+        </div>
+        <script>
+            layui.use('carousel', function(){
+                var carousel = layui.carousel;
+                //建造实例
+                carousel.render({
+                    elem: '#test1'
+                    ,width: '100%' //设置容器宽度
+                    ,arrow: 'always' //始终显示箭头
+                    //,anim: 'updown' //切换动画方式
+                });
+            });
+        </script>
+
+  <!--      <div class="index-banner" id="index-banner-flag">
             <a href="javascript:void(0);" class="arrow-left">
                 <span class="bannner-arrow"></span>
             </a>
@@ -23,15 +45,7 @@
             <div class="swiper-container banner-sliders t8t-ad-swiper-custom">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <a tracker-widget="" href="zxb1.html" target="_blank" rel="nofollow"
-                           onclick="javascript:clickStream.getCvParams('1_1_1_2406')"
-                           class="ad-data-report ad-data-report-carousel" data-ad_id="9551" data-pg="" data-rty="ad___"
-                           widget_index="0" widget_uid="homepage_top_banner" data-ad_type="ad"
-                           data-ad_src="https://pic50.t8tcdn.com/adcms/ad/202001/17/20d61a4540697d084ca90ea4e201cd5a39649.jpg"
-                           data-widget_href="http://www.to8to.com/company/zxb.php" data-rid="20" data-rtt="服务保障首页"
-                           data-radk="idx_idx_hed_al_1">
-                            <img src="imgs/20d61a4540697d084ca90ea4e201cd5a.jpg" alt="服务保障首页">
-                        </a>
+                            <img src="imgs/20d61a4540697d084ca90ea4e201cd5a.jpg" alt="服务保障首页"/>
                     </div>
                 </div>
             </div>
@@ -39,7 +53,7 @@
             </ul>
         </div>
         <img src="#" height="75" width="121" alt="土巴兔郑州装修网"
-             style="display:none;">
+             style="display:none;">-->
         <!--轮播图 End-->
 
 

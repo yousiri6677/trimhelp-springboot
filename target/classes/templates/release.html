@@ -4,13 +4,9 @@
     <meta name="viewport"
           content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--<meta name="keywords" content="众包,众包平台,软件众包,软件外包,软件开发,开源众包,开源中国,开源众包,开源众包平台,外包,众包开发,软件接包,IT 众包,码云">-->
-    <!--<meta name="description" itemprop="description" content="开源众包平台-靠谱的IT软件开发服务交易平台，拥有百万专业软件类技术服务商。采用共享经济的理念借助“众”的模式降低企业技术资源成本投入，通过高效的匹配撮合与专业的项目管理机制等多维度平台级服务保障，为您提供覆盖所有软件领域技术资源需求的有效对接及开发实施">-->
     <meta name="robots" content="index, follow">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="开源众包平台">
-    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
     <meta name="HandheldFriendly" content="true">
     <!-- UC强制全屏 -->
     <meta name="full-screen" content="yes">
@@ -26,17 +22,19 @@
     <meta name="msapplication-TileColor" content="#FFF">
     <!-- 百度移动搜索 -->
     <meta name="applicable-device" content="pc">
-    <!-- QQ聊天框中发送url网站链接预览内容 http://kf.qq.com/faq/140508YJf6NJ140508NzeQJj.html -->
     <meta itemprop="name" content="开源众包平台">
     <!-- ios设备上禁止将数字识别为可点击的tel link -->
     <meta content="telephone=no" name="format-detection">
     <link rel="home" href="/">
+
     <link href="css/layui.css" rel="stylesheet" type="text/css"/>
     <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag() {
             dataLayer.push(arguments);
         }
+
         gtag('js', new Date());
 
         gtag('config', 'UA-131295055-1');
@@ -45,7 +43,7 @@
 
     <link href="css/b5995b7778b8e0186f55.css" rel="stylesheet">
     <link href="css/publish.09eebe33.css" rel="stylesheet">
-    <title>完善项目需求信息-开源众包平台</title>
+    <title>发布需求</title>
     <style type="text/css">
         .publish-wrap[data-v-206f89a0] .el-loading-spinner {
             top: 25% !important;
@@ -2135,1268 +2133,340 @@
 
     <link rel="stylesheet" type="text/css" href="css/footer-0bf5e5a4f3.css" charset="utf-8">
 </head>
+
+
 <body>
+<!--引入头部 Begin-->
+<ul th:replace="Navigation::nav"></ul>
+<!--引入头部 End-->
 
-<ul th:replace="Navigation::nav">
-</ul>
+<div data-v-206f89a0="" id="container" element-loading-text="拼命加载中" class="publish-wrap" style="margin-top: -2px">
+    <!---->
 
-<div data-v-206f89a0="">
-</div>
-<div data-v-206f89a0="" id="container" element-loading-text="拼命加载中" class="publish-wrap" style="margin-top: -2px"><!---->
-        <div data-v-206f89a0="" class="main-content">
-            <div data-v-f7548b24="" data-v-206f89a0="" style="width: 100%; background-color: rgb(249, 250, 253);">
-                <div data-v-1476ebd8="" data-v-f7548b24="" class="el-dialog__wrapper el-dialog-width-auto-passport"
-                     style="display: none; z-index: 2001;">
-                    <div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog"
-                         style="margin-top: 15vh; width: 480px;">
-                        <div class="el-dialog__header"><span class="el-dialog__title"></span>
-                            <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i
-                                    class="el-dialog__close el-icon el-icon-close"></i></button>
-                        </div>
-                        <!----><!----></div>
-                </div>
-                <div data-v-f7548b24="" class="top-panel" style="margin-top: 0px;">
-                    <div data-v-f7548b24="" class="w"><p data-v-f7548b24="">免费发布需求</p>
+    <div data-v-206f89a0="" class="main-content">
+        <div data-v-f7548b24="" data-v-206f89a0="" style="width: 100%; background-color: rgb(249, 250, 253);">
 
-                        <p data-v-f7548b24="">几分钟内联系技能丰富的威客。查看其个人资料、评级、作品集并与他们聊天。只有当您对他们的作品100％满意时再向威客支付。</p></div>
-                </div>
-                <div data-v-f7548b24="" class="mtb-large">
-                    <div data-v-f7548b24="" class="w">
-                        <div data-v-f7548b24="" class="el-row" style="margin-left: -10px; margin-right: -10px;">
-                            <div data-v-f7548b24="" class="el-col el-col-18"
-                                 style="padding-left: 10px; padding-right: 10px;">
-                                <form data-v-f7548b24="" class="el-form">
-                                    <div data-v-f7548b24="" class="publish-project">
-                                        <div data-v-f7548b24="" class="el-form-item is-required"><label
-                                                for="application" class="el-form-item__label">选择需求类型</label>
+            <!--  <div data-v-1476ebd8="" data-v-f7548b24="" class="el-dialog__wrapper el-dialog-width-auto-passport"
+                   style="display: none; z-index: 2001;">
+                  <div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog"
+                       style="margin-top: 15vh; width: 480px;">
+                      <div class="el-dialog__header"><span class="el-dialog__title"></span>
+                          <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i
+                                  class="el-dialog__close el-icon el-icon-close"></i></button>
+                      </div>
+                  </div>
+              </div>          -->
+            <!--标题 Begin-->
+            <div data-v-f7548b24="" class="top-panel" style="margin-top: 0px;">
+                <div data-v-f7548b24="" class="w"><p data-v-f7548b24="">免费发布需求</p>
 
-                                            <div class="el-form-item__content">
-                                                <div data-v-f7548b24="" class="application__btn">
-                                                    <button data-v-f7548b24="" type="button"
-                                                            class="el-button el-button--small" data-index="0"><!---->
-                                                        <!----><span>
+                    <p data-v-f7548b24="">几分钟内联系装修丰富的公司。查看其个人资料、评级、作品集并与他们聊天。只有当您对他们的作品100％满意时再向威客支付。</p></div>
+            </div>
+            <!--标题 End-->
+
+            <div data-v-f7548b24="" class="mtb-large">
+                <div data-v-f7548b24="" class="w">
+                    <div data-v-f7548b24="" class="el-row" style="margin-left: -10px; margin-right: -10px;">
+
+                        <div data-v-f7548b24="" class="el-col el-col-18"
+                             style="padding-left: 10px; padding-right: 10px;">
+                            <form data-v-f7548b24="" class="el-form">
+
+                                <div data-v-f7548b24="" class="publish-project">
+                                    <div data-v-f7548b24="" class="el-form-item is-required">
+                                        <label class="el-form-item__label">选择需求类型</label>
+                                       <!-- <div class="el-form-item__content">
+                                            <div data-v-f7548b24="" class="application__btn">
+                                                <button data-v-f7548b24="" type="button"
+                                                        class="el-button el-button&#45;&#45;small" data-index="0">&lt;!&ndash;&ndash;&gt;
+                                                    &lt;!&ndash;&ndash;&gt;<span>
                               移动应用
                             </span></button>
-                                                    <button data-v-f7548b24="" type="button"
-                                                            class="el-button el-button--small" data-index="1"><!---->
-                                                        <!----><span>
+                                                <button data-v-f7548b24="" type="button"
+                                                        class="el-button el-button&#45;&#45;small" data-index="1">&lt;!&ndash;&ndash;&gt;
+                                                    &lt;!&ndash;&ndash;&gt;<span>
                               H5应用
                             </span></button>
-                                                    <button data-v-f7548b24="" type="button"
-                                                            class="el-button el-button--small" data-index="2"><!---->
-                                                        <!----><span>
+                                                <button data-v-f7548b24="" type="button"
+                                                        class="el-button el-button&#45;&#45;small" data-index="2">&lt;!&ndash;&ndash;&gt;
+                                                    &lt;!&ndash;&ndash;&gt;<span>
                               微信应用
                             </span></button>
-                                                    <button data-v-f7548b24="" type="button"
-                                                            class="el-button el-button--small" data-index="3"><!---->
-                                                        <!----><span>
+                                                <button data-v-f7548b24="" type="button"
+                                                        class="el-button el-button&#45;&#45;small" data-index="3">&lt;!&ndash;&ndash;&gt;
+                                                    &lt;!&ndash;&ndash;&gt;<span>
                               企业应用
                             </span></button>
-                                                    <button data-v-f7548b24="" type="button"
-                                                            class="el-button el-button--small" data-index="4"><!---->
-                                                        <!----><span>
+                                                <button data-v-f7548b24="" type="button"
+                                                        class="el-button el-button&#45;&#45;small" data-index="4">&lt;!&ndash;&ndash;&gt;
+                                                    &lt;!&ndash;&ndash;&gt;<span>
                               WEB应用
                             </span></button>
-                                                    <button data-v-f7548b24="" type="button"
-                                                            class="el-button el-button--small" data-index="5"><!---->
-                                                        <!----><span>
+                                                <button data-v-f7548b24="" type="button"
+                                                        class="el-button el-button&#45;&#45;small" data-index="5">&lt;!&ndash;&ndash;&gt;
+                                                    &lt;!&ndash;&ndash;&gt;<span>
                               工具应用
                             </span></button>
-                                                    <button data-v-f7548b24="" type="button"
-                                                            class="el-button el-button--small" data-index="6"><!---->
-                                                        <!----><span>
+                                                <button data-v-f7548b24="" type="button"
+                                                        class="el-button el-button&#45;&#45;small" data-index="6">&lt;!&ndash;&ndash;&gt;
+                                                    &lt;!&ndash;&ndash;&gt;<span>
                               桌面应用
                             </span></button>
-                                                    <button data-v-f7548b24="" type="button"
-                                                            class="el-button el-button--small" data-index="7"><!---->
-                                                        <!----><span>
+                                                <button data-v-f7548b24="" type="button"
+                                                        class="el-button el-button&#45;&#45;small" data-index="7">&lt;!&ndash;&ndash;&gt;
+                                                    &lt;!&ndash;&ndash;&gt;<span>
                               游戏开发
                             </span></button>
-                                                    <button data-v-f7548b24="" type="button"
-                                                            class="el-button el-button--small" data-index="8"><!---->
-                                                        <!----><span>
+                                                <button data-v-f7548b24="" type="button"
+                                                        class="el-button el-button&#45;&#45;small" data-index="8">&lt;!&ndash;&ndash;&gt;
+                                                    &lt;!&ndash;&ndash;&gt;<span>
                               设计
                             </span></button>
-                                                    <button data-v-f7548b24="" type="button"
-                                                            class="el-button el-button--small" data-index="9"><!---->
-                                                        <!----><span>
+                                                <button data-v-f7548b24="" type="button"
+                                                        class="el-button el-button&#45;&#45;small" data-index="9">&lt;!&ndash;&ndash;&gt;
+                                                    &lt;!&ndash;&ndash;&gt;<span>
                               培训咨询
                             </span></button>
-                                                    <button data-v-f7548b24="" type="button"
-                                                            class="el-button el-button--small" data-index="10"><!---->
-                                                        <!----><span>
+                                                <button data-v-f7548b24="" type="button"
+                                                        class="el-button el-button&#45;&#45;small" data-index="10">&lt;!&ndash;&ndash;&gt;
+                                                    &lt;!&ndash;&ndash;&gt;<span>
                               区块链
                             </span></button>
-                                                    <button data-v-f7548b24="" type="button"
-                                                            class="el-button el-button--small" data-index="11"><!---->
-                                                        <!----><span>
+                                                <button data-v-f7548b24="" type="button"
+                                                        class="el-button el-button&#45;&#45;small" data-index="11">&lt;!&ndash;&ndash;&gt;
+                                                    &lt;!&ndash;&ndash;&gt;<span>
                               人工智能
                             </span></button>
-                                                    <button data-v-f7548b24="" type="button"
-                                                            class="el-button el-button--small" data-index="12"><!---->
-                                                        <!----><span>
+                                                <button data-v-f7548b24="" type="button"
+                                                        class="el-button el-button&#45;&#45;small" data-index="12">&lt;!&ndash;&ndash;&gt;
+                                                    &lt;!&ndash;&ndash;&gt;<span>
                               大数据
                             </span></button>
-                                                    <button data-v-f7548b24="" type="button"
-                                                            class="el-button el-button--small" data-index="13"><!---->
-                                                        <!----><span>
+                                                <button data-v-f7548b24="" type="button"
+                                                        class="el-button el-button&#45;&#45;small" data-index="13">&lt;!&ndash;&ndash;&gt;
+                                                    &lt;!&ndash;&ndash;&gt;<span>
                               物联网
                             </span></button>
-                                                    <button data-v-f7548b24="" type="button"
-                                                            class="el-button el-button--small" data-index="14"><!---->
-                                                        <!----><span>
+                                                <button data-v-f7548b24="" type="button"
+                                                        class="el-button el-button&#45;&#45;small" data-index="14">&lt;!&ndash;&ndash;&gt;
+                                                    &lt;!&ndash;&ndash;&gt;<span>
                               云计算
                             </span></button>
+                                            </div>
+                                            &lt;!&ndash;&ndash;&gt;</div>-->
+                                    </div>
+                                    <!--需求标题 Begin-->
+                                    <div data-v-f7548b24="" class="el-form-item is-required">
+                                        <label  class="el-form-item__label">需求标题</label>
+                                <div class="el-form-item__content">
+                                    <input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                                </div>
+                                    </div>
+                                    <!--需求标题 End-->
+
+                                    <!--需求描述 Begin-->
+                                    <div data-v-f7548b24=""
+                                         class="el-form-item form-prd is-required">
+                                        <label class="el-form-item__label">需求描述：</label>
+
+                                        <textarea name="" required lay-verify="required" placeholder="请输入需求描述" class="layui-textarea"></textarea>
+                                    </div>
+                                    <!--需求描述 End-->
+
+                                    <!--图片上传 Begin-->
+                                    <div data-v-f7548b24="" class="el-form-item"><!---->
+                                        <div class="layui-upload-drag" id="test10">
+                                            <i class="layui-icon"></i>
+                                            <p>点击上传，或将文件拖拽到此处</p>
+                                            <div class="layui-hide" id="uploadDemoView">
+                                                <hr>
+                                                <img src="" alt="上传成功后渲染" style="max-width: 196px">
+                                            </div>
+                                        </div>
+                                        <script>
+                                            layui.use('upload', function(){
+                                                var $ = layui.jquery
+                                                    ,upload = layui.upload;
+
+                                                //指定允许上传的文件类型
+                                                upload.render({
+                                                    elem: '#test3'
+                                                    ,url: 'https://httpbin.org/post' //改成您自己的上传接口
+                                                    ,accept: '*' //普通文件
+                                                    ,done: function(res){
+                                                        layer.msg('上传成功');
+                                                        console.log(res);
+                                                    }
+                                                });
+
+                                            //拖拽上传
+                                            upload.render({
+                                                elem: '#test10'
+                                                ,url: 'https://httpbin.org/post' //改成您自己的上传接口
+                                                ,done: function(res){
+                                                    layer.msg('上传成功');
+                                                    layui.$('#uploadDemoView').removeClass('layui-hide').find('img').attr('src', res.files.file);
+                                                    console.log(res)
+                                                }
+                                            });
+                                            });
+                                        </script>
+                                    </div>
+                                    <!--图片上传 End-->
+
+                                    <!--要求描述 Begin-->
+                                    <div data-v-f7548b24="" class="el-form-item skill-select__wrapper"><label class="el-form-item__label">个人要求：</label>
+                                        <textarea name="" required lay-verify="required" placeholder="请输入您特定的要求" class="layui-textarea"></textarea>
+                                    </div>
+                                    <!--要求描述 End-->
+
+                                    <div data-v-f7548b24="" class="project-panel cycle-money">
+                                        <div data-v-f7548b24="" class="title">预算与工期</div>
+                                        <div data-v-f7548b24="" class="el-row">
+                                            <div class="layui-inline">
+                                                <label class="layui-form-label" id="test25-1">验收时间</label>
+                                                <div class="layui-input-inline">
+                                                    <input type="text" class="layui-input" id="test25" placeholder="yyyy-MM-dd">
                                                 </div>
-                                                <!----></div>
-                                        </div>
-                                        <div data-v-f7548b24="" class="el-form-item is-required"><label for="name"
-                                                                                                        class="el-form-item__label">需求标题</label>
+                                            </div>
+                                            <script>
+                                                layui.use('laydate', function() {
+                                                    var laydate = layui.laydate;
 
-                                            <div class="el-form-item__content">
-                                                <div data-v-f7548b24="" class="title-name el-input"><!----><input
-                                                        type="text" autocomplete="off"
-                                                        placeholder="请输入需求标题，如美食类电商网站开发、APP开发" maxlength="40"
-                                                        class="el-input__inner"><!----><!----><!----></div>
-                                                <!----></div>
-                                        </div>
-                                        <div data-v-f7548b24="" class="el-form-item form-prd is-required"><label
-                                                for="prd" class="el-form-item__label">需求描述：</label>
+                                                    //点我触发
+                                                    laydate.render({
+                                                        elem: '#test25'
+                                                        ,eventElem: '#test25-1'
+                                                        ,trigger: 'click'
+                                                    });
+                                                });
+                                            </script>
 
-                                            <div class="el-form-item__content">
-                                                <div data-v-f7548b24="" class="quill-editor">
-                                                    <div class="ql-toolbar ql-snow"><span class="ql-formats"><button
-                                                            type="button" class="ql-bold">
-                                                        <svg viewBox="0 0 18 18">
-                                                            <path class="ql-stroke"
-                                                                  d="M5,4H9.5A2.5,2.5,0,0,1,12,6.5v0A2.5,2.5,0,0,1,9.5,9H5A0,0,0,0,1,5,9V4A0,0,0,0,1,5,4Z"></path>
-                                                            <path class="ql-stroke"
-                                                                  d="M5,9h5.5A2.5,2.5,0,0,1,13,11.5v0A2.5,2.5,0,0,1,10.5,14H5a0,0,0,0,1,0,0V9A0,0,0,0,1,5,9Z"></path>
-                                                        </svg>
-                                                    </button><button type="button" class="ql-italic">
-                                                        <svg viewBox="0 0 18 18">
-                                                            <line class="ql-stroke" x1="7" x2="13" y1="4" y2="4"></line>
-                                                            <line class="ql-stroke" x1="5" x2="11" y1="14"
-                                                                  y2="14"></line>
-                                                            <line class="ql-stroke" x1="8" x2="10" y1="14"
-                                                                  y2="4"></line>
-                                                        </svg>
-                                                    </button><button type="button" class="ql-underline">
-                                                        <svg viewBox="0 0 18 18">
-                                                            <path class="ql-stroke"
-                                                                  d="M5,3V9a4.012,4.012,0,0,0,4,4H9a4.012,4.012,0,0,0,4-4V3"></path>
-                                                            <rect class="ql-fill" height="1" rx="0.5" ry="0.5"
-                                                                  width="12" x="3" y="15"></rect>
-                                                        </svg>
-                                                    </button><button type="button" class="ql-strike">
-                                                        <svg viewBox="0 0 18 18">
-                                                            <line class="ql-stroke ql-thin" x1="15.5" x2="2.5" y1="8.5"
-                                                                  y2="9.5"></line>
-                                                            <path class="ql-fill"
-                                                                  d="M9.007,8C6.542,7.791,6,7.519,6,6.5,6,5.792,7.283,5,9,5c1.571,0,2.765.679,2.969,1.309a1,1,0,0,0,1.9-.617C13.356,4.106,11.354,3,9,3,6.2,3,4,4.538,4,6.5a3.2,3.2,0,0,0,.5,1.843Z"></path>
-                                                            <path class="ql-fill"
-                                                                  d="M8.984,10C11.457,10.208,12,10.479,12,11.5c0,0.708-1.283,1.5-3,1.5-1.571,0-2.765-.679-2.969-1.309a1,1,0,1,0-1.9.617C4.644,13.894,6.646,15,9,15c2.8,0,5-1.538,5-3.5a3.2,3.2,0,0,0-.5-1.843Z"></path>
-                                                        </svg>
-                                                    </button></span><span class="ql-formats"><button type="button"
-                                                                                                     class="ql-list"
-                                                                                                     value="ordered">
-                                                        <svg viewBox="0 0 18 18">
-                                                            <line class="ql-stroke" x1="7" x2="15" y1="4" y2="4"></line>
-                                                            <line class="ql-stroke" x1="7" x2="15" y1="9" y2="9"></line>
-                                                            <line class="ql-stroke" x1="7" x2="15" y1="14"
-                                                                  y2="14"></line>
-                                                            <line class="ql-stroke ql-thin" x1="2.5" x2="4.5" y1="5.5"
-                                                                  y2="5.5"></line>
-                                                            <path class="ql-fill"
-                                                                  d="M3.5,6A0.5,0.5,0,0,1,3,5.5V3.085l-0.276.138A0.5,0.5,0,0,1,2.053,3c-0.124-.247-0.023-0.324.224-0.447l1-.5A0.5,0.5,0,0,1,4,2.5v3A0.5,0.5,0,0,1,3.5,6Z"></path>
-                                                            <path class="ql-stroke ql-thin"
-                                                                  d="M4.5,10.5h-2c0-.234,1.85-1.076,1.85-2.234A0.959,0.959,0,0,0,2.5,8.156"></path>
-                                                            <path class="ql-stroke ql-thin"
-                                                                  d="M2.5,14.846a0.959,0.959,0,0,0,1.85-.109A0.7,0.7,0,0,0,3.75,14a0.688,0.688,0,0,0,.6-0.736,0.959,0.959,0,0,0-1.85-.109"></path>
-                                                        </svg>
-                                                    </button><button type="button" class="ql-list" value="bullet">
-                                                        <svg viewBox="0 0 18 18">
-                                                            <line class="ql-stroke" x1="6" x2="15" y1="4" y2="4"></line>
-                                                            <line class="ql-stroke" x1="6" x2="15" y1="9" y2="9"></line>
-                                                            <line class="ql-stroke" x1="6" x2="15" y1="14"
-                                                                  y2="14"></line>
-                                                            <line class="ql-stroke" x1="3" x2="3" y1="4" y2="4"></line>
-                                                            <line class="ql-stroke" x1="3" x2="3" y1="9" y2="9"></line>
-                                                            <line class="ql-stroke" x1="3" x2="3" y1="14"
-                                                                  y2="14"></line>
-                                                        </svg>
-                                                    </button></span><span class="ql-formats"><span
-                                                            class="ql-size ql-picker"><span class="ql-picker-label"
-                                                                                            tabindex="0" role="button"
-                                                                                            aria-expanded="false"
-                                                                                            aria-controls="ql-picker-options-0"><svg
-                                                            viewBox="0 0 18 18">
-                                                        <polygon class="ql-stroke"
-                                                                 points="7 11 9 13 11 11 7 11"></polygon>
-                                                        <polygon class="ql-stroke" points="7 7 9 5 11 7 7 7"></polygon>
-                                                    </svg></span><span class="ql-picker-options" aria-hidden="true"
-                                                                       tabindex="-1" id="ql-picker-options-0"><span
-                                                            tabindex="0" role="button" class="ql-picker-item"
-                                                            data-value="small"></span><span tabindex="0" role="button"
-                                                                                            class="ql-picker-item ql-selected"></span><span
-                                                            tabindex="0" role="button" class="ql-picker-item"
-                                                            data-value="large"></span><span tabindex="0" role="button"
-                                                                                            class="ql-picker-item"
-                                                                                            data-value="huge"></span></span></span><select
-                                                            class="ql-size" style="display: none;">
-                                                        <option value="small"></option>
-                                                        <option selected="selected"></option>
-                                                        <option value="large"></option>
-                                                        <option value="huge"></option>
-                                                    </select></span><span class="ql-formats"><span
-                                                            class="ql-font ql-picker"><span class="ql-picker-label"
-                                                                                            tabindex="0" role="button"
-                                                                                            aria-expanded="false"
-                                                                                            aria-controls="ql-picker-options-1"><svg
-                                                            viewBox="0 0 18 18">
-                                                        <polygon class="ql-stroke"
-                                                                 points="7 11 9 13 11 11 7 11"></polygon>
-                                                        <polygon class="ql-stroke" points="7 7 9 5 11 7 7 7"></polygon>
-                                                    </svg></span><span class="ql-picker-options" aria-hidden="true"
-                                                                       tabindex="-1" id="ql-picker-options-1"><span
-                                                            tabindex="0" role="button"
-                                                            class="ql-picker-item ql-selected"></span><span tabindex="0"
-                                                                                                            role="button"
-                                                                                                            class="ql-picker-item"
-                                                                                                            data-value="serif"></span><span
-                                                            tabindex="0" role="button" class="ql-picker-item"
-                                                            data-value="monospace"></span></span></span><select
-                                                            class="ql-font" style="display: none;">
-                                                        <option selected="selected"></option>
-                                                        <option value="serif"></option>
-                                                        <option value="monospace"></option>
-                                                    </select></span><span class="ql-formats"><button type="button"
-                                                                                                     class="ql-clean">
-                                                        <svg class="" viewBox="0 0 18 18">
-                                                            <line class="ql-stroke" x1="5" x2="13" y1="3" y2="3"></line>
-                                                            <line class="ql-stroke" x1="6" x2="9.35" y1="12"
-                                                                  y2="3"></line>
-                                                            <line class="ql-stroke" x1="11" x2="15" y1="11"
-                                                                  y2="15"></line>
-                                                            <line class="ql-stroke" x1="15" x2="11" y1="11"
-                                                                  y2="15"></line>
-                                                            <rect class="ql-fill" height="1" rx="0.5" ry="0.5" width="7"
-                                                                  x="2" y="14"></rect>
-                                                        </svg>
-                                                    </button></span></div>
-                                                    <div class="ql-container ql-snow">
-                                                        <div class="ql-editor ql-blank" data-gramm="false"
-                                                             contenteditable="true"
-                                                             data-placeholder="请输入需求描述，最多不超过8000字"><p><br></p></div>
-                                                        <div class="ql-clipboard" contenteditable="true"
-                                                             tabindex="-1"></div>
-                                                        <div class="ql-tooltip ql-hidden"><a class="ql-preview"
-                                                                                             target="_blank"
-                                                                                             href="about:blank"></a><input
-                                                                type="text" data-formula="e=mc^2"
-                                                                data-link="https://quilljs.com"
-                                                                data-video="Embed URL"><a class="ql-action"></a><a
-                                                                class="ql-remove"></a></div>
+                                            <div data-v-f7548b24="" class="el-col el-col-12">
+                                                <div data-v-f7548b24="" class="el-form-item budget-wrapper"><!---->
+                                                    <div class="el-form-item__content">
+                                                        <input type="text" name="title" required lay-verify="required" placeholder="请输入您预算金额" autocomplete="off" class="layui-input">
+
                                                     </div>
-                                                </div>
-                                                <!----></div>
+                                            </div>
                                         </div>
-                                        <div data-v-f7548b24="" class="el-form-item"><!---->
-                                            <div class="el-form-item__content">
-                                                <div data-v-f7548b24="" class="upload-demo">
-                                                    <div tabindex="0" class="el-upload el-upload--text">
-                                                        <div class="el-upload-dragger"><i data-v-f7548b24=""
-                                                                                          class="el-icon-upload"></i>
+                                    </div>
 
-                                                            <div data-v-f7548b24="" class="el-upload__text"><em
-                                                                    data-v-f7548b24="">拖拽</em>或<em
-                                                                    data-v-f7548b24="">点击</em>上传您的需求补充文件或图片，附件总数不超过 5
-                                                                个且总大小不超过 15MB
-                                                            </div>
-                                                        </div>
-                                                        <input type="file" name="file"
-                                                               accept="image/*,.zip,.rar,.doc,.docx,xlsx,.xls,.ppt,.pptx,.pdf"
-                                                               class="el-upload__input"></div>
-                                                    <ul class="el-upload-list el-upload-list--text"></ul>
-                                                </div>
-                                                <!----></div>
+                                    <div data-v-f7548b24="" class="project-panel name-mobile">
+                                        <div data-v-f7548b24="" class="title">
+                                            <em data-v-f7548b24="" style="color: rgb(245, 108, 108); margin-right: 4px;">*</em>联系方式
                                         </div>
-                                        <div data-v-f7548b24="" class="el-form-item skill-select__wrapper"><label
-                                                for="skillList" class="el-form-item__label">技能要求：</label>
-
-                                            <div class="el-form-item__content">
-                                                <div data-v-f7548b24="" class="el-select skill-select"
-                                                     style="width: 100%;">
-                                                    <div class="el-select__tags"
-                                                         style="width: 100%; max-width: 777.5px;">
-                                                        <!----><span></span><input type="text" autocomplete="off"
-                                                                                   class="el-select__input"
-                                                                                   style="flex-grow: 1; width: 0.0257235%; max-width: 767.5px;">
-                                                    </div>
-                                                    <div class="el-input el-input--suffix"><!----><input type="text"
-                                                                                                         readonly="readonly"
-                                                                                                         autocomplete="off"
-                                                                                                         placeholder="请选择或输入需求所需的技能，如您不清楚应选择哪些技能，请留空，由竞标方为您提供所需的技能信息"
-                                                                                                         class="el-input__inner"
-                                                                                                         style="height: 42px;"><!----><span
-                                                            class="el-input__suffix"><span
-                                                            class="el-input__suffix-inner"><i
-                                                            class="el-select__caret el-input__icon el-icon-arrow-up"></i><!----><!----></span><!----></span><!---->
-                                                    </div>
-                                                    <div class="el-select-dropdown el-popper is-multiple skill-sel"
-                                                         style="display: none; min-width: 809.5px;">
-                                                        <div class="el-scrollbar" style="">
-                                                            <div class="el-select-dropdown__wrap el-scrollbar__wrap"
-                                                                 style="margin-bottom: -6px; margin-right: -6px;">
-                                                                <ul class="el-scrollbar__view el-select-dropdown__list">
-                                                                    <!---->
-                                                                    <ul data-v-f7548b24=""
-                                                                        class="el-select-group__wrap">
-                                                                        <li class="el-select-group__title">开发语言</li>
-                                                                        <li>
-                                                                            <ul class="el-select-group">
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Java</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>PHP</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Python</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>C++</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>C#</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>C</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>.Net</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Go</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Scala</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Swift</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Objective-c</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>HTML5</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>JavaScript</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>CSS</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Lua</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Ruby</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Perl</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Groovy</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Rust</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Delphi</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>R</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>assembly language</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Visual Basic</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>MatLab</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>PL/SQL</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Scratch</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Logo</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>其他语言</span></li>
-                                                                            </ul>
-                                                                        </li>
-                                                                    </ul>
-                                                                    <ul data-v-f7548b24=""
-                                                                        class="el-select-group__wrap">
-                                                                        <li class="el-select-group__title">技能与框架</li>
-                                                                        <li>
-                                                                            <ul class="el-select-group">
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>angluarjs</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Foundation</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Bootstrap</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>React</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Node.js</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Vue.js</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>jQuery</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Flux</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Ember.js</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>react native</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Framework</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Jingle</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Ionic</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>ReactiveCocoa</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>jQuery Mobile</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Cocos2d-x</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Cocos2d</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Struts</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Struts2</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Hibernate</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Spring</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Spring Boot</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>SpringSide</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Mybatis</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Netty</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Shiro</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Spring MVC</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Spring Cloud</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>JSF</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>freemarker</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Laravel</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Drupal</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Phalcon</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Symfony2</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Yii</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>zendframework</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>ThinkPHP</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Django</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Diesel</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Flask</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Cubes</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Kartograph.py</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Pulsar</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Web2py</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Falcon</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Dpark</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Tornado</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Buildbot</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>webpy</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Scrapy</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>MFC</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>ATL</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>WPF</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Microsoft Velocity</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Quartz.NET</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Topshelf</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Unity</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Spring.NET</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Iris</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>http server</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>gorm</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Faygo</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>echo</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>play</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>rails</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Catalyst</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Dancer</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Mojolicious</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>grails</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Dubbo</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>QT</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>JFinal</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Hadoop</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Storm</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>NutzBoot</span></li>
-                                                                            </ul>
-                                                                        </li>
-                                                                    </ul>
-                                                                    <ul data-v-f7548b24=""
-                                                                        class="el-select-group__wrap">
-                                                                        <li class="el-select-group__title">容器与中间件</li>
-                                                                        <li>
-                                                                            <ul class="el-select-group">
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Tomcat</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Jboss</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>WebLogic</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Nginx</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Oracle</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>MySql</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>MongoDB</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>SqlServer</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Redis</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>HBase</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Informix</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>DB2</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>apache</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Jetty</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>ebSphere</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Memcahed</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Gradle</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Gulp</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Grunt</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>ower</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>ven</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>ActiveMQ</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>WinForm</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>JBPM</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Docker</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Spark</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Kafka</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>OpenStack</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>MQ</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>ESB</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Mule</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Mahout</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>GIS</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>APM</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>Android</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>IOS</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>NutzWx</span></li>
-                                                                            </ul>
-                                                                        </li>
-                                                                    </ul>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="el-scrollbar__bar is-horizontal">
-                                                                <div class="el-scrollbar__thumb"
-                                                                     style="transform: translateX(0%);"></div>
-                                                            </div>
-                                                            <div class="el-scrollbar__bar is-vertical">
-                                                                <div class="el-scrollbar__thumb"
-                                                                     style="transform: translateY(0%);"></div>
-                                                            </div>
-                                                        </div>
+                                        <div data-v-f7548b24="" class="el-row">
+                                            <div data-v-f7548b24="" class="el-col el-col-12">
+                                                <div data-v-f7548b24="" class="el-form-item is-required"><!---->
+                                                    <div class="el-form-item__content">
+                                                        <div data-v-f7548b24="" class="el-input"><!----><input
+                                                                type="text" autocomplete="off" placeholder="请输入姓名"
+                                                                maxlength="30" minlength="2"
+                                                                class="el-input__inner"><!----><!----><!----></div>
                                                         <!----></div>
                                                 </div>
-                                                <!----></div>
-                                        </div>
-                                        <div data-v-f7548b24="" class="project-panel cycle-money">
-                                            <div data-v-f7548b24="" class="title">工期与预算</div>
-                                            <div data-v-f7548b24="" class="el-row">
-                                                <div data-v-f7548b24="" class="el-col el-col-12">
-                                                    <div data-v-f7548b24="" class="el-form-item cycle-wrapper"><!---->
-                                                        <div class="el-form-item__content">
-                                                            <div data-v-f7548b24="" class="el-input"><!----><input
-                                                                    type="number" autocomplete="off"
-                                                                    placeholder="您期望多长时间完成，默认：可商议" minlength="1"
-                                                                    maxlength="3" class="el-input__inner"><!----><!---->
-                                                                <!----></div>
-                                                            <div data-v-f7548b24="" class="cycle-main"><span
-                                                                    data-v-f7548b24="" class="active">天</span> <span
-                                                                    data-v-f7548b24="" class="">月</span></div>
-                                                            <!----></div>
-                                                    </div>
-                                                </div>
-                                                <div data-v-f7548b24="" class="el-col el-col-12">
-                                                    <div data-v-f7548b24="" class="el-form-item budget-wrapper"><!---->
-                                                        <div class="el-form-item__content">
-                                                            <div data-v-f7548b24="" class="el-select"
-                                                                 style="width: 384px;"><!---->
-                                                                <div class="el-input el-input--suffix"><!----><input
-                                                                        type="text" readonly="readonly"
-                                                                        autocomplete="off"
-                                                                        placeholder="您计划支付多少费用完成需(默认：可议价)"
-                                                                        class="el-input__inner"><!----><span
-                                                                        class="el-input__suffix"><span
-                                                                        class="el-input__suffix-inner"><i
-                                                                        class="el-select__caret el-input__icon el-icon-arrow-up"></i><!----><!----></span><!----></span><!---->
-                                                                </div>
-                                                                <div class="el-select-dropdown el-popper"
-                                                                     style="display: none; min-width: 384px;">
-                                                                    <div class="el-scrollbar" style="">
-                                                                        <div class="el-select-dropdown__wrap el-scrollbar__wrap"
-                                                                             style="margin-bottom: -6px; margin-right: -6px;">
-                                                                            <ul class="el-scrollbar__view el-select-dropdown__list">
-                                                                                <!---->
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>可议价</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>1000-5000</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>5000-10000</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>10000-50000</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>50000-100000</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>100000-500000</span></li>
-                                                                                <li data-v-f7548b24=""
-                                                                                    class="el-select-dropdown__item">
-                                                                                    <span>500000以上</span></li>
-                                                                            </ul>
-                                                                        </div>
-                                                                        <div class="el-scrollbar__bar is-horizontal">
-                                                                            <div class="el-scrollbar__thumb"
-                                                                                 style="transform: translateX(0%);"></div>
-                                                                        </div>
-                                                                        <div class="el-scrollbar__bar is-vertical">
-                                                                            <div class="el-scrollbar__thumb"
-                                                                                 style="transform: translateY(0%);"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <!----></div>
-                                                            </div>
-                                                            <!----></div>
-                                                    </div>
+                                            </div>
+                                            <div data-v-f7548b24="" class="el-col el-col-12">
+                                                <div data-v-f7548b24="" class="el-form-item is-required"><!---->
+                                                    <div class="el-form-item__content">
+                                                        <div data-v-f7548b24="" class="el-input"><!----><input
+                                                                type="text" autocomplete="off"
+                                                                placeholder="请输入手机/电话号码" maxlength="11"
+                                                                minlength="11" class="el-input__inner"><!---->
+                                                            <!----><!----></div>
+                                                        <!----></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div data-v-f7548b24="" class="project-panel name-mobile">
-                                            <div data-v-f7548b24="" class="title"><em data-v-f7548b24=""
-                                                                                      style="color: rgb(245, 108, 108); margin-right: 4px;">*</em>联系方式
-                                            </div>
-                                            <div data-v-f7548b24="" class="el-row">
-                                                <div data-v-f7548b24="" class="el-col el-col-12">
-                                                    <div data-v-f7548b24="" class="el-form-item is-required"><!---->
-                                                        <div class="el-form-item__content">
-                                                            <div data-v-f7548b24="" class="el-input"><!----><input
-                                                                    type="text" autocomplete="off" placeholder="请输入姓名"
-                                                                    maxlength="30" minlength="2"
-                                                                    class="el-input__inner"><!----><!----><!----></div>
-                                                            <!----></div>
-                                                    </div>
-                                                </div>
-                                                <div data-v-f7548b24="" class="el-col el-col-12">
-                                                    <div data-v-f7548b24="" class="el-form-item is-required"><!---->
-                                                        <div class="el-form-item__content">
-                                                            <div data-v-f7548b24="" class="el-input"><!----><input
-                                                                    type="text" autocomplete="off"
-                                                                    placeholder="请输入手机/电话号码" maxlength="11"
-                                                                    minlength="11" class="el-input__inner"><!---->
-                                                                <!----><!----></div>
-                                                            <!----></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div data-v-f7548b24="" class="drop-down">完善更多需求合作信息（选填） <i data-v-f7548b24=""
-                                                                                                    class="el-icon-d-arrow-right"
-                                                                                                    style="transform: rotate(90deg);"></i>
-                                        </div>
-                                    </div>
-                                    <div data-v-f7548b24="" class="project-panel drop-down__main"
-                                         style="display: none;">
-                                        <div data-v-f7548b24="" class="title">合作的服务方需满足以下要求 <span data-v-f7548b24="">不符合要求的服务方，将无法参与您的项目竞标合作，您可以在发布成功后进行修改</span>
-                                        </div>
-                                        <div data-v-f7548b24="" class="content">
-                                            <div data-v-f7548b24="" class="el-form-item"><label
-                                                    class="el-form-item__label">身份要求：</label>
-
-                                                <div class="el-form-item__content">
-                                                    <div data-v-f7548b24="" role="radiogroup" class="el-radio-group">
-                                                        <label data-v-f7548b24="" role="radio" aria-checked="true"
-                                                               tabindex="0" class="el-radio is-checked"><span
-                                                                class="el-radio__input is-checked"><span
-                                                                class="el-radio__inner"></span><input type="radio"
-                                                                                                      aria-hidden="true"
-                                                                                                      tabindex="-1"
-                                                                                                      class="el-radio__original"
-                                                                                                      value="1"></span><span
-                                                                class="el-radio__label">不限<!----></span></label> <label
-                                                            data-v-f7548b24="" role="radio" tabindex="-1"
-                                                            class="el-radio"><span class="el-radio__input"><span
-                                                            class="el-radio__inner"></span><input type="radio"
-                                                                                                  aria-hidden="true"
-                                                                                                  tabindex="-1"
-                                                                                                  class="el-radio__original"
-                                                                                                  value="2"></span><span
-                                                            class="el-radio__label">个人<!----></span></label> <label
-                                                            data-v-f7548b24="" role="radio" tabindex="-1"
-                                                            class="el-radio"><span class="el-radio__input"><span
-                                                            class="el-radio__inner"></span><input type="radio"
-                                                                                                  aria-hidden="true"
-                                                                                                  tabindex="-1"
-                                                                                                  class="el-radio__original"
-                                                                                                  value="3"></span><span
-                                                            class="el-radio__label">企业<!----></span></label></div>
-                                                    <!----></div>
-                                            </div>
-                                            <div data-v-f7548b24="" class="el-form-item"><label
-                                                    class="el-form-item__label">驻场要求：</label>
-
-                                                <div class="el-form-item__content">
-                                                    <div data-v-f7548b24="" role="radiogroup" class="el-radio-group">
-                                                        <label data-v-f7548b24="" role="radio" aria-checked="true"
-                                                               tabindex="0" class="el-radio is-checked"><span
-                                                                class="el-radio__input is-checked"><span
-                                                                class="el-radio__inner"></span><input type="radio"
-                                                                                                      aria-hidden="true"
-                                                                                                      tabindex="-1"
-                                                                                                      class="el-radio__original"
-                                                                                                      value="1"></span><span
-                                                                class="el-radio__label">无需驻场<!----></span></label>
-                                                        <label data-v-f7548b24="" role="radio" tabindex="-1"
-                                                               class="el-radio"><span class="el-radio__input"><span
-                                                                class="el-radio__inner"></span><input type="radio"
-                                                                                                      aria-hidden="true"
-                                                                                                      tabindex="-1"
-                                                                                                      class="el-radio__original"
-                                                                                                      value="2"></span><span
-                                                                class="el-radio__label">偶尔到场交流<!----></span></label>
-                                                        <label data-v-f7548b24="" role="radio" tabindex="-1"
-                                                               class="el-radio"><span class="el-radio__input"><span
-                                                                class="el-radio__inner"></span><input type="radio"
-                                                                                                      aria-hidden="true"
-                                                                                                      tabindex="-1"
-                                                                                                      class="el-radio__original"
-                                                                                                      value="3"></span><span
-                                                                class="el-radio__label">定期驻场<!----></span></label>
-                                                        <label data-v-f7548b24="" role="radio" tabindex="-1"
-                                                               class="el-radio"><span class="el-radio__input"><span
-                                                                class="el-radio__inner"></span><input type="radio"
-                                                                                                      aria-hidden="true"
-                                                                                                      tabindex="-1"
-                                                                                                      class="el-radio__original"
-                                                                                                      value="4"></span><span
-                                                                class="el-radio__label">全程驻场<!----></span></label></div>
-                                                    <!----></div>
-                                            </div>
-                                            <div data-v-f7548b24="" class="el-form-item"><label
-                                                    class="el-form-item__label">地域要求：</label>
-
-                                                <div class="el-form-item__content">
-                                                    <div data-v-f7548b24="" class="el-select"><!---->
-                                                        <div class="el-input el-input--suffix"><!----><input type="text"
-                                                                                                             readonly="readonly"
-                                                                                                             autocomplete="off"
-                                                                                                             placeholder="请选择省市"
-                                                                                                             class="el-input__inner"><!----><span
-                                                                class="el-input__suffix"><span
-                                                                class="el-input__suffix-inner"><i
-                                                                class="el-select__caret el-input__icon el-icon-arrow-up"></i><!----><!----></span><!----></span><!---->
-                                                        </div>
-                                                        <div class="el-select-dropdown el-popper"
-                                                             style="display: none;">
-                                                            <div class="el-scrollbar" style="">
-                                                                <div class="el-select-dropdown__wrap el-scrollbar__wrap"
-                                                                     style="margin-bottom: -6px; margin-right: -6px;">
-                                                                    <ul class="el-scrollbar__view el-select-dropdown__list">
-                                                                        <!---->
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>北京</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>天津</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>河北省</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>山西省</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item"><span>内蒙古自治区</span>
-                                                                        </li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>辽宁省</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>吉林省</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>黑龙江省</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>上海</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>江苏省</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>浙江省</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>安徽省</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>福建省</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>江西省</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>山东省</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>河南省</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>湖北省</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>湖南省</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>广东省</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item"><span>广西壮族自治区</span>
-                                                                        </li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>海南省</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>重庆</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>四川省</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>贵州省</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>云南省</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>西藏自治区</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>陕西省</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>甘肃省</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>青海省</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item"><span>宁夏回族自治区</span>
-                                                                        </li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item"><span>新疆维吾尔自治区</span>
-                                                                        </li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>台湾</span></li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item"><span>香港特别行政区</span>
-                                                                        </li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item"><span>澳门特别行政区</span>
-                                                                        </li>
-                                                                        <li data-v-f7548b24=""
-                                                                            class="el-select-dropdown__item">
-                                                                            <span>钓鱼岛</span></li>
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="el-scrollbar__bar is-horizontal">
-                                                                    <div class="el-scrollbar__thumb"
-                                                                         style="transform: translateX(0%);"></div>
-                                                                </div>
-                                                                <div class="el-scrollbar__bar is-vertical">
-                                                                    <div class="el-scrollbar__thumb"
-                                                                         style="transform: translateY(0%);"></div>
-                                                                </div>
-                                                            </div>
-                                                            <!----></div>
-                                                    </div>
-                                                    <div data-v-f7548b24="" class="el-select"><!---->
-                                                        <div class="el-input el-input--suffix"><!----><input type="text"
-                                                                                                             readonly="readonly"
-                                                                                                             autocomplete="off"
-                                                                                                             placeholder="请选择市/区"
-                                                                                                             class="el-input__inner"><!----><span
-                                                                class="el-input__suffix"><span
-                                                                class="el-input__suffix-inner"><i
-                                                                class="el-select__caret el-input__icon el-icon-arrow-up"></i><!----><!----></span><!----></span><!---->
-                                                        </div>
-                                                        <div class="el-select-dropdown el-popper"
-                                                             style="display: none;">
-                                                            <div class="el-scrollbar" style="display: none;">
-                                                                <div class="el-select-dropdown__wrap el-scrollbar__wrap"
-                                                                     style="margin-bottom: -6px; margin-right: -6px;">
-                                                                    <ul class="el-scrollbar__view el-select-dropdown__list"></ul>
-                                                                </div>
-                                                                <div class="el-scrollbar__bar is-horizontal">
-                                                                    <div class="el-scrollbar__thumb"
-                                                                         style="transform: translateX(0%);"></div>
-                                                                </div>
-                                                                <div class="el-scrollbar__bar is-vertical">
-                                                                    <div class="el-scrollbar__thumb"
-                                                                         style="transform: translateY(0%);"></div>
-                                                                </div>
-                                                            </div>
-                                                            <p class="el-select-dropdown__empty">
-                                                                无数据
-                                                            </p></div>
-                                                    </div>
-                                                    <!----></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div data-v-f7548b24="" class="panel mt-large bond">
-                                        <div data-v-f7548b24="" class="el-row">
-                                            <div data-v-f7548b24="" class="project-add-bond__checked el-col el-col-2">
-                                                <label data-v-f7548b24="" role="checkbox" aria-checked="true"
-                                                       class="el-checkbox is-checked"><span aria-checked="mixed"
-                                                                                            class="el-checkbox__input is-checked"><span
-                                                        class="el-checkbox__inner"></span><input type="checkbox"
-                                                                                                 aria-hidden="true"
-                                                                                                 class="el-checkbox__original"
-                                                                                                 value=""></span><!---->
-                                                </label></div>
-                                            <div data-v-f7548b24="" class="el-col el-col-15">
-                                                <div data-v-f7548b24="" class="title">接包方筛选评估服务</div>
-                                                <p data-v-f7548b24="">不用再没完没了接电话讲需求评估接包方，开源众包为您精准筛选最优接包方。</p>
-
-                                                <div data-v-f7548b24=""
-                                                     style="margin-top: 10px; color: rgb(153, 153, 153);">
-                                                    <div data-v-f7548b24=""
-                                                         style="color: rgb(0, 0, 0); margin-bottom: 6px;">服务内容及标准：
-                                                    </div>
-                                                    <p data-v-f7548b24="">1、项目发布后30分钟内为您梳理需求并开始评估筛选接包方</p>
-
-                                                    <p data-v-f7548b24="">2、项目选标期间每天提供一次接包方筛选评估报告</p>
-
-                                                    <p data-v-f7548b24="">3、评估筛选服务直至项目筛选到合适接包方为止</p>
-
-                                                    <p data-v-f7548b24=""
-                                                       style="color: rgb(255, 0, 0); font-size: 12px;">
-                                                        特别说明：增值服务不予退款！</p></div>
-                                            </div>
-                                            <div data-v-f7548b24="" class="el-col el-col-7" style="text-align: right;">
-                                                <div data-v-f7548b24="" style="margin-top: 36px;">
-                                                    <div data-v-f7548b24="" class="bond__money">￥999元</div>
-                                                    <div data-v-f7548b24="" class="bond__money">￥ <span
-                                                            data-v-f7548b24=""> 99 </span> 元
-                                                    </div>
-                                                    <div data-v-f7548b24="" class="bond__money">限时</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                                <div data-v-f7548b24="" class="mt-large text-center project-btn">
-                                    <div data-v-f7548b24="">
-                                        <button data-v-f7548b24="" type="button"
-                                                class="el-button btn-200 el-button--default"><!----><!----><span>保存为草稿
-                            </span></button>
-                                        <button data-v-f7548b24="" type="button"
-                                                class="el-button btn-200 el-button--primary"><!----><!----><span>立即发布
-                            </span></button>
-                                    </div>
-                                    <div data-v-f7548b24="" class="project-agreement">
-                                        点击保存或发布按钮，表示您已确认并同意
-                                        <span data-v-f7548b24=""><a data-v-f7548b24=""
-                                                                    href="/help/rule/index.html#/crowd/project"
-                                                                    target="_blank" style="color: rgb(32, 160, 255);">《开源众包平台项目发布协议及规则》</a></span>
                                     </div>
                                 </div>
-                            </div>
-                            <div data-v-f7548b24="" class="el-col el-col-6"
-                                 style="padding-left: 10px; padding-right: 10px;">
-                                <div data-v-f80c760a="" data-v-f7548b24="">
-                                    <div data-v-f80c760a="" class="panel">
-                                        <div data-v-f80c760a="" class="info__service-star1"
-                                             style="margin: 0px 0px 20px;"><a data-v-f80c760a=""
-                                                                              href="/help/rule/index.html#/quality/qualityResolution"
-                                                                              target="_blank"><img data-v-f80c760a=""
-                                                                                                   src="/static/images/project/images3.jpg"
-                                                                                                   alt=""></a></div>
-                                    </div>
-                                    <div data-v-f80c760a="" class="panel">
-                                        <div data-v-f80c760a="" class="info__service-star1"
-                                             style="margin: 0px 0px 20px;"><a data-v-f80c760a=""
-                                                                              href="/activity/service-standard/index.html"
-                                                                              target="_blank"><img data-v-f80c760a=""
-                                                                                                   src="/static/images/project/images4.jpg"
-                                                                                                   alt=""></a></div>
-                                    </div>
-                                    <div data-v-f80c760a="" class="panel">
-                                        <div data-v-f80c760a="" class="info__service-star"
-                                             style="margin: 0px 0px 20px;"><a data-v-f80c760a=""
-                                                                              href="/activity/own-project/index.html"
-                                                                              target="_blank"><img data-v-f80c760a=""
-                                                                                                   src="/static/images/project/img3.jpg"
-                                                                                                   alt=""></a></div>
-                                    </div>
-                                    <div data-v-f80c760a="" class="panel info">
-                                        <div data-v-f80c760a="" class="info__service-star"><a data-v-f80c760a=""
-                                                                                              href="https://url.cn/55JN5Pc"
-                                                                                              target="_blank"><img
-                                                data-v-f80c760a="" src="/static/images/project/img1.png" alt=""></a>
-                                        </div>
-                                        <div data-v-f80c760a="" style="padding: 0px 14px;"><h5 data-v-f80c760a="">
-                                            第一次使用？遇到问题，需要帮助？</h5>
 
-                                            <div data-v-f80c760a="" class="el-row" style="padding: 15px 0px;">
-                                                <div data-v-f80c760a="" class="el-col el-col-6">
-                                                    <div data-v-f80c760a="" class="grid-content bg-purple-dark"><img
-                                                            data-v-f80c760a="" src="/static/images/im/u36444.png" alt=""
-                                                            class="info__img"></div>
-                                                </div>
-                                                <div data-v-f80c760a="" class="el-col el-col-18">
-                                                    <div data-v-f80c760a="" class="grid-content bg-purple-dark"><p
-                                                            data-v-f80c760a="" class="info__tel">全国免费服务电话<br
-                                                            data-v-f80c760a=""><span
-                                                            data-v-f80c760a="">400-8982-008</span></p></div>
-                                                </div>
+                            </form>
+
+                            <!--提交需求 Begin-->
+                            <div data-v-f7548b24="" class="mt-large text-center project-btn">
+
+                                <div data-v-f7548b24="">
+                                    <button data-v-f7548b24="" type="button"
+                                            class="el-button btn-200 el-button--primary"><!----><!----><span>立即发布
+                            </span></button>
+                                </div>
+
+                                <div data-v-f7548b24="" class="project-agreement">
+                                    点击保存或发布按钮，表示您已确认并同意
+                                    <span data-v-f7548b24=""><a data-v-f7548b24=""
+                                                                href="#"
+                                                                target="_blank" style="color: rgb(32, 160, 255);">《装修邦需求发布协议及规则》</a></span>
+                                </div>
+
+                            </div>
+                            <!--提交需求 End-->
+                        </div>
+
+                        <!--主题右侧 Begin-->
+                        <div data-v-f7548b24="" class="el-col el-col-6"
+                             style="padding-left: 10px; padding-right: 10px;">
+                            <div data-v-f80c760a="" data-v-f7548b24="">
+                                <div data-v-f80c760a="" class="panel">
+                                    <div data-v-f80c760a="" class="info__service-star1"
+                                         style="margin: 0px 0px 20px;"><a data-v-f80c760a=""
+                                                                          href="/help/rule/index.html#/quality/qualityResolution"
+                                                                          target="_blank"><img data-v-f80c760a=""
+                                                                                               src="/static/images/project/images3.jpg"
+                                                                                               alt=""></a></div>
+                                </div>
+                                <div data-v-f80c760a="" class="panel">
+                                    <div data-v-f80c760a="" class="info__service-star1"
+                                         style="margin: 0px 0px 20px;"><a data-v-f80c760a=""
+                                                                          href="/activity/service-standard/index.html"
+                                                                          target="_blank"><img data-v-f80c760a=""
+                                                                                               src="/static/images/project/images4.jpg"
+                                                                                               alt=""></a></div>
+                                </div>
+                                <div data-v-f80c760a="" class="panel">
+                                    <div data-v-f80c760a="" class="info__service-star"
+                                         style="margin: 0px 0px 20px;"><a data-v-f80c760a=""
+                                                                          href="/activity/own-project/index.html"
+                                                                          target="_blank"><img data-v-f80c760a=""
+                                                                                               src="/static/images/project/img3.jpg"
+                                                                                               alt=""></a></div>
+                                </div>
+                                <div data-v-f80c760a="" class="panel info">
+                                    <div data-v-f80c760a="" class="info__service-star"><a data-v-f80c760a=""
+                                                                                          href="https://url.cn/55JN5Pc"
+                                                                                          target="_blank"><img
+                                            data-v-f80c760a="" src="/static/images/project/img1.png" alt=""></a>
+                                    </div>
+                                    <div data-v-f80c760a="" style="padding: 0px 14px;"><h5 data-v-f80c760a="">
+                                        第一次使用？遇到问题，需要帮助？</h5>
+
+                                        <div data-v-f80c760a="" class="el-row" style="padding: 15px 0px;">
+                                            <div data-v-f80c760a="" class="el-col el-col-6">
+                                                <div data-v-f80c760a="" class="grid-content bg-purple-dark"><img
+                                                        data-v-f80c760a="" src="/static/images/im/u36444.png" alt=""
+                                                        class="info__img"></div>
+                                            </div>
+                                            <div data-v-f80c760a="" class="el-col el-col-18">
+                                                <div data-v-f80c760a="" class="grid-content bg-purple-dark"><p
+                                                        data-v-f80c760a="" class="info__tel">全国免费服务电话<br
+                                                        data-v-f80c760a=""><span
+                                                        data-v-f80c760a="">400-8982-008</span></p></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!--主题右侧 End-->
                     </div>
                 </div>
-                <!----></div>
-        </div>
+            </div>
 
-
-
-        <div class="el-loading-mask" style="display: none;">
-            <div class="el-loading-spinner">
-                <svg viewBox="25 25 50 50" class="circular">
-                    <circle cx="50" cy="50" r="20" fill="none" class="path"></circle>
-                </svg>
-                <p class="el-loading-text">拼命加载中</p></div>
         </div>
     </div>
+
+</div>
 
 <!--引入footer部分-->
 <div th:replace="footer::footer"></div>
