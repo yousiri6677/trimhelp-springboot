@@ -1,6 +1,7 @@
 package cn.youfull.trimhelp.controller;
 
 import cn.youfull.trimhelp.entity.User;
+import cn.youfull.trimhelp.entity.UserEx;
 import cn.youfull.trimhelp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,7 +26,7 @@ public class UserController {
 
 
     @PostMapping("/register")
-    public String register(User user){
+    public String register(UserEx user){
         int i = userService.addUser(user);
         if (i>0){
             return "login";

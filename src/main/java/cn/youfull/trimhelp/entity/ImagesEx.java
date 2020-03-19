@@ -1,4 +1,4 @@
 package cn.youfull.trimhelp.entity;
 
-public class UserEx extends User {
+public class ImagesEx extends Images {
 }

@@ -1,8 +1,8 @@
 package cn.youfull.trimhelp.mapper;
 
 
-import cn.youfull.trimhelp.entity.Companyinfo;
+import cn.youfull.trimhelp.entity.CompanyinfoEx;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface CompanyinfoMapper extends BaseMapper<Companyinfo> {
+public interface CompanyinfoMapper extends BaseMapper<CompanyinfoEx> {
 }

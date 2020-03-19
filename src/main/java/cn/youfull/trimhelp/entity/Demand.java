@@ -25,5 +25,6 @@ public class Demand {
     private Date acceptanceTime;
     private String referenceDoc;
     private int state;
+    private long decoratestyleId;
 
 }

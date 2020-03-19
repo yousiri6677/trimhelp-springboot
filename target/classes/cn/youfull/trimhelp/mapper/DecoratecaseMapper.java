@@ -1,9 +1,8 @@
 package cn.youfull.trimhelp.mapper;
 
 
-import cn.youfull.trimhelp.entity.Decoratecase;
-import cn.youfull.trimhelp.entity.Demandtype;
+import cn.youfull.trimhelp.entity.DecoratecaseEx;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface DecoratecaseMapper extends BaseMapper<Decoratecase> {
+public interface DecoratecaseMapper extends BaseMapper<DecoratecaseEx> {
 }

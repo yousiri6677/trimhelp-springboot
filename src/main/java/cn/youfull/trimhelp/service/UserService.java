@@ -1,7 +1,7 @@
 package cn.youfull.trimhelp.service;
 
-import cn.youfull.trimhelp.entity.User;
 
+import cn.youfull.trimhelp.entity.User;
 
 public interface UserService {
 

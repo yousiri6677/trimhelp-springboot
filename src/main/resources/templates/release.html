@@ -2162,7 +2162,7 @@
                              style="padding-left: 10px; padding-right: 10px;">
 
                             <!--表单提交-->
-                            <form data-v-f7548b24="" class="el-form">
+                            <form data-v-f7548b24="" action="addDemand" class="el-form" id="xuqiubiaodan">
 
                                 <div data-v-f7548b24="" class="publish-project">
 
@@ -2197,86 +2197,6 @@
                                                 </dd>
                                             </dl>
                                         </div>
-
-                                        <!-- <div class="el-form-item__content">
-                                             <div data-v-f7548b24="" class="application__btn">
-                                                 <button data-v-f7548b24="" type="button"
-                                                         class="el-button el-button&#45;&#45;small" data-index="0">&lt;!&ndash;&ndash;&gt;
-                                                     &lt;!&ndash;&ndash;&gt;<span>
-                               移动应用
-                             </span></button>
-                                                 <button data-v-f7548b24="" type="button"
-                                                         class="el-button el-button&#45;&#45;small" data-index="1">&lt;!&ndash;&ndash;&gt;
-                                                     &lt;!&ndash;&ndash;&gt;<span>
-                               H5应用
-                             </span></button>
-                                                 <button data-v-f7548b24="" type="button"
-                                                         class="el-button el-button&#45;&#45;small" data-index="2">&lt;!&ndash;&ndash;&gt;
-                                                     &lt;!&ndash;&ndash;&gt;<span>
-                               微信应用
-                             </span></button>
-                                                 <button data-v-f7548b24="" type="button"
-                                                         class="el-button el-button&#45;&#45;small" data-index="3">&lt;!&ndash;&ndash;&gt;
-                                                     &lt;!&ndash;&ndash;&gt;<span>
-                               企业应用
-                             </span></button>
-                                                 <button data-v-f7548b24="" type="button"
-                                                         class="el-button el-button&#45;&#45;small" data-index="4">&lt;!&ndash;&ndash;&gt;
-                                                     &lt;!&ndash;&ndash;&gt;<span>
-                               WEB应用
-                             </span></button>
-                                                 <button data-v-f7548b24="" type="button"
-                                                         class="el-button el-button&#45;&#45;small" data-index="5">&lt;!&ndash;&ndash;&gt;
-                                                     &lt;!&ndash;&ndash;&gt;<span>
-                               工具应用
-                             </span></button>
-                                                 <button data-v-f7548b24="" type="button"
-                                                         class="el-button el-button&#45;&#45;small" data-index="6">&lt;!&ndash;&ndash;&gt;
-                                                     &lt;!&ndash;&ndash;&gt;<span>
-                               桌面应用
-                             </span></button>
-                                                 <button data-v-f7548b24="" type="button"
-                                                         class="el-button el-button&#45;&#45;small" data-index="7">&lt;!&ndash;&ndash;&gt;
-                                                     &lt;!&ndash;&ndash;&gt;<span>
-                               游戏开发
-                             </span></button>
-                                                 <button data-v-f7548b24="" type="button"
-                                                         class="el-button el-button&#45;&#45;small" data-index="8">&lt;!&ndash;&ndash;&gt;
-                                                     &lt;!&ndash;&ndash;&gt;<span>
-                               设计
-                             </span></button>
-                                                 <button data-v-f7548b24="" type="button"
-                                                         class="el-button el-button&#45;&#45;small" data-index="9">&lt;!&ndash;&ndash;&gt;
-                                                     &lt;!&ndash;&ndash;&gt;<span>
-                               培训咨询
-                             </span></button>
-                                                 <button data-v-f7548b24="" type="button"
-                                                         class="el-button el-button&#45;&#45;small" data-index="10">&lt;!&ndash;&ndash;&gt;
-                                                     &lt;!&ndash;&ndash;&gt;<span>
-                               区块链
-                             </span></button>
-                                                 <button data-v-f7548b24="" type="button"
-                                                         class="el-button el-button&#45;&#45;small" data-index="11">&lt;!&ndash;&ndash;&gt;
-                                                     &lt;!&ndash;&ndash;&gt;<span>
-                               人工智能
-                             </span></button>
-                                                 <button data-v-f7548b24="" type="button"
-                                                         class="el-button el-button&#45;&#45;small" data-index="12">&lt;!&ndash;&ndash;&gt;
-                                                     &lt;!&ndash;&ndash;&gt;<span>
-                               大数据
-                             </span></button>
-                                                 <button data-v-f7548b24="" type="button"
-                                                         class="el-button el-button&#45;&#45;small" data-index="13">&lt;!&ndash;&ndash;&gt;
-                                                     &lt;!&ndash;&ndash;&gt;<span>
-                               物联网
-                             </span></button>
-                                                 <button data-v-f7548b24="" type="button"
-                                                         class="el-button el-button&#45;&#45;small" data-index="14">&lt;!&ndash;&ndash;&gt;
-                                                     &lt;!&ndash;&ndash;&gt;<span>
-                               云计算
-                             </span></button>
-                                             </div>
-                                             &lt;!&ndash;&ndash;&gt;</div>-->
                                     </div>
 
                                     <!--需求标题 Begin-->
@@ -2423,7 +2343,7 @@
 
                                 <div data-v-f7548b24="">
                                     <button data-v-f7548b24="" type="button"
-                                            class="el-button btn-200 el-button--primary"><!----><!----><span>立即发布
+                                            class="el-button btn-200 el-button--primary" id="tijiaoxuqiu"><!----><!----><span>立即发布
                             </span></button>
                                 </div>
 
@@ -2436,6 +2356,11 @@
 
                             </div>
                             <!--提交需求 End-->
+<script>
+    $("#tijiaoxuqiu").click(function(){
+      $("#xuqiubiaodan").submit();
+    });
+</script>
 
                         </div>
 

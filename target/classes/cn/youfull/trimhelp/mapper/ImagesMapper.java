@@ -1,8 +1,8 @@
 package cn.youfull.trimhelp.mapper;
 
 
-import cn.youfull.trimhelp.entity.Images;
+import cn.youfull.trimhelp.entity.ImagesEx;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface ImagesMapper extends BaseMapper<Images> {
+public interface ImagesMapper extends BaseMapper<ImagesEx> {
 }

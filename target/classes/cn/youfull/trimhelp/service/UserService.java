@@ -1,11 +1,11 @@
 package cn.youfull.trimhelp.service;
 
-import cn.youfull.trimhelp.entity.User;
+import cn.youfull.trimhelp.entity.UserEx;
 
 
 public interface UserService {
 
-    User loginByAccountAndPassWord(String account, String passWord);
+    UserEx loginByAccountAndPassWord(String account, String passWord);
 
-    int addUser(User user);
+    int addUser(UserEx user);
 }
