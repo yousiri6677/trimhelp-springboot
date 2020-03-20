@@ -33,7 +33,7 @@ public class NavController {
 
     @RequestMapping("/toCompany")
     public String toCompany(){
-        return "company1";
+        return "company";
     }
 
 

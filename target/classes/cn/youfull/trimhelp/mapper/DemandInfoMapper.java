@@ -1,7 +1,7 @@
 package cn.youfull.trimhelp.mapper;
 
-import cn.youfull.trimhelp.entity.DemandinfoEx;
+import cn.youfull.trimhelp.entity.Demandinfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface DemandInfoMapper extends BaseMapper<DemandinfoEx> {
+public interface DemandInfoMapper extends BaseMapper<Demandinfo> {
 }

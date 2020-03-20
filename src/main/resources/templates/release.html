@@ -27,8 +27,11 @@
     <meta content="telephone=no" name="format-detection">
     <link rel="home" href="/">
 
+    <!--类型css Begin-->
     <link href="css/list.896ef529.css" rel="stylesheet" type="text/css"/>
+    <!--类型css End-->
     <link href="css/layui.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -2162,42 +2165,64 @@
                              style="padding-left: 10px; padding-right: 10px;">
 
                             <!--表单提交-->
-                            <form data-v-f7548b24="" action="addDemand" class="el-form" id="xuqiubiaodan">
+                            <form data-v-f7548b24="" action="" class="el-form" id="xuqiubiaodan">
 
                                 <div data-v-f7548b24="" class="publish-project">
-
+                                    <!--类型选择 Begin-->
                                     <div data-v-f7548b24="" class="el-form-item is-required">
                                         <div class="xgt_select_type">
                                             <dl class="xgt_st_dl">
                                                 <dt>装修类型</dt>
-                                                <dd>
-                                                    <a href="#" title="客厅装修效果图" class="on"> 全包
+                                                <dd id="demandTypes">
+                                                    <a title="全包" class="on"> 全包
                                                     </a>
-                                                    <a href="#" title="卧室装修效果图"> 半包
+                                                    <a title="半包"> 半包
                                                     </a>
-                                                    <a href="#" title="厨房装修效果图"> 纯设计
+                                                    <a title="纯设计"> 纯设计
                                                     </a>
                                                 </dd>
                                             </dl>
                                             <dl class="xgt_st_dl">
                                                 <dt>风格</dt>
-                                                <dd>
-                                                    <a href="javascript:;" title="不限装修效果图" class="on">不限
+                                                <dd id="decoratestyles">
+                                                    <a href="javascript:;" title="不限" class="on">不限
                                                     </a>
-                                                    <a href="javascript:;" title="现代简约装修效果图">现代简约
+                                                    <a href="javascript:;" title="现代简约">现代简约
                                                     </a>
-                                                    <a href="javascript:;" title="中式现代装修效果图">中式现代
+                                                    <a href="javascript:;" title="中式现代">中式现代
                                                     </a>
-                                                    <a href="javascript:;" title="美式田园装修效果图">美式田园
+                                                    <a href="javascript:;" title="美式田园">美式田园
                                                     </a>
-                                                    <a href="javascript:;" title="美式经典装修效果图">美式经典
+                                                    <a href="javascript:;" title="美式经典">美式经典
                                                     </a>
                                                     <a href="javascript:;" title="其他">其他
                                                     </a>
                                                 </dd>
                                             </dl>
+                                            <input id="demandTypeName" hidden="hidden" name="demandTypeName" value=""/>
+
+                                            <input id="decoratestyleName" hidden="hidden" name="decoratestyleName"
+                                                   value=""/>
                                         </div>
                                     </div>
+                                    <!--类型选择 End-->
+                                    <script>
+                                        (function ($) {
+                                            $("#demandTypes a").click(function () {
+                                                $("#demandTypes a").removeClass("on");
+                                                $(this).addClass("on");
+                                                var type = $(this).attr("title");
+                                                $("#demandTypeName").val(type);
+                                            });
+                                            $("#decoratestyles a").click(function () {
+                                                $("#decoratestyles a").removeClass("on");
+                                                $(this).addClass("on");
+                                                var style = $(this).attr("title");
+                                                $("#decoratestyleName").val(style);
+                                            });
+                                        })(jQuery);
+
+                                    </script>
 
                                     <!--需求标题 Begin-->
                                     <div data-v-f7548b24="" class="el-form-item is-required">
@@ -2214,7 +2239,7 @@
                                          class="el-form-item form-prd is-required">
                                         <label class="el-form-item__label">需求描述：</label>
 
-                                        <textarea name="" required lay-verify="required" placeholder="请输入需求描述"
+                                        <textarea name="content" required lay-verify="required" placeholder="请输入需求描述"
                                                   class="layui-textarea"></textarea>
                                     </div>
                                     <!--需求描述 End-->
@@ -2263,7 +2288,8 @@
                                     <!--要求描述 Begin-->
                                     <div data-v-f7548b24="" class="el-form-item skill-select__wrapper"><label
                                             class="el-form-item__label">个人要求：</label>
-                                        <textarea name="" required lay-verify="required" placeholder="请输入您特定的要求"
+                                        <textarea name="requirements" required lay-verify="required"
+                                                  placeholder="请输入您特定的要求"
                                                   class="layui-textarea"></textarea>
                                     </div>
                                     <!--要求描述 End-->
@@ -2274,7 +2300,8 @@
                                             <div class="layui-inline">
                                                 <label class="layui-form-label" id="test25-1">验收时间</label>
                                                 <div class="layui-input-inline">
-                                                    <input type="text" class="layui-input" id="test25"
+                                                    <input type="date" name="acceptanceTime" class="layui-input"
+                                                           id="test25"
                                                            placeholder="yyyy-MM-dd">
                                                 </div>
                                             </div>
@@ -2294,7 +2321,7 @@
                                             <div data-v-f7548b24="" class="el-col el-col-12">
                                                 <div data-v-f7548b24="" class="el-form-item budget-wrapper"><!---->
                                                     <div class="el-form-item__content">
-                                                        <input type="text" name="title" required lay-verify="required"
+                                                        <input type="text" name="money" required lay-verify="required"
                                                                placeholder="请输入您预算金额" autocomplete="off"
                                                                class="layui-input">
 
@@ -2313,6 +2340,7 @@
                                                     <div data-v-f7548b24="" class="el-form-item is-required"><!---->
                                                         <div class="el-form-item__content">
                                                             <div data-v-f7548b24="" class="el-input"><!----><input
+                                                                    name="contactsName"
                                                                     type="text" autocomplete="off" placeholder="请输入姓名"
                                                                     maxlength="30" minlength="2"
                                                                     class="el-input__inner"><!----><!----><!----></div>
@@ -2323,6 +2351,7 @@
                                                     <div data-v-f7548b24="" class="el-form-item is-required"><!---->
                                                         <div class="el-form-item__content">
                                                             <div data-v-f7548b24="" class="el-input"><!----><input
+                                                                    name="phone"
                                                                     type="text" autocomplete="off"
                                                                     placeholder="请输入手机/电话号码" maxlength="11"
                                                                     minlength="11" class="el-input__inner"><!---->
@@ -2334,8 +2363,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
                             </form>
 
                             <!--提交需求 Begin-->
@@ -2356,11 +2383,33 @@
 
                             </div>
                             <!--提交需求 End-->
-<script>
-    $("#tijiaoxuqiu").click(function(){
-      $("#xuqiubiaodan").submit();
-    });
-</script>
+                            <script>
+                                $("#tijiaoxuqiu").click(function () {
+
+                                    $.ajax({
+                                        type: "post",
+                                        dataType: "text",//预期服务器返回的数据类型
+                                        url: "addDemand",//url
+                                        data: $('#xuqiubiaodan').serialize(),
+                                        success: function (result) {
+                                            if (result == "true") {
+                                                layer.msg('发布成功', {icon: 1});
+                                            } else if (result == "false") {
+                                                layer.msg('发布失败', {icon: 5});
+                                            } else if (result == "exist") {
+                                                layer.msg('不可重复提交', function () {
+                                                });
+                                            }
+                                            ;
+                                        },
+                                        error: function () {
+                                            layer.msg('异常！', {icon: 5});
+                                        }
+                                    });
+
+
+                                });
+                            </script>
 
                         </div>
 

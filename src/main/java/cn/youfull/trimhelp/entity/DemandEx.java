@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class DemandEx extends Demand {
 
-      private Demandtype demandtype;
+      private String demandTypeName;
 
-      private Decoratestyle decoratestyle;
+      private String decoratestyleName;
 }

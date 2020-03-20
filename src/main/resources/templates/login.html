@@ -15,9 +15,11 @@
           href="css/adLoader-bc38998ed9.css">
     <link rel="stylesheet" type="text/css" href="css/footer-0bf5e5a4f3.css" charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/Gd_common-6515590370.css" charset="utf-8">
+    <script src="js/jquery-1.10.2.js" type="text/javascript"></script>
 
     <link href="css/layui.css" rel="stylesheet" type="text/css"/>
     <script src="layui.js" type="text/javascript"></script>
+
     <script>
         //注意：导航 依赖 element 模块，否则无法进行功能性操作
         layui.use('element', function () {
@@ -438,7 +440,7 @@
                 </div>
 
                 <div class="login_wrap" style="">
-                    <form autocomplete="off" action="/login" id="reg_form" class="new_reg_form reg_form" method="post">
+                    <form autocomplete="off" action="" id="reg_form" class="new_reg_form reg_form" method="post">
 
                         <div class="login_select">
                             <input type="text" id="account" name="account" class="input-holder-style"
@@ -450,23 +452,58 @@
                                    placeholder="密码">
                         </div>
                         <div class="safe">
-                         <span class="safe_login">
+                        <!-- <span class="safe_login">
                           <input type="checkbox" name="cookietime" value="on">
                          <label>下次自动登录</label>
-                            </span>
+                            </span>-->
                             <a target="_blank" href="#" class="forget_pw">忘记密码?</a>
                         </div>
-                        <input type="submit" value="立即登录" class="btn_login">
+                        <input type="button" value="立即登录" id="lijidenglu" class="btn_login">
                     </form>
+
+                    <script type="text/javascript">
+                        layui.use('layer', function(){
+                            var layer = layui.layer;
+                        });
+
+
+                        (function ($) {
+
+                        $("#lijidenglu").click(       function login() {
+                            $.ajax({
+                                type: "post",
+                                dataType: "text",//预期服务器返回的数据类型
+                                url: "/login" ,//url
+                                data: $('#reg_form').serialize(),
+                                success: function (result) {
+                                    if (result == "SUCCESS") {
+                                        layer.msg('登录成功',{icon: 1},function(){
+                                            window.location.replace("index");
+                                        });
+
+                                    }else if (result=="ERROR"){
+                                        layer.msg('账号或密码错误',{icon: 5});
+                                    }
+                                    ;
+                                },
+                                error : function() {
+                                    layer.msg('登录异常！', {icon: 5});
+                                }
+                            });
+                        });
+
+                            $(document).on("keydown",function () {
+                                if(window.event.keyCode ==13){
+                                    $("#lijidenglu").click();
+                                }
+
+                            });
+                        })(jQuery);
+                    </script>
                         <ul class="entries">
-                            <!--    <li class="other_login">
-                                    <a class="weibo_login" title="微博帐号登录" href="//www.to8to.com/loginfromsina/"><i></i>微博登录</a>
-                                    <a class="qq_login" title="QQ账户登录"
-                                       href="//www.to8to.com/loginfromqq/oauth/redirect_to_login.php"><i></i>QQ登录</a>
-                                </li>-->
 
                         <li class="register">
-                            <a href="//www.to8to.com/reg/reg_new.php">免费注册</a>
+                            <a href="/toRegister">免费注册</a>
                         </li>
                         <li class="register">
                             <span>没有账号？马上&nbsp;&nbsp;</span>

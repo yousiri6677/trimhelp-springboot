@@ -1,7 +1,6 @@
 package cn.youfull.trimhelp.service.impl;
 
 import cn.youfull.trimhelp.entity.User;
-import cn.youfull.trimhelp.entity.UserEx;
 import cn.youfull.trimhelp.mapper.UserMapper;
 import cn.youfull.trimhelp.service.UserService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -17,16 +16,16 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public UserEx loginByAccountAndPassWord(String account, String passWord) {
-        QueryWrapper<UserEx> qw = new QueryWrapper<>();
+    public User loginByAccountAndPassWord(String account, String passWord) {
+        QueryWrapper<User> qw = new QueryWrapper<>();
         qw.eq("account",account);
         qw.eq("passWord",passWord);
-        UserEx user = userMapper.selectOne(qw);
+        User user = userMapper.selectOne(qw);
         return user;
     }
 
     @Override
-    public int addUser(UserEx user) {
+    public int addUser(User user) {
         user.setUserState(1);
         user.setUserTypeId(4);
         user.setUserName(user.getAccount());

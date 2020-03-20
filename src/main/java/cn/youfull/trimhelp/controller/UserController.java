@@ -6,7 +6,9 @@ import cn.youfull.trimhelp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class UserController {
@@ -14,23 +16,25 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/login")
-    public String login(String account,String passWord){
+    @PostMapping("/login")
+    @ResponseBody
+    public String login(String account, String passWord, HttpSession session) {
         User user = userService.loginByAccountAndPassWord(account, passWord);
-        if (user!=null){
-            return "index";
+        if (user != null) {
+            session.setAttribute("user",user);
+            return "SUCCESS";
         } else {
-            return "login";
+            return "ERROR";
         }
     }
 
 
     @PostMapping("/register")
-    public String register(UserEx user){
+    public String register(UserEx user) {
         int i = userService.addUser(user);
-        if (i>0){
+        if (i > 0) {
             return "login";
-        }else {
+        } else {
             return "register";
         }
     }
