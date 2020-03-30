@@ -8,4 +8,6 @@ public interface UserService {
     User loginByAccountAndPassWord(String account, String passWord);
 
     int addUser(User user);
+
+    User selectUserById(long id);
 }

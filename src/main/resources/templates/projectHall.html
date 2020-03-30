@@ -3162,7 +3162,7 @@
         /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi91c3IvbG9jYWwvYXBwcy9qZW5raW5zL2RhdGEvd29ya3NwYWNlL3piLXNpdGUvc3JjL2NvbXBvbmVudHMvQmFzZU1lc3NhZ2VCb3gudnVlIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFDQTtJQUNJLG1CQUFtQjtDQUN0QjtBQUNEO0lBQ0ksb0JBQW9CO0lBQ3BCLGdCQUFnQjtDQUNuQiIsImZpbGUiOiJCYXNlTWVzc2FnZUJveC52dWUiLCJzb3VyY2VzQ29udGVudCI6WyJcbi5jb250ZW50W2RhdGEtdi02N2MzNjdjNF0ge1xuICAgIHBhZGRpbmctdG9wOiAxMTBweDtcbn1cbi5idG4tc21hbGxbZGF0YS12LTY3YzM2N2M0XSB7XG4gICAgYm9yZGVyLXJhZGl1czogNTBweDtcbiAgICBmb250LXNpemU6IDE2cHg7XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style>
     <link rel="stylesheet" type="text/css" href="css/footer-0bf5e5a4f3.css" charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/Gd_common-6515590370.css" charset="utf-8">
-    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="webjars/jquery/3.1.1/jquery.js"></script>
     <!--类型css Begin-->
     <link href="css/list.896ef529.css" rel="stylesheet" type="text/css"/>
     <!--类型css End-->
@@ -3187,14 +3187,8 @@
                         <!--搜索框 Begin-->
                         <div data-v-b59f93d4="" id="search-box" class="panel">
                             <div data-v-b59f93d4="" class="search-input el-input el-input-group el-input-group--append">
-                                <!----><input type="text" autocomplete="off" maxlength="20" minlength="2"
-                                              placeholder="输入关键字词, 开始检索您感兴趣的装修风格" class="el-input__inner"><!---->
-                                <!---->
-                                <div class="el-input-group__append">
-                                    <button data-v-b59f93d4="" type="button"
-                                            class="el-button search-button el-button--default"><!----><i
-                                            class="el-icon-search"></i><!----></button>
-                                </div>
+                                <input type="text" autocomplete="off" maxlength="20" minlength="2"
+                                       placeholder="输入关键字词, 开始检索您感兴趣的装修风格" class="el-input__inner" id="sousuo"/>
                             </div>
                         </div>
                         <!--搜索框 End-->
@@ -3203,30 +3197,37 @@
                         <div data-v-f7548b24="" class="el-form-item is-required">
                             <div class="xgt_select_type">
                                 <dl class="xgt_st_dl">
+                                    <dt>全部需求</dt>
+                                    <dd id="demandAll">
+                                        <a title="显示全部" class="on"> 显示全部
+                                        </a>
+                                    </dd>
+                                </dl>
+                                <dl class="xgt_st_dl">
                                     <dt>装修类型</dt>
-                                    <dd id="demandTypes">
-                                        <a title="全包" class="on"> 全包
+                                    <dd id="demandTypes" enable="true">
+                                        <a title="全包" typeId="1"> 全包
                                         </a>
-                                        <a title="半包"> 半包
+                                        <a title="半包" typeId="2"> 半包
                                         </a>
-                                        <a title="纯设计"> 纯设计
+                                        <a title="纯设计" typeId="3"> 纯设计
                                         </a>
                                     </dd>
                                 </dl>
                                 <dl class="xgt_st_dl">
                                     <dt>风格</dt>
-                                    <dd id="decoratestyles">
-                                        <a href="javascript:;" title="不限" class="on">不限
+                                    <dd id="decoratestyles" enable="true">
+                                        <a href="javascript:;" title="不限" styleId="9">不限
                                         </a>
-                                        <a href="javascript:;" title="现代简约">现代简约
+                                        <a href="javascript:;" title="现代简约" styleId="1">现代简约
                                         </a>
-                                        <a href="javascript:;" title="中式现代">中式现代
+                                        <a href="javascript:;" title="中式现代" styleId="2">中式现代
                                         </a>
-                                        <a href="javascript:;" title="美式田园">美式田园
+                                        <a href="javascript:;" title="美式田园" styleId="3">美式田园
                                         </a>
-                                        <a href="javascript:;" title="美式经典">美式经典
+                                        <a href="javascript:;" title="美式经典" styleId="4">美式经典
                                         </a>
-                                        <a href="javascript:;" title="其他">其他
+                                        <a href="javascript:;" title="其他" styleId="8">其他
                                         </a>
                                     </dd>
                                 </dl>
@@ -3239,75 +3240,287 @@
                         <!--选择类型区域 End-->
                         <script>
                             (function ($) {
+                                var typeId = 1;
+                                var styleId = 9;
+                                var data;
+                                var $title;
+                                var $limit = 1;
+
+                                function addProjectList(data, obj) {
+                                    var htmlText = []
+                                        , thisData = data.concat().splice(obj.curr * obj.limit - obj.limit, obj.limit);
+                                    layui.each(thisData, function (index, item) {
+                                        htmlText.push('<li>' +
+                                            ' <a class="company-item" target="_blank" href="getDemandInfo?id=' + item.id + '" >' +
+                                            '<input hidden class="item_id" value="' + item.id + '"/>' +
+                                            ' <div class="contents--item clearfix fantastic" > ' +
+                                            '<div class="company__info"> <div class="company__info--top"> ' +
+                                            '<p class="company__info--name">' + item.title + '</p> ' +
+                                            '</div> ' +
+                                            '<div class="company__info--tag">' +
+                                            '<span class="tag-rank" style="color:#FF5921;background:#FFF0EC">正在火热招标</span>' +
+                                            ' <span>' + item.demandTypeName + '</span> ' +
+                                            '<span>价格可商议</span> ' +
+                                            '<span>' + item.decoratestyleName + '</span> ' +
+                                            '</div> ' +
+                                            '<div class="company__info--activity"> ' +
+                                            '<p><i class="icon-coupon"></i>预约送专业监理服务</p> ' +
+                                            '<p><i class="icon-coupon"></i>预约送全局验房、方案</p> ' +
+                                            '</div>' +
+                                            ' </div> ' +
+                                            '</div> ' +
+                                            '</a> ' +
+                                            '</li>'
+                                        )
+                                    });
+                                    return htmlText.join('');
+                                };
+
+                                function getDemandAll() {
+                                    $("#demandAll a").addClass("on");
+                                    $("#demandTypes a").removeClass("on");
+                                    $("#decoratestyles a").removeClass("on");
+                                    var jiazai;
+                                    layui.use('layer', function () {
+                                        var layer = layui.layer;
+                                        jiazai = layer.load();
+                                    });
+                                    $title = $("#sousuo").val() + " ";
+                                    $.ajax({
+                                        type: "post",
+                                        dataType: "json",//预期服务器返回的数据类型
+                                        url: "getAllDemandInfos",//url
+                                        async: false,
+                                        data: {demandtitle: $title},
+                                        success: function (result) {
+                                            data = result.demandInfos;
+                                            layui.use(['laypage', 'layer'], function () {
+                                                var laypage = layui.laypage
+                                                    , layer = layui.layer;
+                                                laypage.render({
+                                                    elem: 'demo1'
+                                                    , count: data.length //数据总数
+                                                    , limit: result.pageSize
+                                                    , jump: function (obj, first) {
+                                                        var htmlText1 = '';
+                                                        document.getElementById('projectList').innerHTML = htmlText1;
+                                                        document.getElementById('projectList').innerHTML = addProjectList(data, obj);
+                                                        layer.close(jiazai);
+                                                    }
+                                                });
+                                            });
+                                        },
+                                        error: function () {
+                                            layui.use('layer', function () {
+                                                var layer = layui.layer;
+                                                layer.close(jiazai);
+                                            layer.msg('网络异常！', {icon: 5});
+                                            });
+                                        }
+                                    });
+
+                                };
+
+                                onload = getDemandAll();
+
+                                $("#demandAll a").click(function () {
+                                    getDemandAll();
+                                });
+
+                                $("#sousuo").on('input propertychange', function () {
+                                    var jiazai;
+                                    layui.use('layer', function () {
+                                        var layer = layui.layer;
+                                        jiazai = layer.load();
+                                    });
+                                    $title = $("#sousuo").val() + " ";
+
+                                    if ($("#demandAll a:first-child").attr("class") == "on") {
+                                        $.ajax({
+                                            type: "post",
+                                            dataType: "json",//预期服务器返回的数据类型
+                                            url: "getAllDemandInfos",//url
+                                            async: false,
+                                            data: {demandtitle: $title},
+                                            success: function (result) {
+                                                data = result.demandInfos;
+                                                layui.use(['laypage', 'layer'], function () {
+                                                    var laypage = layui.laypage
+                                                        , layer = layui.layer;
+                                                    laypage.render({
+                                                        elem: 'demo1'
+                                                        , count: data.length //数据总数
+                                                        , limit: result.pageSize
+                                                        , jump: function (obj, first) {
+                                                                var htmlText1 = '';
+                                                                document.getElementById('projectList').innerHTML = htmlText1;
+                                                                document.getElementById('projectList').innerHTML = addProjectList(data, obj);
+                                                                layer.close(jiazai);
+                                                        }
+                                                    });
+                                                });
+                                            },
+                                            error: function () {
+                                                layui.use('layer', function () {
+                                                    var layer = layui.layer;
+                                                    layer.close(jiazai);
+                                                layer.msg('网络异常！', {icon: 5});
+                                                });
+                                            }
+                                        });
+                                    } else {
+                                        $.ajax({
+                                            type: "post",
+                                            dataType: "json",//预期服务器返回的数据类型
+                                            url: "getDemandInfos",//url
+                                            async: false,
+                                            data: {typeId: typeId, styleId: styleId, demandtitle: $title},
+                                            success: function (result) {
+                                                data = result.demandInfos;
+                                                layui.use(['laypage', 'layer'], function () {
+                                                    var laypage = layui.laypage
+                                                        , layer = layui.layer;
+                                                    laypage.render({
+                                                        elem: 'demo1'
+                                                        , count: data.length //数据总数
+                                                        , limit: result.pageSize
+                                                        , jump: function (obj, first) {
+                                                                var htmlText1 = '';
+                                                                document.getElementById('projectList').innerHTML = htmlText1;
+                                                                document.getElementById('projectList').innerHTML = addProjectList(data, obj);
+                                                                layer.close(jiazai);
+                                                        }
+                                                    });
+                                                });
+
+                                            },
+                                            error: function () {
+                                                layui.use('layer', function () {
+                                                    var layer = layui.layer;
+                                                    layer.close(jiazai);
+                                                layer.msg('网络异常！', {icon: 5});
+                                                });
+                                            }
+                                        });
+                                    }
+                                });
+
                                 $("#demandTypes a").click(function () {
+                                    var jiazai;
+                                    layui.use('layer', function () {
+                                        var layer = layui.layer;
+                                        jiazai = layer.load();
+                                    });
+                                    $("#demandAll a").removeClass("on");
+                                    $("#demandTypes a").removeClass("on");
                                     $("#demandTypes a").removeClass("on");
                                     $(this).addClass("on");
                                     var type = $(this).attr("title");
                                     $("#demandTypeName").val(type);
+                                    typeId = $(this).attr("typeId");
+                                    $title = $("#sousuo").val() + " ";
+                                    $.ajax({
+                                        type: "post",
+                                        dataType: "json",//预期服务器返回的数据类型
+                                        url: "getDemandInfos",//url
+                                        async: false,
+                                        data: {typeId: typeId, styleId: styleId, demandtitle: $title},
+                                        success: function (result) {
+                                            data = result.demandInfos;
+                                            layui.use(['laypage', 'layer'], function () {
+                                                var laypage = layui.laypage
+                                                    , layer = layui.layer;
+                                                laypage.render({
+                                                    elem: 'demo1'
+                                                    , count: data.length //数据总数
+                                                    , limit: result.pageSize
+                                                    , jump: function (obj, first) {
+                                                        var htmlText1 = '';
+                                                        document.getElementById('projectList').innerHTML = htmlText1;
+                                                        document.getElementById('projectList').innerHTML = addProjectList(data, obj);
+                                                        layer.close(jiazai);
+                                                    }
+                                                });
+                                            });
+                                        },
+                                        error: function () {
+                                            layui.use('layer', function () {
+                                                var layer = layui.layer;
+                                                layer.close(jiazai);
+                                            layer.msg('网络异常！', {icon: 5});
+                                            });
+                                        }
+                                    });
                                 });
+
                                 $("#decoratestyles a").click(function () {
+                                    var jiazai;
+                                    layui.use('layer', function () {
+                                        var layer = layui.layer;
+                                        jiazai = layer.load();
+                                    });
+                                    $("#demandAll a").removeClass("on");
                                     $("#decoratestyles a").removeClass("on");
                                     $(this).addClass("on");
                                     var style = $(this).attr("title");
                                     $("#decoratestyleName").val(style);
+                                    styleId = $(this).attr("styleId");
+                                    $title = $("#sousuo").val() + " ";
+                                    $.ajax({
+                                        type: "post",
+                                        dataType: "json",//预期服务器返回的数据类型
+                                        url: "getDemandInfos",
+                                        async: false,
+                                        data: {typeId: typeId, styleId: styleId, demandtitle: $title},
+                                        success: function (result) {
+                                            data = result.demandInfos;
+                                            layui.use(['laypage', 'layer'], function () {
+                                                var laypage = layui.laypage
+                                                    , layer = layui.layer;
+                                                laypage.render({
+                                                    elem: 'demo1'
+                                                    , count: data.length //
+                                                    , limit: result.pageSize
+                                                    , jump: function (obj, first) {
+                                                            var htmlText1 = '';
+                                                            document.getElementById('projectList').innerHTML = htmlText1;
+                                                            document.getElementById('projectList').innerHTML = addProjectList(data, obj);
+                                                            layer.close(jiazai);
+                                                    }
+                                                });
+                                            });
+                                        },
+                                        error: function () {
+                                            layui.use('layer', function () {
+                                                var layer = layui.layer;
+                                                layer.close(jiazai);
+                                            layer.msg('网络异常！', {icon: 5});
+                                            });
+                                        }
+                                    });
                                 });
+
+
                             })(jQuery);
 
                         </script>
-
                         <!--主题需求列表 Begin-->
                         <div class="company__list">
                             <div class="company__list--content">
-                                <ul>
-                                    <li>
-                                        <a class="company-item" target="_blank" href="#" >
-                                            <div class="contents--item clearfix fantastic" >
-                                                <div class="company__info">
-                                                    <div class="company__info--top">
-                                                        <p class="company__info--name">这是一条需求</p>
-                                                    </div>
-                                                    <div class="company__info--tag">
-                                                     <span class="tag-rank" style="color:#FF5921;background:#FFF0EC">深圳本地人气商家榜</span>
-                                                        <span>工地参观1</span>
-                                                        <span>工地参观2</span>
-                                                        <span>工地参观3</span>
-                                                    </div>
-                                                    <div class="company__info--activity">
-                                                        <p><i class="icon-coupon"></i>预约送专业监理服务</p>
-                                                        <p><i class="icon-coupon"></i>预约送全局验房、方案</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="company-item" target="_blank" href="#" >
-                                            <div class="contents--item clearfix fantastic" >
-                                                <div class="company__info">
-                                                    <div class="company__info--top">
-                                                        <p class="company__info--name">这是一条需求</p>
-                                                    </div>
-                                                    <div class="company__info--tag">
-                                                        <span class="tag-rank" style="color:#FF5921;background:#FFF0EC">深圳本地人气商家榜</span>
-                                                        <span>工地参观1</span>
-                                                        <span>工地参观2</span>
-                                                        <span>工地参观3</span>
-                                                    </div>
-                                                    <div class="company__info--activity">
-                                                        <p><i class="icon-coupon"></i>预约送专业监理服务</p>
-                                                        <p><i class="icon-coupon"></i>预约送全局验房、方案</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
+                                <ul id="projectList">
                                 </ul>
                             </div>
+                            <!--点击需求 跳转到具体的需求详情页 Begin-->
+                            <!--     <script>
+                                     $("#projectList li").click(function () {
+                                         var $demandId=$(this).attr("item_id");
+                                         window.location.href="getDemandInfo/"+$demandId;
+                                     })
+
+                                 </script>-->
+                            <!--点击需求 跳转到具体的需求详情页 End-->
                             <!--分页 Begin-->
-                            <!--<div class="pages"><em>共有<b>7203</b>条</em><strong>1</strong><a href="javascript:;">2</a><a
-                                   href="javascript:;">3</a><a href="javascript:;">4</a><a href="javascript:;">5</a><i>...</i> <a
-                                   href="javascript:;" class="last">481</a><a href="javascript:;" class="next"
-                                                                              id="nextpageid">下一页<b></b></a></div>-->
+                            <div id="demo1"></div>
                             <!--分页 End-->
                         </div>
 
@@ -3316,7 +3529,7 @@
                     <div data-v-b59f93d4="" id="project-list-slider" class="marginL hidden-sm-only main__right">
                         <div data-v-b59f93d4="" class="panel-right">
                             <div data-v-b59f93d4="" class="panel publish__submit">
-                                <button data-v-b59f93d4="">免费发布需求</button>
+                                <a href="toRelease"><button data-v-b59f93d4="">免费发布需求</button></a>
                             </div>
 
                             <!--宣传图 Begin-->
@@ -3385,41 +3598,6 @@
     </div>
     <!---->
     <div data-v-07519bd8=""><!---->
-        <div data-v-07519bd8="" class="side-bar">
-            <div data-v-07519bd8="" class="side-bar__content">
-                <div data-v-07519bd8="" class="item"><a data-v-07519bd8="" class="tool-tip">项目管家</a> <img
-                        data-v-07519bd8="" src="/static/images/siderbar/project-manager.png"
-                        class="tool-icon project-manager"></div>
-                <div data-v-07519bd8="" class="item item-share hidden-xs-only"><a data-v-07519bd8=""
-                                                                                  href="javascript: void(0)"
-                                                                                  style="width: 53px; height: 44px;"><img
-                        data-v-07519bd8="" src="/static/images/siderbar/share.png" class="share-icon"></a>
-
-                    <div data-v-07519bd8="" class="share-container">
-                        <div data-v-07519bd8="" data-sites="wechat,weibo,qq"
-                             data-wechat-qrcode-helper="<p>打开微信扫一扫</p><p>分享至微信朋友圈</p>" class="social-share"></div>
-                    </div>
-                </div>
-                <div data-v-07519bd8="" class="item item-wechatqr"><img data-v-07519bd8=""
-                                                                        src="/static/images/siderbar/wxcode.png"
-                                                                        class="wechaticon">
-
-                    <div data-v-07519bd8="" class="qrinfo-pc">
-                        <div data-v-07519bd8="" class="row">
-                            <div data-v-07519bd8="" class="qrimg"></div>
-                        </div>
-                        <div data-v-07519bd8="" class="row infotext"><p data-v-07519bd8="">关注开源众包微信号</p>
-
-                            <p data-v-07519bd8="">体验快速发单、接单</p></div>
-                    </div>
-                </div>
-                <div data-v-07519bd8="" class="item item-feedback hidden-xs-only"><a data-v-07519bd8=""
-                                                                                     class="tool-tip">意见建议</a> <img
-                        data-v-07519bd8="" src="/static/images/siderbar/feedback.png" class="tool-icon feedback"></div>
-                <div data-v-07519bd8="" class="item item-online-service"><a data-v-07519bd8="" class="tool-tip">在线客服</a>
-                    <img data-v-07519bd8="" src="/static/images/siderbar/service.png" class="tool-icon service"></div>
-                <div data-v-07519bd8="" class="item" style="display: none;"><a data-v-07519bd8="">微信</a></div>
-            </div>
             <div data-v-07519bd8="" class="item item-back-top" style="display: none;"><a data-v-07519bd8=""
                                                                                          class="tool-tip">返回顶部</a> <img
                     data-v-07519bd8="" src="/static/images/siderbar/backtop.png" class="tool-icon backtop"></div>

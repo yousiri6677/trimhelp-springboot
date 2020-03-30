@@ -6,20 +6,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@TableName("decoratecase")
-public class Decoratecase {
+@TableName("vieList")
+public class VieList implements Serializable {
+    private static final long serialVersionUID = -91821906L;
     @TableId
-    private long id;
-    private long companyId;
-    private long imgId;
-    private String  title;
-    private String content;
-    private double area;
-    private int browseNum;
-    private long demandTypeId;
-
+    private long vieId;
+    private long demandId;
+    private long vieUserId;
 }

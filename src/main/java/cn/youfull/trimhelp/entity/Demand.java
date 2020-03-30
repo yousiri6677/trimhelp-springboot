@@ -1,10 +1,12 @@
 package cn.youfull.trimhelp.entity;
 
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -18,6 +20,7 @@ import java.time.LocalDateTime;
 public class Demand implements Serializable {
 
     private static final long serialVersionUID = -90000068L;
+    @TableId
     private long id;
     private String title;
     private String content;
@@ -25,6 +28,7 @@ public class Demand implements Serializable {
     private long demandTypeId;
     private double money;
     private String requirements;
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime releaseTime;
     private String acceptanceTime;
     private String referenceDoc;

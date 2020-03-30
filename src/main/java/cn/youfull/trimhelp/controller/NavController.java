@@ -36,6 +36,12 @@ public class NavController {
         return "company";
     }
 
+    @RequestMapping("/toProjectHallInfo")
+    public String toProjectHallInfo(){
+        return "projectHallInfo";
+    }
+
+
 
 
 }

@@ -2174,11 +2174,11 @@
                                             <dl class="xgt_st_dl">
                                                 <dt>装修类型</dt>
                                                 <dd id="demandTypes">
-                                                    <a title="全包" class="on"> 全包
+                                                    <a title="全包" class="on">全包
                                                     </a>
-                                                    <a title="半包"> 半包
+                                                    <a title="半包">半包
                                                     </a>
-                                                    <a title="纯设计"> 纯设计
+                                                    <a title="纯设计">纯设计
                                                     </a>
                                                 </dd>
                                             </dl>
@@ -2208,6 +2208,10 @@
                                     <!--类型选择 End-->
                                     <script>
                                         (function ($) {
+                                            onload = function () {
+                                                $("#demandTypeName").val("全包");
+                                                $("#decoratestyleName").val("不限");
+                                            };
                                             $("#demandTypes a").click(function () {
                                                 $("#demandTypes a").removeClass("on");
                                                 $(this).addClass("on");
@@ -2385,7 +2389,6 @@
                             <!--提交需求 End-->
                             <script>
                                 $("#tijiaoxuqiu").click(function () {
-
                                     $.ajax({
                                         type: "post",
                                         dataType: "text",//预期服务器返回的数据类型

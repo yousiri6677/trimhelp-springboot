@@ -4,6 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
-public class DecoratecaseEx extends Decoratecase {
+public class VieListEx extends VieList {
+
+    private List<User> list;
 }

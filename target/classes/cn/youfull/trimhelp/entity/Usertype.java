@@ -1,6 +1,7 @@
 package cn.youfull.trimhelp.entity;
 
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,6 +17,7 @@ public class Usertype {
     /**
      * 用户类型Id
      */
+    @TableId
     private Integer Id;
 
     /**

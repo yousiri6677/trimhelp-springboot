@@ -1,6 +1,7 @@
 package cn.youfull.trimhelp.entity;
 
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,7 +15,7 @@ import java.util.Date;
 @TableName("demandbill")
 public class Demandbill {
 
-
+    @TableId
     private  long id;
 
     /**

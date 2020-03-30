@@ -30,7 +30,7 @@
         <a href="toCompany">装修公司<span class=""></span></a>
     </li>
     <li class="layui-nav-item">
-        <a href="">装修案例<span class=""></span></a>
+        <a href="toProjectHallInfo">装修案例<span class=""></span></a>
     </li>
     <li class="layui-nav-item">
         <a href="toRelease" target="_top">发布需求<span class=""></span></a>
@@ -38,21 +38,27 @@
     <li class="layui-nav-item">
         <a href="">家居商城<span class=""></span></a>
     </li>
-        <li class="layui-nav-item" style="left: 350px">
+        <li class="layui-nav-item" style="left: 350px" th:if="${#strings.isEmpty(session.user?.userName)}" >
             <a href="toLogin"  target="_top">登录<span class=""></span></a>
         </li>
-        <li class="layui-nav-item" style="left: 370px">
+        <li class="layui-nav-item" style="left: 370px" th:if="${#strings.isEmpty(session.user?.userName)}" >
             <a href="toRegister"  target="_top">注册<span class=""></span></a>
         </li>
+        <li class="layui-nav-item"  style="left: 320px" th:if="${not #strings.isEmpty(session.user?.userName)}">
+            <a href="javascript:;">控制台<span class="layui-badge">9</span></a>
+        </li>
+        <li class="layui-nav-item"  style="left: 340px" th:if="${not #strings.isEmpty(session.user?.userName)}">
+            <a href="javascript:;">个人中心<span class="layui-badge-dot"></span></a>
+        </li>
+        <li class="layui-nav-item" lay-unselect=""  style="left: 360px" th:if="${not #strings.isEmpty(session.user?.userName)}" >
+            <a href="javascript:;" id="user_id" th:attr="USER_ID=${session.user?.id}" ><img src="//t.cn/RCzsdCq" class="layui-nav-img"><span th:text="${session.user?.userName}"></span></a>
+            <dl class="layui-nav-child">
+                <dd><a href="javascript:;">修改信息</a></dd>
+                <dd><a href="javascript:;">安全管理</a></dd>
+                <dd><a href="javascript:;">退出</a></dd>
+            </dl>
+        </li>
      </div>
-    <!--<li class="layui-nav-item" lay-unselect="">
-        <a href="javascript:;"><img src="//t.cn/RCzsdCq" class="layui-nav-img">我</a>
-        <dl class="layui-nav-child">
-            <dd><a href="javascript:;">修改信息</a></dd>
-            <dd><a href="javascript:;">安全管理</a></dd>
-            <dd><a href="javascript:;">退了</a></dd>
-        </dl>
-    </li>-->
 </ul>
 </body>
 

@@ -1,5 +1,6 @@
 package cn.youfull.trimhelp.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +14,7 @@ import java.io.Serializable;
 public class User implements Serializable  {
 
     private static final long serialVersionUID = -90000032L;
+    @TableId
     private long id;
     private String userName;
     private String account;

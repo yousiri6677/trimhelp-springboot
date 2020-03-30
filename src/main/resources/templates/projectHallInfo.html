@@ -3182,354 +3182,277 @@
         <div data-v-b59f93d4="" style="padding-top: 16px; background-color: rgb(249, 250, 253);">
             <div data-v-b59f93d4="" class="w">
                 <div data-v-b59f93d4="" class="list__main">
+                    <!--左边主体部分 Begin-->
                     <div data-v-b59f93d4="" class="main__left">
 
-                        <!--搜索框 Begin-->
-                        <div data-v-b59f93d4="" id="search-box" class="panel">
-                            <div data-v-b59f93d4="" class="search-input el-input el-input-group el-input-group--append">
-                                <input type="text" autocomplete="off" maxlength="20" minlength="2"
-                                       placeholder="输入关键字词, 开始检索您感兴趣的装修风格" class="el-input__inner" id="sousuo"/>
-                            </div>
-                        </div>
-                        <!--搜索框 End-->
+                        <div style="padding: 20px; background-color: #F2F2F2;">
+                            <div class="layui-row layui-col-space15">
+                                <div class="layui-col-md12">
+                                    <div class="layui-card">
+                                        <div class="layui-card-header">
+                                            <span style="font-size: 25px" th:text="${demandInfo.title}"></span>
+                                        </div>
+                                        <div class="layui-card-body">
+                                            <div>
+                                                <span class="layui-badge" style="font-size: 12px">竞标中</span>
+                                                <span class="layui-badge layui-bg-orange"
+                                                      style="font-size: 12px;margin-left: 10px;">装修类型：&nbsp;<span
+                                                        th:text="${demandInfo.demandTypeName}"></span></span>
+                                                <span class="layui-badge layui-bg-green"
+                                                      style="font-size: 12px;margin-left: 10px;">装修风格:&nbsp;<span
+                                                        th:text="${demandInfo.decoratestyleName}"></span></span>
+                                                <span class="layui-badge"
+                                                      style="font-size: 12px;margin-left: 10px;">可议价</span>
+                                            </div>
+                                            <br>
+                                            <hr class="layui-bg-cyan">
+                                            <br>
+                                            <div>
+                                                <div style="padding: 5px"><span style="font-size: 16px;color: gray">发布时间:&nbsp;&nbsp;&nbsp;<span
+                                                        th:text="${demandInfo.releaseTime}"></span></span>
+                                                </div>
+                                                <div style="padding: 5px"><span style="font-size: 16px;color: gray">验收时间:&nbsp;&nbsp;&nbsp;<span
+                                                        th:text="${demandInfo.acceptanceTime}"></span></span>
+                                                    <span class="layui-badge"
+                                                          style="font-size: 12px;margin-left: 10px;">可详谈</span>
+                                                </div>
+                                                <div style="padding: 5px">
+                                                    <span style="font-size: 16px;color: gray;">招标金额:&nbsp;&nbsp;&nbsp;<span
+                                                            th:text="${demandInfo.money}"></span></span>
+                                                    <span class="layui-badge"
+                                                          style="font-size: 12px;margin-left: 10px;">可详谈</span>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <hr class="layui-bg-cyan">
+                                            <br>
+                                            <!--需求模块 Begin-->
+                                            <div>
+                                                <div style="padding: 5px">
+                                                    <span class="layui-badge-dot"></span>
+                                                    <span style="font-size: 18px;color: #0a0a0a">&nbsp;&nbsp;&nbsp;需求内容</span>
+                                                </div>
+                                                <br>
+                                                <div style="height: 140px;font-size: 16px;">
+                                                    <span th:text="${demandInfo.content}"></span>
+                                                </div>
+                                            </div>
+                                            <!--需求模块 End-->
+                                            <br>
+                                            <hr class="layui-bg-cyan">
+                                            <br>
+                                            <!--要求模块 Begin-->
+                                            <div>
+                                                <div style="padding: 5px">
+                                                    <span class="layui-badge-dot layui-bg-orange"></span>
+                                                    <span style="font-size: 18px;color: #0a0a0a">&nbsp;&nbsp;&nbsp;需求要求</span>
+                                                </div>
+                                                <div style="height: 90px;font-size: 16px;">
+                                                    <span th:text="${demandInfo.requirements}"></span>
+                                                </div>
+                                            </div>
+                                            <!--要求模块 End-->
+                                            <br>
+                                            <hr class="layui-bg-cyan">
+                                            <br>
+                                            <!--立即竞标 Begin-->
+                                            <div class="layui-layout-right">
+                                                <button type="button" class="layui-btn" id="jingbiao">立即竞标</button>
+                                            </div>
+                                            <script>
+                                                $("#jingbiao").click(function () {
+                                                    layui.use('layer', function () {
+                                                        var layer = layui.layer;
+                                                        var attr = $("#user_id").attr("USER_ID");
+                                                        if (attr == undefined) {
+                                                            //询问框
+                                                            layer.confirm('您还未登录,是否前去登录？', {
+                                                                btn: ['是', '取消'] //按钮
+                                                            }, function () {
+                                                                layer.open({
+                                                                    type: 1,
+                                                                    skin: 'layui-layer-rim', //加上边框
+                                                                    area: ['420px', '300px'], //宽高
+                                                                    content: '<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">\n' +
+                                                                        '  <legend>登录</legend>\n' +
+                                                                        '</fieldset>  ' +
+                                                                        '<form class="layui-form" action=""> ' +
+                                                                        '<div class="layui-form-item">\n' +
+                                                                        '    <div class="layui-inline">\n' +
+                                                                        '      <label class="layui-form-label">账号:</label>\n' +
+                                                                        '      <div class="layui-input-inline">\n' +
+                                                                        '         <input type="text" name="title" id="user_account" autocomplete="off" placeholder="请输入账号" class="layui-input">\n' +
+                                                                        '      </div>\n' +
+                                                                        '    </div>\n' +
+                                                                        '    <div class="layui-inline">\n' +
+                                                                        '      <label class="layui-form-label">密码:</label>\n' +
+                                                                        '      <div class="layui-input-inline">\n' +
+                                                                        '        <input type="password" name="password" id="pass_word" placeholder="请输入密码" autocomplete="off" class="layui-input">\n' +
+                                                                        '      </div>\n' +
+                                                                        '    </div>\n' +
+                                                                        '  </div> ' +
+                                                                        ' <div class="layui-form-item">\n' +
+                                                                        '    <div class="layui-input-block">\n' +
+                                                                        '      <button type="button" id="denglutijiao" class="layui-btn" lay-filter="demo1">立即登录</button>\n' +
+                                                                        ' 没有账号？去 <a href="toRegister">注册</a> ' +
+                                                                        ' </div>\n' +
+                                                                        '  </div>' +
+                                                                        '</form> ' +
+                                                                        '<script>' +
+                                                                        'layui.use(\'element\', function () {var element = layui.element;});<\/script>' +
+                                                                        '<script>' +
+                                                                        'layui.use(\'layer\', function(){\n' +
+                                                                        'var layer = layui.layer;\n' +
 
-                        <!--选择类型区域 Begin-->
-                        <div data-v-f7548b24="" class="el-form-item is-required">
-                            <div class="xgt_select_type">
-                                <dl class="xgt_st_dl">
-                                    <dt>全部需求</dt>
-                                    <dd id="demandAll">
-                                        <a title="显示全部" class="on"> 显示全部
-                                        </a>
-                                    </dd>
-                                </dl>
-                                <dl class="xgt_st_dl">
-                                    <dt>装修类型</dt>
-                                    <dd id="demandTypes" enable="true">
-                                        <a title="全包" typeId="1"> 全包
-                                        </a>
-                                        <a title="半包" typeId="2"> 半包
-                                        </a>
-                                        <a title="纯设计" typeId="3"> 纯设计
-                                        </a>
-                                    </dd>
-                                </dl>
-                                <dl class="xgt_st_dl">
-                                    <dt>风格</dt>
-                                    <dd id="decoratestyles" enable="true">
-                                        <a href="javascript:;" title="不限" styleId="9">不限
-                                        </a>
-                                        <a href="javascript:;" title="现代简约" styleId="1">现代简约
-                                        </a>
-                                        <a href="javascript:;" title="中式现代" styleId="2">中式现代
-                                        </a>
-                                        <a href="javascript:;" title="美式田园" styleId="3">美式田园
-                                        </a>
-                                        <a href="javascript:;" title="美式经典" styleId="4">美式经典
-                                        </a>
-                                        <a href="javascript:;" title="其他" styleId="8">其他
-                                        </a>
-                                    </dd>
-                                </dl>
-                                <input id="demandTypeName" hidden="hidden" name="demandTypeName" value=""/>
+                                                                        '$("#denglutijiao").click(function() {' +
+                                                                        'var $account=$("#user_account").val();' +
+                                                                        'var $password=$("#pass_word").val();' +
+                                                                        'if ($account==""){' +
+                                                                        'layer.msg(\'请输入账号\');return;' +
+                                                                        '}' +
+                                                                        'if ($password==""){' +
+                                                                        'layer.msg(\'请输入密码\');return;' +
+                                                                        '}' +
+                                                                        '$.ajax({\n' +
+                                                                        'type: "post",\n' +
+                                                                        'dataType: "text",//预期服务器返回的数据类型\n' +
+                                                                        'url: "/login" ,//url\n' +
+                                                                        'data: {account: $account,passWord: $password},\n' +
+                                                                        'success: function (result) {\n' +
+                                                                        'if (result == "SUCCESS") {\n' +
+                                                                        'layer.msg(\'登录成功\',{icon: 1},function(){\n' +
+                                                                        'window.location.reload();\n' +
+                                                                        '});\n' +
+                                                                        '\n' +
+                                                                        '}else if (result=="ERROR"){\n' +
+                                                                        'layer.msg(\'账号或密码错误\',{icon: 5});\n' +
+                                                                        '}\n' +
+                                                                        ';\n' +
+                                                                        '},\n' +
+                                                                        'error : function() {\n' +
+                                                                        'layer.msg(\'登录异常！\', {icon: 5});\n' +
+                                                                        '}\n' +
+                                                                        '});' +
+                                                                        ' })' +//点击时间结束
+                                                                        '});' + //layui结束
+                                                                        '<\/script>'
+                                                                });
+                                                            }, function () {
+                                                            });
+                                                        } else {
+                                                            $.ajax({
+                                                                type: "get",
+                                                                dataType: "text",//预期服务器返回的数据类型
+                                                                url: "userTypeIs" ,//url
+                                                                data: {id: attr},
+                                                                success: function (result) {
+                                                                    alert(result);
+                                                                    if (result == "COMPANY") {
+                                                                        layer.confirm('您确定参与该需求竞标吗？', {
+                                                                            btn: ['确定','取消'] //按钮
+                                                                        }, function(){
+                                                                            
+                                                                            layer.msg('已经参与竞标咯！', {icon: 1});
+                                                                        }, function(){
+                                                                        });
+                                                                    }else if (result=="ERROR"){
+                                                                        layer.msg('系统错误！',{icon: 5});
+                                                                    }else{
+                                                                        layer.msg('只有公司参能参与竞标哦！');
+                                                                    }
+                                                                    ;
+                                                                },
+                                                                error : function() {
+                                                                    layer.msg('网络异常！', {icon: 5});
+                                                                }
+                                                            });
 
-                                <input id="decoratestyleName" hidden="hidden" name="decoratestyleName"
-                                       value=""/>
-                            </div>
-                        </div>
-                        <!--选择类型区域 End-->
-                        <script>
-                            (function ($) {
-                                var typeId = 1;
-                                var styleId = 9;
-                                var data;
-                                var $title;
-                                var $limit = 1;
 
-                                function addProjectList(data, obj) {
-                                    var htmlText = []
-                                        , thisData = data.concat().splice(obj.curr * obj.limit - obj.limit, obj.limit);
-                                    layui.each(thisData, function (index, item) {
-                                        htmlText.push('<li>' +
-                                            ' <a class="company-item" target="_blank" href="getDemandInfo?id=' + item.id + '" >' +
-                                            '<input hidden class="item_id" value="' + item.id + '"/>' +
-                                            ' <div class="contents--item clearfix fantastic" > ' +
-                                            '<div class="company__info"> <div class="company__info--top"> ' +
-                                            '<p class="company__info--name">' + item.title + '</p> ' +
-                                            '</div> ' +
-                                            '<div class="company__info--tag">' +
-                                            '<span class="tag-rank" style="color:#FF5921;background:#FFF0EC">正在火热招标</span>' +
-                                            ' <span>' + item.demandTypeName + '</span> ' +
-                                            '<span>价格可商议</span> ' +
-                                            '<span>' + item.decoratestyleName + '</span> ' +
-                                            '</div> ' +
-                                            '<div class="company__info--activity"> ' +
-                                            '<p><i class="icon-coupon"></i>预约送专业监理服务</p> ' +
-                                            '<p><i class="icon-coupon"></i>预约送全局验房、方案</p> ' +
-                                            '</div>' +
-                                            ' </div> ' +
-                                            '</div> ' +
-                                            '</a> ' +
-                                            '</li>'
-                                        )
-                                    });
-                                    return htmlText.join('');
-                                };
-
-                                function getDemandAll() {
-                                    $("#demandAll a").addClass("on");
-                                    $("#demandTypes a").removeClass("on");
-                                    $("#decoratestyles a").removeClass("on");
-                                    var jiazai;
-                                    layui.use('layer', function () {
-                                        var layer = layui.layer;
-                                        jiazai = layer.load();
-                                    });
-                                    $title = $("#sousuo").val() + " ";
-                                    $.ajax({
-                                        type: "post",
-                                        dataType: "json",//预期服务器返回的数据类型
-                                        url: "getAllDemandInfos",//url
-                                        async: false,
-                                        data: {demandtitle: $title},
-                                        success: function (result) {
-                                            data = result.demandInfos;
-                                            layui.use(['laypage', 'layer'], function () {
-                                                var laypage = layui.laypage
-                                                    , layer = layui.layer;
-                                                laypage.render({
-                                                    elem: 'demo1'
-                                                    , count: data.length //数据总数
-                                                    , limit: result.pageSize
-                                                    , jump: function (obj, first) {
-                                                        var htmlText1 = '';
-                                                        document.getElementById('projectList').innerHTML = htmlText1;
-                                                        document.getElementById('projectList').innerHTML = addProjectList(data, obj);
-                                                        layer.close(jiazai);
-                                                    }
-                                                });
-                                            });
-                                        },
-                                        error: function () {
-                                            layui.use('layer', function () {
-                                                var layer = layui.layer;
-                                                layer.close(jiazai);
-                                            layer.msg('网络异常！', {icon: 5});
-                                            });
-                                        }
-                                    });
-
-                                };
-
-                                onload = getDemandAll();
-
-                                $("#demandAll a").click(function () {
-                                    getDemandAll();
-                                });
-
-                                $("#sousuo").on('input propertychange', function () {
-                                    var jiazai;
-                                    layui.use('layer', function () {
-                                        var layer = layui.layer;
-                                        jiazai = layer.load();
-                                    });
-                                    $title = $("#sousuo").val() + " ";
-
-                                    if ($("#demandAll a:first-child").attr("class") == "on") {
-                                        $.ajax({
-                                            type: "post",
-                                            dataType: "json",//预期服务器返回的数据类型
-                                            url: "getAllDemandInfos",//url
-                                            async: false,
-                                            data: {demandtitle: $title},
-                                            success: function (result) {
-                                                data = result.demandInfos;
-                                                layui.use(['laypage', 'layer'], function () {
-                                                    var laypage = layui.laypage
-                                                        , layer = layui.layer;
-                                                    laypage.render({
-                                                        elem: 'demo1'
-                                                        , count: data.length //数据总数
-                                                        , limit: result.pageSize
-                                                        , jump: function (obj, first) {
-                                                                var htmlText1 = '';
-                                                                document.getElementById('projectList').innerHTML = htmlText1;
-                                                                document.getElementById('projectList').innerHTML = addProjectList(data, obj);
-                                                                layer.close(jiazai);
                                                         }
                                                     });
                                                 });
-                                            },
-                                            error: function () {
-                                                layui.use('layer', function () {
-                                                    var layer = layui.layer;
-                                                    layer.close(jiazai);
-                                                layer.msg('网络异常！', {icon: 5});
-                                                });
-                                            }
-                                        });
-                                    } else {
-                                        $.ajax({
-                                            type: "post",
-                                            dataType: "json",//预期服务器返回的数据类型
-                                            url: "getDemandInfos",//url
-                                            async: false,
-                                            data: {typeId: typeId, styleId: styleId, demandtitle: $title},
-                                            success: function (result) {
-                                                data = result.demandInfos;
-                                                layui.use(['laypage', 'layer'], function () {
-                                                    var laypage = layui.laypage
-                                                        , layer = layui.layer;
-                                                    laypage.render({
-                                                        elem: 'demo1'
-                                                        , count: data.length //数据总数
-                                                        , limit: result.pageSize
-                                                        , jump: function (obj, first) {
-                                                                var htmlText1 = '';
-                                                                document.getElementById('projectList').innerHTML = htmlText1;
-                                                                document.getElementById('projectList').innerHTML = addProjectList(data, obj);
-                                                                layer.close(jiazai);
-                                                        }
-                                                    });
-                                                });
+                                            </script>
+                                            <!--立即竞标 End-->
 
-                                            },
-                                            error: function () {
-                                                layui.use('layer', function () {
-                                                    var layer = layui.layer;
-                                                    layer.close(jiazai);
-                                                layer.msg('网络异常！', {icon: 5});
-                                                });
-                                            }
-                                        });
-                                    }
-                                });
 
-                                $("#demandTypes a").click(function () {
-                                    var jiazai;
-                                    layui.use('layer', function () {
-                                        var layer = layui.layer;
-                                        jiazai = layer.load();
-                                    });
-                                    $("#demandAll a").removeClass("on");
-                                    $("#demandTypes a").removeClass("on");
-                                    $("#demandTypes a").removeClass("on");
-                                    $(this).addClass("on");
-                                    var type = $(this).attr("title");
-                                    $("#demandTypeName").val(type);
-                                    typeId = $(this).attr("typeId");
-                                    $title = $("#sousuo").val() + " ";
-                                    $.ajax({
-                                        type: "post",
-                                        dataType: "json",//预期服务器返回的数据类型
-                                        url: "getDemandInfos",//url
-                                        async: false,
-                                        data: {typeId: typeId, styleId: styleId, demandtitle: $title},
-                                        success: function (result) {
-                                            data = result.demandInfos;
-                                            layui.use(['laypage', 'layer'], function () {
-                                                var laypage = layui.laypage
-                                                    , layer = layui.layer;
-                                                laypage.render({
-                                                    elem: 'demo1'
-                                                    , count: data.length //数据总数
-                                                    , limit: result.pageSize
-                                                    , jump: function (obj, first) {
-                                                        var htmlText1 = '';
-                                                        document.getElementById('projectList').innerHTML = htmlText1;
-                                                        document.getElementById('projectList').innerHTML = addProjectList(data, obj);
-                                                        layer.close(jiazai);
+                                            <div>
+                                                <div style="padding: 5px">
+                                                    <span class="layui-badge-dot layui-bg-blue"></span>
+                                                    <span style="font-size: 18px;color: #0a0a0a">&nbsp;&nbsp;&nbsp;报名列表</span>
+                                                </div>
+                                                <div style="height: 320px">
+                                                    <ul class="flow-default" style="height: 300px;" id="LAY_demo2"></ul>
+                                                </div>
+                                                <input hidden="hidden" id="demand_ID" th:value="${demandInfo.id}">
+                                                <!--加载竞标人群 Begin-->
+                                                <script type="text/javascript">
+                                                    onload = function () {
+                                                        var id = $("#demand_ID").val();
+                                                        $.ajax({
+                                                            type: "post",
+                                                            dataType: "json",//预期服务器返回的数据类型
+                                                            url: "getVieListInfo",//url
+                                                            async: false,
+                                                            data: {id: id},
+                                                            success: function (result) {
+                                                                var data = result.vieListInfos;
+                                                                if (data != null) {
+                                                                    layui.use('flow', function () {
+                                                                        var flow = layui.flow;
+                                                                        flow.load({
+                                                                            elem: '#LAY_demo2' //流加载容器
+                                                                            , scrollElem: '#LAY_demo2' //滚动条所在元素，一般不用填，此处只是演示需要。
+                                                                            , isAuto: false
+                                                                            , isLazyimg: true
+                                                                            , done: function (page, next) { //加载下一页
+                                                                                //模拟插入
+                                                                                setTimeout(function () {
+                                                                                    var lis = [];
+                                                                                    var name;
+                                                                                    var pageNum = data.list.length / 6 > 1 ? Math.ceil(data.list.length / 6) : 1;
+                                                                                    for (var i = 0; i < data.list.length; i++) {
+                                                                                        name = data.list[i].userName;
+                                                                                        lis.push('<li> ' +
+                                                                                            '<div class="layui-inline layui-col-md2" style="padding: 5px">\n' +
+                                                                                            '<a href="#">\n' +
+                                                                                            '<img src="imgs/8ecc1f03910cfa0ab2f6338724844aa8.jpg"\n' +
+                                                                                            'class="layui-circle">\n' +
+                                                                                            '<span>' + name + '</span>\n' +
+                                                                                            '</a>\n' +
+                                                                                            '</div>' +
+                                                                                            '</li>')
+                                                                                    }
+                                                                                    next(lis.join(''), page < pageNum);
+                                                                                }, 500);
+                                                                            }
+                                                                        });
+
+                                                                    });
+                                                                }
+                                                            },
+                                                            error: function () {
+                                                                layer.msg('网络异常！', {icon: 5});
+                                                            }
+                                                        });
+
+
                                                     }
-                                                });
-                                            });
-                                        },
-                                        error: function () {
-                                            layui.use('layer', function () {
-                                                var layer = layui.layer;
-                                                layer.close(jiazai);
-                                            layer.msg('网络异常！', {icon: 5});
-                                            });
-                                        }
-                                    });
-                                });
 
-                                $("#decoratestyles a").click(function () {
-                                    var jiazai;
-                                    layui.use('layer', function () {
-                                        var layer = layui.layer;
-                                        jiazai = layer.load();
-                                    });
-                                    $("#demandAll a").removeClass("on");
-                                    $("#decoratestyles a").removeClass("on");
-                                    $(this).addClass("on");
-                                    var style = $(this).attr("title");
-                                    $("#decoratestyleName").val(style);
-                                    styleId = $(this).attr("styleId");
-                                    $title = $("#sousuo").val() + " ";
-                                    $.ajax({
-                                        type: "post",
-                                        dataType: "json",//预期服务器返回的数据类型
-                                        url: "getDemandInfos",
-                                        async: false,
-                                        data: {typeId: typeId, styleId: styleId, demandtitle: $title},
-                                        success: function (result) {
-                                            data = result.demandInfos;
-                                            layui.use(['laypage', 'layer'], function () {
-                                                var laypage = layui.laypage
-                                                    , layer = layui.layer;
-                                                laypage.render({
-                                                    elem: 'demo1'
-                                                    , count: data.length //
-                                                    , limit: result.pageSize
-                                                    , jump: function (obj, first) {
-                                                            var htmlText1 = '';
-                                                            document.getElementById('projectList').innerHTML = htmlText1;
-                                                            document.getElementById('projectList').innerHTML = addProjectList(data, obj);
-                                                            layer.close(jiazai);
-                                                    }
-                                                });
-                                            });
-                                        },
-                                        error: function () {
-                                            layui.use('layer', function () {
-                                                var layer = layui.layer;
-                                                layer.close(jiazai);
-                                            layer.msg('网络异常！', {icon: 5});
-                                            });
-                                        }
-                                    });
-                                });
-
-
-                            })(jQuery);
-
-                        </script>
-                        <!--主题需求列表 Begin-->
-                        <div class="company__list">
-                            <div class="company__list--content">
-                                <ul id="projectList">
-                                </ul>
+                                                </script>
+                                                <!--加载竞标人群 End-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <!--点击需求 跳转到具体的需求详情页 Begin-->
-                            <!--     <script>
-                                     $("#projectList li").click(function () {
-                                         var $demandId=$(this).attr("item_id");
-                                         window.location.href="getDemandInfo/"+$demandId;
-                                     })
-
-                                 </script>-->
-                            <!--点击需求 跳转到具体的需求详情页 End-->
-                            <!--分页 Begin-->
-                            <div id="demo1"></div>
-                            <!--分页 End-->
                         </div>
-
-                        <!--主题需求列表 End-->
                     </div>
+                    <!--左边主体部分 End-->
+                    <!--右边部分 Begin-->
                     <div data-v-b59f93d4="" id="project-list-slider" class="marginL hidden-sm-only main__right">
                         <div data-v-b59f93d4="" class="panel-right">
                             <div data-v-b59f93d4="" class="panel publish__submit">
-                                <a href="toRelease"><button data-v-b59f93d4="">免费发布需求</button></a>
+                                <button data-v-b59f93d4="">免费发布需求</button>
                             </div>
 
                             <!--宣传图 Begin-->
@@ -3592,26 +3515,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!---->
-    <div data-v-07519bd8=""><!---->
-            <div data-v-07519bd8="" class="item item-back-top" style="display: none;"><a data-v-07519bd8=""
-                                                                                         class="tool-tip">返回顶部</a> <img
-                    data-v-07519bd8="" src="/static/images/siderbar/backtop.png" class="tool-icon backtop"></div>
-            <div data-v-07519bd8="" class="qrdialog-mask" style="display: none;">
-                <div data-v-07519bd8="" class="qrdialog-maindiv">
-                    <div data-v-07519bd8="" class="row row-closeimg"><img data-v-07519bd8=""
-                                                                          src="/static/images/u861.svg"
-                                                                          class="closeimg"></div>
-                    <div data-v-07519bd8="" class="row paddinglr-2rem"><img data-v-07519bd8=""
-                                                                            src="/static/images/wechatqr.png"
-                                                                            class="qrimg"></div>
-                    <div data-v-07519bd8="" class="row row-infotext"><p data-v-07519bd8="">关注开源众包微信号</p>
-
-                        <p data-v-07519bd8="">体验快速发单、接单</p></div>
+                    <!--左边主体部分 End-->
                 </div>
             </div>
         </div>
@@ -3621,76 +3525,5 @@
     <div th:replace="footer::footer"></div>
 
 </div>
-<!--<div>
-
-    <div id="chatBtn" class="chatBtn"
-         style="display: none; right: 18px; z-index: -100; background-color: rgb(25, 202, 166); padding: 8px 10px; border-radius: 5px 5px 0px 0px; bottom: 0px;">
-        <img width="28px" height="25px" style="margin:0px 5px -6px 0px;"
-             src="//webchat.7moor.com/images/chat.png"><span>在线咨询</span><span id="qimo_badge"></span></div>
-    <div id="qimo_showNewMsg" class="qimo_showNewMsg" style="display: none; ">
-        <div id="qimo_showNewMsg_box" class="qimo_showNewMsg_box">
-            <div id="qimo_showNewMsg_title_box" class="qimo_showNewMsg_title_box"><img
-                    src="//webchat.7moor.com/images/agentLogo.png"><span id="qimo_showNewMsg_title"
-                                                                         class="qimo_showNewMsg_title"></span></div>
-            <div id="qimo_showNewMsg_content" class="qimo_showNewMsg_content"></div>
-        </div>
-        <span id="qimo_showNewMsg_close" class="qimo_showNewMsg_close">x</span></div>
-</div>
-
-<div>
-    <div class="qimo_inviteBox" id="qimo_inviteBox"
-         style="display: none; right: 10px; bottom: 10px; background: rgb(63, 184, 253);"><img class="qimo_invite_close"
-                                                                                               id="qimo_invite_close"
-                                                                                               src="//webchat.7moor.com/images/invite-close.png">
-
-        <div class="qimo_inviteBox_top">
-            <div class="qimo_inviteBox_top_img" id="qimo_inviteBox_top_img"><img id="qimo_inviteBox_img"
-                                                                                 src="https://fs-im-kefu.7moor.com/im/486e1f70-bde0-11e7-8806-e7bf8b6e8c91/2017-12-03/1512299414438/896beb70-d81a-11e7-b6e7-9da891414b0f.png">
-            </div>
-            <div class="qimo_inviteBox_top_right" id="qimo_inviteBox_top_right"><p id="qimo_inviteBox_InviteWords">
-                欢迎咨询，请问有什么可以帮您的吗？</p>
-
-                <div class="qimo_inviteBox_top_button" id="qimo_inviteBox_top_button">
-                    <div id="invite_click_button_1" class="divbuttons msie11PadTop"
-                         style="color: rgb(255, 255, 255); border-color: rgb(255, 255, 255);">立即咨询
-                    </div>
-                    <div id="invite_click_button_2" class="divbuttons msie11PadTop"
-                         style="color: rgb(255, 255, 255); border-color: rgb(255, 255, 255);">以后再说
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="qimo_inviteBox_bottom"><textarea id="sendInviteText" placeholder="请输入您想要输入的内容..."
-                                                     rows="2"></textarea>
-
-            <div id="sendInviteContent" class="sendInviteContent msie11PadTop" style="background: rgb(63, 184, 253);">
-                发送
-            </div>
-        </div>
-    </div>
-</div>
-<div>
-    <div class="qimo_screenpop" id="qimo_screenpop" style="display: none">
-        <div class="screendragbar" id="screendrag"></div>
-        <div class="qimo_headerimg" id="qimo_headerimg">
-            <div class="screenminimg" style="display: none" id="screenminimg"><img
-                    src="//webchat.7moor.com/images/small.png"></div>
-            <div class="screenminimg" id="screenmaximg"><img src="//webchat.7moor.com/images/big.png"></div>
-            <div class="screenminimg" id="screencloseimg"><img src="//webchat.7moor.com/images/close.png"
-                                                               style="width: 16px;height: 16px;"></div>
-        </div>
-        <div id="mask"></div>
-        <iframe id="screenIframe" src="" height="100%" width="100%" allow="microphone; camera"></iframe>
-    </div>
-</div>
-<div>
-    <div class="qimo_videopup" id="qimo_videopup" style="display: none">
-        <div style="" class="dragbar" id="drag"></div>
-        <div class="qimo_minimg" id="qimo_minimg"><img src="//webchat.7moor.com/images/small.png"></div>
-        <img src="//webchat.7moor.com/images/big.png" class="qimo_maximg" id="qimo_maximg" style="display: none">
-
-        <iframe id="videoIframe" src="" height="100%" width="100%" allow="microphone; camera"></iframe>
-    </div>
-</div>-->
 </body>
 </html>

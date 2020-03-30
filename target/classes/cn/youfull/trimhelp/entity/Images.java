@@ -1,5 +1,6 @@
 package cn.youfull.trimhelp.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,7 +14,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @TableName("images")
 public class Images {
-
+    @TableId
     private  long id;
     /**
      * 图片大概信息

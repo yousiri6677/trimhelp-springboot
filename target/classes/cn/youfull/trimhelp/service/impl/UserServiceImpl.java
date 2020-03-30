@@ -34,4 +34,9 @@ public class UserServiceImpl implements UserService {
         return count;
     }
 
+    @Override
+    public User selectUserById(long id) {
+        return userMapper.selectById(id);
+    }
+
 }
