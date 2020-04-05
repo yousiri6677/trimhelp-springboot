@@ -18,4 +18,8 @@ public class VieList implements Serializable {
     private long vieId;
     private long demandId;
     private long vieUserId;
+    private int predictMoney;
+    private long case1Id;
+    private long case2Id;
+    private long case3Id;
 }

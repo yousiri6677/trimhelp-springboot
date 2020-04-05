@@ -8,4 +8,6 @@ import java.util.List;
 public interface VieListService {
 
     VieListEx selectVieListUsersByDemandId(long id);
+
+    int addVie(VieList vieList);
 }

@@ -3,6 +3,7 @@ package cn.youfull.trimhelp.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,6 +12,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 
 @Data
@@ -29,7 +31,7 @@ public class Demand implements Serializable {
     private double money;
     private String requirements;
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime releaseTime;
+    private Date releaseTime;
     private String acceptanceTime;
     private String referenceDoc;
     private int state;

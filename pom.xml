@@ -22,6 +22,8 @@
         <maven.comiler.target>${java.version}</maven.comiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <aliyun.oss.version>2.8.3</aliyun.oss.version>
+        <jodatime.version>2.10.1</jodatime.version>
     </properties>
 
     <!--开源协议-->
@@ -59,6 +61,14 @@
             <version>${mysql.version}</version>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+        </dependency>
         <!--数据访问 End-->
 
         <!--页面模板 Begin-->
@@ -73,6 +83,12 @@
             <version>1.9.22</version>
         </dependency>
         <!--页面模板 End-->
+        <!-- 阿里云oss依赖 -->
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+            <version>3.8.0</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

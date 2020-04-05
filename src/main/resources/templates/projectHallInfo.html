@@ -1,30 +1,6 @@
-<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="robots" content="index, follow">
-    <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="HandheldFriendly" content="true">
-    <!-- UC强制全屏 -->
-    <meta name="full-screen" content="yes">
-    <!-- QQ强制全屏 -->
-    <meta name="x5-fullscreen" content="true">
-    <!-- UC应用模式 -->
-    <meta name="browsermode" content="application">
-    <!-- QQ应用模式 -->
-    <meta name="x5-page-mode" content="app">
-    <!-- windows phone 点击无高光 -->
-    <meta name="msapplication-tap-highlight" content="no">
-    <!-- Windows 8 磁贴颜色 -->
-    <meta name="msapplication-TileColor" content="#FFF">
-    <!-- 百度移动搜索 -->
-    <meta name="applicable-device" content="pc">
-    <!-- QQ聊天框中发送url网站链接预览内容 http://kf.qq.com/faq/140508YJf6NJ140508NzeQJj.html -->
-    <meta content="telephone=no" name="format-detection">
-    <!--<title>开源众包平台</title>-->
     <script>
         var _hmt = _hmt || [];
         (function () {
@@ -3209,7 +3185,7 @@
                                             <br>
                                             <div>
                                                 <div style="padding: 5px"><span style="font-size: 16px;color: gray">发布时间:&nbsp;&nbsp;&nbsp;<span
-                                                        th:text="${demandInfo.releaseTime}"></span></span>
+                                                        th:text="${#dates.format(demandInfo.releaseTime,'yyyy-MM-dd hh:mm:ss')}"></span></span>
                                                 </div>
                                                 <div style="padding: 5px"><span style="font-size: 16px;color: gray">验收时间:&nbsp;&nbsp;&nbsp;<span
                                                         th:text="${demandInfo.acceptanceTime}"></span></span>
@@ -3218,7 +3194,8 @@
                                                 </div>
                                                 <div style="padding: 5px">
                                                     <span style="font-size: 16px;color: gray;">招标金额:&nbsp;&nbsp;&nbsp;<span
-                                                            th:text="${demandInfo.money}"></span></span>
+                                                            th:text="${demandInfo.money}"
+                                                            id="demand_money"></span></span>
                                                     <span class="layui-badge"
                                                           style="font-size: 12px;margin-left: 10px;">可详谈</span>
                                                 </div>
@@ -3255,9 +3232,22 @@
                                             <br>
                                             <hr class="layui-bg-cyan">
                                             <br>
+                                            <div>
+                                                <div style="padding: 5px">
+                                                    <a href="https://trimhelp-img.oss-cn-beijing.aliyuncs.com/th-file/%E7%9A%84%E6%92%92123123%E7%9A%84%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3.docx">
+                                                        <button type="button" class="layui-btn layui-btn-fluid">
+                                                            需求文档下载
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!---->
+                                            <br>
+                                            <hr class="layui-bg-cyan">
+                                            <br>
                                             <!--立即竞标 Begin-->
                                             <div class="layui-layout-right">
-                                                <button type="button" class="layui-btn" id="jingbiao">立即竞标</button>
+                                                <button type="button" class="layui-btn" id="jingbiao">立即装修</button>
                                             </div>
                                             <script>
                                                 $("#jingbiao").click(function () {
@@ -3343,26 +3333,265 @@
                                                             $.ajax({
                                                                 type: "get",
                                                                 dataType: "text",//预期服务器返回的数据类型
-                                                                url: "userTypeIs" ,//url
+                                                                url: "userTypeIs",//url
                                                                 data: {id: attr},
                                                                 success: function (result) {
-                                                                    alert(result);
                                                                     if (result == "COMPANY") {
                                                                         layer.confirm('您确定参与该需求竞标吗？', {
-                                                                            btn: ['确定','取消'] //按钮
-                                                                        }, function(){
-                                                                            
-                                                                            layer.msg('已经参与竞标咯！', {icon: 1});
-                                                                        }, function(){
+                                                                            btn: ['确定', '取消'] //按钮
+                                                                        }, function () {
+                                                                            //判断是否已经竞标
+                                                                            layer.confirm('您需要展示已有案例吗', {
+                                                                                btn: ['展示', '取消'] //按钮
+                                                                            }, function () {
+                                                                                //异步获取该公司的所有装修案例
+                                                                                $.ajax({
+                                                                                    type: "get",
+                                                                                    dataType: "json",//预期服务器返回的数据类型
+                                                                                    url: "getDecoratecases",//url
+                                                                                    data: {
+                                                                                        userId: attr
+                                                                                    },
+                                                                                    success: function (result) {
+                                                                                        if (result.decoratecases == null || result.decoratecases == "") {
+                                                                                            layer.msg('很抱歉，公司未存在装修案例', {icon: 5});
+                                                                                        } else {
+                                                                                            var htmlTexts = [];
+                                                                                            layui.use('layer', function () {
+                                                                                                var layer = layui.layer;
+                                                                                                layui.each(result.decoratecases, function (index, item) {
+                                                                                                    htmlTexts.push('<option value="' + item.id + '" selected="">' + item.title + '</option>')
+                                                                                                });
+                                                                                            });
+                                                                                            var tt = htmlTexts.join('');
+                                                                                            var htmlText = "   <fieldset class='layui-elem-field layui-field-title' style='margin-top: 20px;'>             \n" +
+                                                                                                "          <legend>装修意向</legend>             \n" +
+                                                                                                "        </fieldset>           \n" +
+                                                                                                "    <form class='layui-form' action=''>          \n" +
+                                                                                                "        <div class='layui-form-item'>             \n" +
+                                                                                                "                <div class='layui-inline'>             \n" +
+                                                                                                "                      <label class='layui-form-label' style='width: 100px'>预计金额：</label>             \n" +
+                                                                                                "                      <div class='layui-input-block'>             \n" +
+                                                                                                "                             <input type='text' name='money' id='xuji_money' autocomplete='off' placeholder='请输入预计金额' class='layui-input'>             \n" +
+                                                                                                "                          </div>             \n" +
+                                                                                                "                    </div>             \n" +
+                                                                                                "            </div>         \n" +
+                                                                                                "        </form>         \n" +
+                                                                                                "    <div class='layui-form-item'>             \n" +
+                                                                                                "            <label class='layui-form-label' style='width: 100px'>案例选择：</label>             \n" +
+                                                                                                "            <div class='layui-input-block' style='width: 168px;height: 50px'>             \n" +
+                                                                                                "                  <select name='interest' lay-filter='aihao' id='anli1'>             \n" +
+                                                                                                "" + tt + "" +
+                                                                                                "                      </select>             \n" +
+                                                                                                "                </div>             \n" +
+                                                                                                "          </div>         \n" +
+                                                                                                "    <div class='layui-form-item' id='hidden_item1' hidden>             \n" +
+                                                                                                "            <label class='layui-form-label' style='width: 100px'>案例选择：</label>             \n" +
+                                                                                                "            <div class='layui-input-block' style='width: 168px;height: 50px'>             \n" +
+                                                                                                "                  <select name='interest' lay-filter='aihao' id='anli2'>             \n" +
+                                                                                                "" + tt + "" +
+                                                                                                "                      </select>             \n" +
+                                                                                                "                </div>             \n" +
+                                                                                                "          </div>         \n" +
+                                                                                                "    <div class='layui-form-item'  id='hidden_item2' hidden >             \n" +
+                                                                                                "            <label class='layui-form-label' style='width: 100px'>案例选择：</label>             \n" +
+                                                                                                "            <div class='layui-input-block' style='width: 168px;height: 50px'>             \n" +
+                                                                                                "                  <select name='interest' lay-filter='aihao' id='anli3'>             \n" +
+                                                                                                "" + tt + "" +
+                                                                                                "                      </select>             \n" +
+                                                                                                "                </div>             \n" +
+                                                                                                "          </div>         \n" +
+                                                                                                "    <button type='button' id='hide_gengduo' hidden style='margin-left: 180px' class='layui-btn layui-btn-primary layui-btn-xs'>收起</button>         \n" +
+                                                                                                "    <button type='button' id='show_gengduo' style='margin-left: 180px' class='layui-btn layui-btn-primary layui-btn-xs'>选择更多</button>         \n" +
+                                                                                                "    <hr class='layui-bg-cyan' style='margin: 10px 0px'>          \n" +
+                                                                                                "     <button type='button' style='margin-left: 180px' id='btn_xuqiutijiao' class='layui-btn layui-btn-sm'>确定参与</button>         \n" +
+                                                                                                "    <script> var $anli2='';var $anli3='';            \n" +
+                                                                                                "    $('#show_gengduo').click(function(){         \n" +
+                                                                                                " $anli2=$('#anli2').val();$anli3=$('#anli3').val();   " +
+                                                                                                "$('#hidden_item1').show();$('#hidden_item2').show();$('#hide_gengduo').show(); $(this).hide();         \n" +
+                                                                                                "    });         \n" +
+                                                                                                "    $('#hide_gengduo').click(function() {         \n" +
+                                                                                                "$anli2=0;$anli3=0;    " +
+                                                                                                "$('#hidden_item1').hide();$('#hidden_item2').hide();$('#show_gengduo').show(); $(this).hide();         \n" +
+                                                                                                "    });          \n" +
+                                                                                                "$('#btn_xuqiutijiao').click(function(){" +
+                                                                                                "var $demandMoney =$('#demand_money').text();" +
+                                                                                                "var $money = $('#xuji_money').val();" +
+                                                                                                "if ($money==null||$money==''){" +
+                                                                                                "layer.msg('请输入预算金额！');" +
+                                                                                                "return;" +
+                                                                                                "}" +
+                                                                                                "if ($money*1>$demandMoney*1){" +
+                                                                                                "layer.confirm('您的报价比预算金额大哦，可能影响竞标成功几率！是否要继续？', {\n" +
+                                                                                                "btn: ['继续', '取消'] //按钮\n" +
+                                                                                                "}, function () {" +
+                                                                                                "var $anli1 = $('#anli1').val();" +
+                                                                                                "$.ajax({\n" +
+                                                                                                "type: 'put',\n" +
+                                                                                                "dataType: 'text',//预期服务器返回的数据类型\n" +
+                                                                                                "url: 'addVieList'," +
+                                                                                                "data: {\n" +
+                                                                                                "demandId: $('#demand_ID').val(),\n" +
+                                                                                                "vieUserId: $('#user_id').attr('USER_ID'),\n" +
+                                                                                                "predictMoney: $money," +
+                                                                                                "case1Id: $anli1*1,case2Id: $anli2*1,case3Id: $anli3*1" +
+                                                                                                "},\n" +
+                                                                                                "success: function (result) {\n" +
+                                                                                                "if (result == 'SUCCESS') {\n" +
+                                                                                                "layer.msg('竞标成功！', {icon: 1});\n" +
+                                                                                                "window.location.reload();\n" +
+                                                                                                "} else if (result == 'EXIST') {\n" +
+                                                                                                "layer.msg('您已参与竞标！');\n" +
+                                                                                                "} else if (result == 'ERROR') {\n" +
+                                                                                                "layer.msg('竞标失败,请重试！', {icon: 5});\n" +
+                                                                                                "}\n" +
+                                                                                                "},\n" +
+                                                                                                "error: function () {\n" +
+                                                                                                " layer.msg('网络异常！', {icon: 5});\n" +
+                                                                                                "}\n" +
+                                                                                                "});" + //ajax结束
+                                                                                                "},function (){" +
+
+                                                                                                "});" +
+                                                                                                "}else {" +
+                                                                                                "var $anli1 = $('#anli1').val();" +
+                                                                                                "$.ajax({\n" +
+                                                                                                "type: 'put',\n" +
+                                                                                                "dataType: 'text',//预期服务器返回的数据类型\n" +
+                                                                                                "url: 'addVieList'," +
+                                                                                                "data: {\n" +
+                                                                                                "demandId: $('#demand_ID').val(),\n" +
+                                                                                                "vieUserId: $('#user_id').attr('USER_ID'),\n" +
+                                                                                                "predictMoney: $money," +
+                                                                                                "case1Id: $anli1*1,case2Id: $anli2*1,case3Id: $anli3*1" +
+                                                                                                "},\n" +
+                                                                                                "success: function (result) {\n" +
+                                                                                                "if (result == 'SUCCESS') {\n" +
+                                                                                                "layer.msg('竞标成功！', {icon: 1});\n" +
+                                                                                                "window.location.reload();\n" +
+                                                                                                "} else if (result == 'EXIST') {\n" +
+                                                                                                "layer.msg('您已参与竞标！');\n" +
+                                                                                                "} else if (result == 'ERROR') {\n" +
+                                                                                                "layer.msg('竞标失败,请重试！', {icon: 5});\n" +
+                                                                                                "}\n" +
+                                                                                                "},\n" +
+                                                                                                "error: function () {\n" +
+                                                                                                " layer.msg('网络异常！', {icon: 5});\n" +
+                                                                                                "}\n" +
+                                                                                                "});" + //ajax结束
+                                                                                                "}" + //if结束
+                                                                                                "});" +//点击时间结束
+                                                                                                "    <\/script>";
+                                                                                            layer.open({
+                                                                                                type: 1,
+                                                                                                skin: 'layui-layer-rim', //加上边框
+                                                                                                area: ['480px', '455px'], //宽高
+                                                                                                content: htmlText
+                                                                                            });
+                                                                                        }
+                                                                                    },
+                                                                                    error: function () {
+                                                                                        layer.msg('网络异常！', {icon: 5});
+                                                                                    }
+                                                                                });
+                                                                            }, function () {
+                                                                                var textHmtl1 = "<fieldset class=\"layui-elem-field layui-field-title\" style=\"margin-top: 20px;\">\n" +
+                                                                                    "      <legend>装修意向</legend> \n" +
+                                                                                    "    </fieldset>   \n" +
+                                                                                    "<form class=\"layui-form\" action=\"\">  \n" +
+                                                                                    "    <div class=\"layui-form-item\"> \n" +
+                                                                                    "            <div class=\"layui-inline\"> \n" +
+                                                                                    "                  <label class=\"layui-form-label\" style=\"width: 100px\">预计金额：</label> \n" +
+                                                                                    "                  <div class=\"layui-input-block\"> \n" +
+                                                                                    "                         <input type=\"text\" name=\"money\" id=\"xuji_money1\" autocomplete=\"off\" placeholder=\"请输入预计金额\" class=\"layui-input\"> \n" +
+                                                                                    "                      </div> \n" +
+                                                                                    "                </div> \n" +
+                                                                                    "        </div> \n" +
+                                                                                    "    </form> \n" +
+                                                                                    " <button type=\"butto\" style=\"margin-left: 150px\" id='btn_xuqiutijiao' class=\"layui-btn layui-btn-sm\">确定参与</button>" +
+                                                                                    "<script> \n" +
+                                                                                    "$('#btn_xuqiutijiao').click(function(){ \n" +
+                                                                                    "var $demandMoney =$('#demand_money').text();" +
+                                                                                    "var $money = $('#xuji_money1').val(); \n" +
+                                                                                    "if ($money==null||$money==''){ \n" +
+                                                                                    "layer.msg('请输入预算金额！'); \n" +
+                                                                                    "return; \n" +
+                                                                                    "} \n" +
+                                                                                    "if ($money*1>$demandMoney*1){" +
+                                                                                    "layer.confirm('您的报价比预算金额大哦，可能影响竞标成功几率！是否要继续？', {\n" +
+                                                                                    "btn: ['继续', '取消'] //按钮\n" +
+                                                                                    "}, function () {" +
+                                                                                    "$.ajax({ \n" +
+                                                                                    "type: 'put', \n" +
+                                                                                    "dataType: 'text',//预期服务器返回的数据类型 \n" +
+                                                                                    "url: 'addVieList', \n" +
+                                                                                    "data: { \n" +
+                                                                                    "demandId: $('#demand_ID').val(), \n" +
+                                                                                    "vieUserId: $('#user_id').attr('USER_ID'), \n" +
+                                                                                    "predictMoney: $money \n" +
+                                                                                    "}, \n" +
+                                                                                    "success: function (result) { \n" +
+                                                                                    "if (result == 'SUCCESS') { \n" +
+                                                                                    "layer.msg('竞标成功！', {icon: 1}); \n" +
+                                                                                    "window.location.reload(); \n" +
+                                                                                    "} else if (result == 'EXIST') { \n" +
+                                                                                    "layer.msg('您已参与竞标！'); \n" +
+                                                                                    "} else if (result == 'ERROR') { \n" +
+                                                                                    "layer.msg('竞标失败,请重试！', {icon: 5}); \n" +
+                                                                                    "} \n" +
+                                                                                    "}, \n" +
+                                                                                    "error: function () { \n" +
+                                                                                    " layer.msg('网络异常！', {icon: 5}); \n" +
+                                                                                    "} \n" +
+                                                                                    "}); \n" + //ajax
+                                                                                    "},function (){" +
+                                                                                    "});" +
+                                                                                    "}else {" +
+                                                                                    "$.ajax({ \n" +
+                                                                                    "type: 'put', \n" +
+                                                                                    "dataType: 'text',//预期服务器返回的数据类型 \n" +
+                                                                                    "url: 'addVieList', \n" +
+                                                                                    "data: { \n" +
+                                                                                    "demandId: $('#demand_ID').val(), \n" +
+                                                                                    "vieUserId: $('#user_id').attr('USER_ID'), \n" +
+                                                                                    "predictMoney: $money \n" +
+                                                                                    "}, \n" +
+                                                                                    "success: function (result) { \n" +
+                                                                                    "if (result == 'SUCCESS') { \n" +
+                                                                                    "layer.msg('竞标成功！', {icon: 1}); \n" +
+                                                                                    "window.location.reload(); \n" +
+                                                                                    "} else if (result == 'EXIST') { \n" +
+                                                                                    "layer.msg('您已参与竞标！'); \n" +
+                                                                                    "} else if (result == 'ERROR') { \n" +
+                                                                                    "layer.msg('竞标失败,请重试！', {icon: 5}); \n" +
+                                                                                    "} \n" +
+                                                                                    "}, \n" +
+                                                                                    "error: function () { \n" +
+                                                                                    " layer.msg('网络异常！', {icon: 5}); \n" +
+                                                                                    "} \n" +
+                                                                                    "}); \n" + //ajax
+                                                                                    "}" + //if结束
+                                                                                    "}); \n" +
+                                                                                    "<\/script>";
+
+                                                                                layer.open({
+                                                                                    type: 1,
+                                                                                    skin: 'layui-layer-rim', //加上边框
+                                                                                    area: ['400px', '280px'], //宽高
+                                                                                    content: textHmtl1
+
+                                                                                });
+                                                                            });
+                                                                        }, function () {
                                                                         });
-                                                                    }else if (result=="ERROR"){
-                                                                        layer.msg('系统错误！',{icon: 5});
-                                                                    }else{
+                                                                    } else if (result == "ERROR") {
+                                                                        layer.msg('系统错误！', {icon: 5});
+                                                                    } else {
                                                                         layer.msg('只有公司参能参与竞标哦！');
                                                                     }
                                                                     ;
                                                                 },
-                                                                error : function() {
+                                                                error: function () {
                                                                     layer.msg('网络异常！', {icon: 5});
                                                                 }
                                                             });
@@ -3386,7 +3615,7 @@
                                                 <input hidden="hidden" id="demand_ID" th:value="${demandInfo.id}">
                                                 <!--加载竞标人群 Begin-->
                                                 <script type="text/javascript">
-                                                    onload = function () {
+                                                    function getVieList() {
                                                         var id = $("#demand_ID").val();
                                                         $.ajax({
                                                             type: "post",
@@ -3437,6 +3666,8 @@
 
 
                                                     }
+
+                                                    onload = getVieList();
 
                                                 </script>
                                                 <!--加载竞标人群 End-->

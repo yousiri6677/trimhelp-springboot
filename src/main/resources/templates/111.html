@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend>装修意向</legend>
+</fieldset>
+<form class="layui-form" action="">
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label" style="width: 100px">预计金额：</label>
+            <div class="layui-input-block">
+                <input type="text" name="money" id="xuji_money" autocomplete="off" placeholder="请输入预计金额" class="layui-input">
+            </div>
+        </div>
+    </div>
+</form>
+<button type="butto" style="margin-left: 150px" class="layui-btn layui-btn-sm">确定参与</button>"
+<script>
+    $('#btn_xuqiutijiao').click(function(){
+        var $money = $('#xuji_money').val();
+        if ($money==null||$money==''){
+            layer.msg('请输入预算金额！');
+            return;
+        }
+        $.ajax({
+            type: 'put',
+            dataType: 'text',//预期服务器返回的数据类型
+            url: 'addVieList',
+            data: {
+                demandId: $('#demand_ID').val(),
+                vieUserId: $('#user_id').attr('USER_ID'),
+                predictMoney: $money,
+                case1Id: $anli1*1,case2Id: $anli2*1,case3Id: $anli3*1
+            },
+            success: function (result) {
+                if (result == 'SUCCESS') {
+                    layer.msg('竞标成功！', {icon: 1});
+                    window.location.reload();
+                } else if (result == 'EXIST') {
+                    layer.msg('您已参与竞标！');
+                } else if (result == 'ERROR') {
+                    layer.msg('竞标失败,请重试！', {icon: 5});
+                }
+            },
+            error: function () {
+                layer.msg('网络异常！', {icon: 5});
+            }
+        });
+    });
+</script>
+</body>
+</html>

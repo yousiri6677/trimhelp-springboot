@@ -7,41 +7,43 @@ import org.springframework.web.bind.annotation.*;
 public class NavController {
 
     @RequestMapping("/toLogin")
-    public String toLogin(){
+    public String toLogin() {
         return "login";
     }
 
     @RequestMapping("/index")
-    public String index(){
+    public String index() {
         return "index";
     }
 
     @RequestMapping("/toRegister")
-    public String toregister(){
+    public String toregister() {
         return "register";
     }
 
     @RequestMapping("/toRelease")
-    public String torelease(){
+    public String torelease() {
         return "release";
     }
 
     @RequestMapping("/toProjectHall")
-    public String toprojectHall(){
+    public String toprojectHall() {
         return "projectHall";
     }
 
     @RequestMapping("/toCompany")
-    public String toCompany(){
+    public String toCompany() {
         return "company";
     }
 
     @RequestMapping("/toProjectHallInfo")
-    public String toProjectHallInfo(){
+    public String toProjectHallInfo() {
         return "projectHallInfo";
     }
 
 
-
-
+    @RequestMapping("/toCompanyInfo")
+    public String toCompanyInfo(){
+        return "companyInfo";
+    }
 }

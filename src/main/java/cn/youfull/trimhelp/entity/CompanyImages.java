@@ -12,8 +12,8 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@TableName("images")
-public class Images {
+@TableName("companyImages")
+public class CompanyImages {
     @TableId
     private  long id;
     /**

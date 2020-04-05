@@ -104,7 +104,7 @@ html #layuicss-skinlayercss {
 }
 
 .layui-layer-ico {
-    background: url(../image/T8T.551539f873d9ebe0792b120a9867.png) no-repeat
+    background: url(https://wbf1.t8tcdn.com/T8T.551539f873d9ebe0792b120a9867d399.png) no-repeat
 }
 
 .layui-layer-btn a, .layui-layer-dialog .layui-layer-ico, .layui-layer-setwin a {
@@ -1092,7 +1092,7 @@ table {
 }
 
 .arrow_gray, .arrow_gray_down, .arrow_gray_downact, .arrow_gray_up, .arrow_gray_upact, .arrow_green, .bottom_sjybj_right .icn_tip_close, .bottom_sjybj_right .two_code, .footer_bottom_container .fbc_icpico span, .ftc_center dl dd a div.wechat_bg, .ftc_center dl dd a em, .ftc_left .join_link span, .ftc_right dl dd, .global_pie .global_pie_container ul li.gp_menu i, .global_pie .global_pie_container ul li span, .hcc_zxb, .header_bottom .header_menu .q_code, .header_bottom .header_menu .q_code div.q_code_layer span.qcode_img, .header_bottom .header_menu .q_code div.q_code_layer span.wech, .header_bottom .header_menu ul li.has_homeIcon em.jjjcc_icon, .header_bottom .header_menu ul li.has_hotIcon em.sjbj_hot, .header_bottom .header_menu ul li.has_secondMenu a em, .header_center_container span.hcc_logo, .header_search .header_select a.header_select_sort span b, .header_top_left ul li em, .header_top_right ul li div.htr_username i, .ico_code_s, .ico_comment, .ico_crown, .ico_error, .ico_feedback_tip, .ico_feedback i, .ico_info_s, .ico_msg, .ico_pic, .ico_praise, .ico_praise_no, .ico_protect, .ico_qq i, .ico_scan, .ico_server:hover i, .ico_server i, .ico_sort_downoff, .ico_sort_downon, .ico_sort_upoff, .ico_sort_upon, .ico_star_grey, .ico_star_half, .ico_star_yel, .ico_tip_ok, .ico_tip_ok_s, .ico_tip_warn, .ico_tip_warn_green, .ico_tip_warn_green_s, .ico_tip_warn_s, .ico_top i, .mod_yeltip .yeltip_close, .qq_list li em, .triangle_down, .triangle_up, .two_code_s, .zgsh_top_center_left li .logo, .zgsh_top_center_right ul li div.htr_username i, .zxbj-calc-wrap .zxbj-content .element .submit-btn span, .zxbj-calc-wrap .zxbj-content .tips i, span.nav_arrow_right {
-    background: url(../image/global-20160512.png) no-repeat
+    background: url(https://wbf2.t8tcdn.com/T8T.d0cfe0a83d0b380b28c7b5987b36d597.png) no-repeat
 }
 
 .zgsh_top_center_left li .logo {
@@ -1676,7 +1676,7 @@ table {
     transform: translate3d(100%, -50%, 0);
     width: 17px;
     height: 61px;
-    background-image: url(../image/icon_arrow.png);
+    background-image: url(https://img.test.com/icon_arrow.png);
     z-index: 1001;
     cursor: pointer
 }
@@ -1965,7 +1965,7 @@ table {
     height: 11px;
     width: 18px;
     display: block;
-    background: url(../image/global-20160512.png) no-repeat;
+    background: url(https://wbf2.t8tcdn.com/T8T.d0cfe0a83d0b380b28c7b5987b36d597.png) no-repeat;
     background-position: -201px -16px;
     display: inline-block;
     margin-left: 5px;
@@ -2061,7 +2061,7 @@ table {
 }
 
 .banner_arrow, .slider_ico {
-    background: url(../image/icon_arrow.png) no-repeat;
+    background: url(https://img.test.com/decorate_gallery/images/png/banner.png?v=1411559744) no-repeat;
     display: block
 }
 
@@ -2098,7 +2098,7 @@ table {
 }
 
 .index_banner_s .bLeft, .index_banner_s .bRight {
-    background: url(../image/icon_arrow.png) no-repeat;
+    background: url(https://img.test.com/decorate_gallery/images/png/index_global.png?v=14183675301) no-repeat;
     display: inline-block;
     *display: inline;
     zoom: 1
@@ -2287,7 +2287,7 @@ table {
     width: 6px;
     height: 11px;
     margin-top: 11px;
-    background: url(../image/global-20160512.png) no-repeat
+    background: url(https://wbf2.t8tcdn.com/T8T.d0cfe0a83d0b380b28c7b5987b36d597.png) no-repeat
 }
 
 .ielt8 .pages .next b, .ielt8 .pages .prev b {
@@ -2343,7 +2343,7 @@ table {
     height: 11px;
     padding: 0;
     margin-right: 14px;
-    background: url(../image/global-20160512.png) no-repeat
+    background: url(https://wbf2.t8tcdn.com/T8T.d0cfe0a83d0b380b28c7b5987b36d597.png) no-repeat
 }
 
 .pages_s a.prev {
@@ -2382,7 +2382,7 @@ table {
 }
 
 .fwb_color {
-    background: url(../image/icon_arrow.gif) repeat
+    background: url(https://img.test.com/decorate_gallery/images/gif/share_ng.gif?v=1408458119) repeat
 }
 
 .feedbacks, .returnTopBtn, .shareBtn {
@@ -2440,7 +2440,7 @@ table {
     margin: 0 auto;
     display: block;
     overflow: hidden;
-    background: url(../image/icon_arrow.png) no-repeat
+    background: url(https://img.test.com/icon/finework_xiaoguotu_right.png?v=1401786599) no-repeat
 }
 
 .floatWindowBox ul li .feedbacks {
@@ -2499,7 +2499,7 @@ a.feedbacks:hover, a.shareBtn:hover {
     height: 40px;
     color: #999;
     line-height: 40px;
-    background: url(../image/icon_arrow.png) no-repeat;
+    background: url(https://img.test.com/icon/finework_xiaoguotu_right.png?v=1401786599) no-repeat;
     cursor: pointer
 }
 
@@ -2513,7 +2513,7 @@ a.feedbacks:hover, a.shareBtn:hover {
     height: 14px;
     background-color: #ff0;
     overflow: hidden;
-    background: url(../image/icon_arrow.png) -8px -194px no-repeat
+    background: url(https://img.test.com/icon/finework_xiaoguotu_right.png?v=1401786599) -8px -194px no-repeat
 }
 
 .floatWindowBox .shareBox {
@@ -2537,7 +2537,7 @@ a.add_share {
     margin-right: 5px;
     width: 16px;
     height: 16px;
-    background: url(../image/icon_arrow.gif) no-repeat;
+    background: url(https://img.test.com/img/front_end/icon/case_list_icon.gif) no-repeat;
     padding: 0
 }
 
@@ -2714,7 +2714,7 @@ div.small_cage_more .dl_nav dd.green_line {
 #consult_win #consult_board {
     color: #fff;
     font-weight: bold;
-    background: url("../image/icon_arrow.png") no-repeat scroll 0 0 transparent;
+    background: url("https://img.test.com/front_end/bg/float_consult_board.png?v=1384538330") no-repeat scroll 0 0 transparent;
     height: 150px;
     padding: 37px 0 0 7px
 }
@@ -2733,7 +2733,7 @@ div.small_cage_more .dl_nav dd.green_line {
     height: 19px;
     width: 19px;
     margin-left: 60px;
-    background: url(../image/icon_arrow.png)
+    background: url(https://img.test.com/front_end/bg/float_close.png?v=1384538330)
 }
 
 #consult_win .con_msg {
@@ -2747,11 +2747,11 @@ div.small_cage_more .dl_nav dd.green_line {
 }
 
 #consult_win .msg_green {
-    background: url("../image/icon_arrow.png") no-repeat scroll 0 0 transparent
+    background: url("https://img.test.com/front_end/bg/float_msg_green.png?v=1384538330") no-repeat scroll 0 0 transparent
 }
 
 #consult_win .msg_orange {
-    background: url("../image/icon_arrow.png") no-repeat scroll 0 0 transparent
+    background: url("https://img.test.com/front_end/bg/float_msg_orange.png?v=1384538330") no-repeat scroll 0 0 transparent
 }
 
 #consult_win #zxzx {
@@ -2762,7 +2762,7 @@ div.small_cage_more .dl_nav dd.green_line {
 }
 
 #consult_win .float_drcode {
-    background: url("../image/icon_arrow.png");
+    background: url("https://img.test.com/front_end/bg/float_drcode.png?v=1384538330");
     width: 105px;
     height: 147px;
     position: fixed;
@@ -2778,7 +2778,7 @@ div.small_cage_more .dl_nav dd.green_line {
 }
 
 #consult_win #go_top {
-    background: url("../image/icon_arrow.png") no-repeat scroll 0 0 transparent;
+    background: url("https://img.test.com/front_end/bg/float_go_top.png?v=1384538330") no-repeat scroll 0 0 transparent;
     width: 51px;
     height: 34px;
     margin-top: 9px;
@@ -3798,7 +3798,7 @@ a:hover .ico_sort_upoff, a:hover .ico_sort_upon {
 }
 
 .mod_fbbox_wxservice .service_img {
-    background: url(../image/icon_arrow.png) no-repeat;
+    background: url(https://img.test.com/to8to_img/fbbox_service.png?v=1421117809) no-repeat;
     position: relative;
     width: 356px;
     height: 285px;
@@ -4375,7 +4375,7 @@ input.btn_grey_a {
 }
 
 .tip_triangle_left b {
-    background: url(../image/global-20160512.png) 0 -260px no-repeat;
+    background: url(https://wbf2.t8tcdn.com/T8T.d0cfe0a83d0b380b28c7b5987b36d597.png) 0 -260px no-repeat;
     position: absolute;
     left: -6px;
     top: 10px;
@@ -4385,7 +4385,7 @@ input.btn_grey_a {
 
 .header_banner_top {
     display: block;
-    background: url(../image/icon_arrow.jpg) top no-repeat;
+    background: url(https://img.test.com/to8to_img/zxbj/banner_top.jpg?v=1418215917) top no-repeat;
     min-width: 1220px;
     height: 80px
 }
@@ -4427,7 +4427,7 @@ input.btn_grey_a {
 }
 
 .cover .del {
-    background: url(../image/icon_arrow.gif) -89px -86px no-repeat;
+    background: url(https://img.test.com/decorate_gallery/images/gif/xgtcop_bg.gif?v=1409038438) -89px -86px no-repeat;
     width: 37px;
     height: 36px;
     position: absolute;
@@ -4461,7 +4461,7 @@ input.btn_grey_a {
 }
 
 .cover .lrow i {
-    background: url(../image/icon_arrow.gif) 0 -51px no-repeat
+    background: url(https://img.test.com/decorate_gallery/images/gif/xgtcop_bg.gif?v=1409038438) 0 -51px no-repeat
 }
 
 .cover .rrow {
@@ -4469,7 +4469,7 @@ input.btn_grey_a {
 }
 
 .cover .rrow i {
-    background: url(../image/icon_arrow.gif) -37px -51px no-repeat
+    background: url(https://img.test.com/decorate_gallery/images/gif/xgtcop_bg.gif?v=1409038438) -37px -51px no-repeat
 }
 
 .cover a.del:hover {
@@ -4610,7 +4610,7 @@ input.btn_grey_a {
 }
 
 .cover .ppt_loading, .cover li {
-    background: url(../image/icon_arrow.gif) 50% no-repeat;
+    background: url(https://img.test.com/front_end/icon/ajax-loader.gif) 50% no-repeat;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -4619,12 +4619,12 @@ input.btn_grey_a {
 }
 
 .my_wechat_bar, .my_wechat_broadside, .my_wechat_cancel {
-    background: url(../image/icon_arrow.png) no-repeat;
+    background: url(https://img.test.com/to8to_img/my_wechat_bar.png?v=201503191140) no-repeat;
     display: block
 }
 
 .my_sale {
-    background: url(../image/icon_arrow.png) no-repeat;
+    background: url(https://img.test.com/to8to_img/my_sale.png?v=20150527) no-repeat;
     width: 162px;
     height: 311px;
     display: block
@@ -4658,7 +4658,7 @@ input.btn_grey_a {
 }
 
 .wechat_barcode .my_sale_s {
-    background: url(../image/icon_arrow.png) no-repeat;
+    background: url(https://img.test.com/to8to_img/my_sale_s.png?v=20150527) no-repeat;
     width: 162px;
     height: 100px;
     display: block
@@ -4729,7 +4729,7 @@ input.btn_grey_a {
 
 .tender_fail.apply_fail span.as_fail {
     overflow: hidden;
-    background: url(../image/icon_arrow.png) no-repeat
+    background: url(https://img.test.com/decorate_gallery/images/png/xgt_meitu.png?20140920) no-repeat
 }
 
 .apply_fail span.as_fail {
@@ -4858,7 +4858,7 @@ input.btn_grey_a {
 .mod_fbbox_wxserviceV2 .mod_fbbox_code_img {
     height: 224px;
     width: 224px;
-    background: url(../image/icon_arrow.png) no-repeat;
+    background: url(https://img.test.com/to8to_img/to8to_wx_bg.png) no-repeat;
     padding: 1px
 }
 
@@ -5216,7 +5216,7 @@ input.btn_grey_a {
 
 .bottom_show_left {
     height: 160px;
-    background: url(../image/icon_arrow.png) no-repeat;
+    background: url(https://img.test.com/to8to_img/zxbj/sjybj_show_left.png?20150810) no-repeat;
     width: 156px;
     height: 165px;
     left: 0;
@@ -5513,7 +5513,7 @@ input.btn_grey_a {
 }
 
 .bottom_sjybj_content .erro em {
-    background: url(../image/icon_arrow.png) no-repeat;
+    background: url(https://img.test.com/to8to_img/zxbj/sjybj_global.png?20150724) no-repeat;
     background-position: 0 -892px;
     width: 18px;
     height: 12px;
@@ -5522,7 +5522,7 @@ input.btn_grey_a {
 }
 
 .sjybj_mx {
-    background: url(../image/icon_arrow.png) no-repeat;
+    background: url(https://img.test.com/to8to_img/zxbj/sjybj_freeApply_new.png?20150807) no-repeat;
     width: 552px;
     height: 181px;
     position: absolute;
@@ -5632,7 +5632,7 @@ input.btn_grey_a {
     width: 135px;
     height: 136px;
     padding-top: 4px;
-    background: url("../image/icon_arrow.png")
+    background: url("https://img.test.com/to8to_img/zxbj/bottom_code.png?201604281349")
 }
 
 .bottom_sjybj_right .bottom_atten_code img {
@@ -5676,7 +5676,7 @@ input.btn_grey_a {
 }
 
 .zgs_bg_fixed .icon {
-    background: url(../image/icon_arrow.png) no-repeat;
+    background: url(https://img.test.com/to8to_img/zxgs/icon_zxgs.png?2015090109) no-repeat;
     width: 277px;
     height: 90px;
     position: absolute;
@@ -5795,7 +5795,7 @@ input.btn_grey_a {
 }
 
 .kgjr-wrap .kgjr-desc .text2 i {
-    background: url(../image/global-20160512.png) no-repeat;
+    background: url(https://wbf2.t8tcdn.com/T8T.d0cfe0a83d0b380b28c7b5987b36d597.png) no-repeat;
     display: inline-block;
     width: 14px;
     height: 14px;
@@ -5894,7 +5894,7 @@ input.btn_grey_a {
 .kgjr-winbox .p4 i {
     display: block;
     overflow: hidden;
-    background: url(../image/icon_arrow.png) no-repeat;
+    background: url(https://img.test.com/to8to_img/zxbj/sjybj_global.png?20150526) no-repeat;
     float: left;
     display: inline;
     width: 14px;
@@ -5942,7 +5942,7 @@ input.btn_grey_a {
 
 .ico_sem_close, .ico_sercive_free {
     display: inline-block;
-    background: url(../image/global-20160512.png)
+    background: url(https://wbf2.t8tcdn.com/T8T.d0cfe0a83d0b380b28c7b5987b36d597.png)
 }
 
 .ico_sercive_free {
@@ -5964,7 +5964,7 @@ input.btn_grey_a {
 }
 
 .sem_tip_ico {
-    background: url(../image/icon_arrow.png) no-repeat;
+    background: url(https://img.test.com/to8to_img/sem/sem_tip_ico.png) no-repeat;
     position: absolute;
     width: 181px;
     height: 211px;
@@ -6028,7 +6028,7 @@ input.btn_grey_a {
 }
 
 .gif_rabbit {
-    background: url(../image/icon_arrow.gif) no-repeat;
+    background: url(https://img.test.com/to8to_img/mall/default/rabbit.gif) no-repeat;
     position: absolute;
     left: -26px;
     top: 16px;
@@ -6038,7 +6038,7 @@ input.btn_grey_a {
 }
 
 .gif_jm {
-    background: url(../image/icon_arrow.gif) no-repeat;
+    background: url(https://img.test.com/to8to_img/mall/default/jm.gif) no-repeat;
     position: absolute;
     left: 1px;
     top: -4px;
@@ -6128,7 +6128,7 @@ a.btn_login_no, a.btn_login_no:hover, input.btn_login_no, input.btn_login_no:hov
     width: 380px;
     height: 324px;
     margin: 0 auto;
-    background: url("../image/icon_arrow.png") no-repeat
+    background: url("https://img.test.com/to8to_img/red_packet_01.png") no-repeat
 }
 
 .red-packet-con {
@@ -6158,7 +6158,7 @@ a.btn_login_no, a.btn_login_no:hover, input.btn_login_no, input.btn_login_no:hov
     width: 380px;
     height: 324px;
     margin: 0 auto;
-    background: url("../image/icon_arrow.png") no-repeat 100px
+    background: url("https://img.test.com/to8to_img/red_packet_02.png") no-repeat 100px
 }
 
 .red-packet-second p {
@@ -6198,7 +6198,7 @@ a.btn_login_no, a.btn_login_no:hover, input.btn_login_no, input.btn_login_no:hov
 .custPop-box {
     width: 458px;
     height: 166px;
-    background: url(../image/icon_arrow.png) no-repeat 0 0;
+    background: url(https://img.test.com/to8to_img/zxgs/zxgs_alt.png) no-repeat 0 0;
     overflow: hidden
 }
 
@@ -6207,7 +6207,7 @@ a.btn_login_no, a.btn_login_no:hover, input.btn_login_no, input.btn_login_no:hov
     width: 24px;
     height: 24px;
     margin-left: 147px;
-    background: url(../image/icon_arrow.png) no-repeat 0 0
+    background: url(https://img.test.com/to8to_img/zxgs/close.png) no-repeat 0 0
 }
 
 .custPop-con {
@@ -6260,7 +6260,7 @@ a.btn_login_no, a.btn_login_no:hover, input.btn_login_no, input.btn_login_no:hov
 }
 
 .quoted-budgetimg {
-    background: url(../image/icon_arrow.png) no-repeat;
+    background: url(https://img.test.com/to8to_img/learn/zxfs-budget.png?1462935562719) no-repeat;
     height: 26px;
     margin: 10px 0 15px
 }
@@ -6320,7 +6320,7 @@ a.btn_login_no, a.btn_login_no:hover, input.btn_login_no, input.btn_login_no:hov
 
 .quoted-btn .count-btn {
     position: absolute;
-    background: #f6fffb url(../image/icon_arrow.png) no-repeat 0 0;
+    background: #f6fffb url(https://img.test.com/to8to_img/learn/zxfs-count.png?1462935562719) no-repeat 0 0;
     width: 74px;
     height: 120px;
     top: 6px;
@@ -6328,7 +6328,7 @@ a.btn_login_no, a.btn_login_no:hover, input.btn_login_no, input.btn_login_no:hov
 }
 
 .quoted-btn .again-btn {
-    background: url(../image/icon_arrow.png) no-repeat 0 -162px
+    background: url(https://img.test.com/to8to_img/learn/zxfs-count.png?1462935562719) no-repeat 0 -162px
 }
 
 .budget-price span {
@@ -6629,7 +6629,7 @@ a.btn_login_no, a.btn_login_no:hover, input.btn_login_no, input.btn_login_no:hov
     bottom: 0;
     width: 76px;
     height: 41px;
-    background: url(../image/global-20160512.png) no-repeat
+    background: url(https://wbf2.t8tcdn.com/T8T.d0cfe0a83d0b380b28c7b5987b36d597.png) no-repeat
 }
 
 .header_bottom .header_menu .q_code .to8to_headgif em.first-pic {
@@ -6681,7 +6681,7 @@ a.btn_login_no, a.btn_login_no:hover, input.btn_login_no, input.btn_login_no:hov
     left: -22px;
     width: 320px;
     height: 233px;
-    background: url(../image/icon_arrow.png) no-repeat 0 0
+    background: url(https://img.test.com/to8to_img/qcode_back.png?v=20161129) no-repeat 0 0
 }
 
 .header_bottom .header_menu .q_code div.q_code_layer span.qcode_title {
@@ -6704,7 +6704,7 @@ a.btn_login_no, a.btn_login_no:hover, input.btn_login_no, input.btn_login_no:hov
     display: block;
     width: 130px;
     height: 32px;
-    background: url(../image/icon_arrow.png) no-repeat;
+    background: url(https://img.test.com/to8to_img/qcode_back.png?v=20161129) no-repeat;
     bottom: -35px;
     left: 0;
     color: #fff
@@ -6748,7 +6748,7 @@ a.btn_login_no, a.btn_login_no:hover, input.btn_login_no, input.btn_login_no:hov
 }
 
 .header_bottom .header_menu .q_code div.q_code_layer span.qcode_img {
-    background: url(../image/icon_arrow.png) no-repeat;
+    background: url(https://img.test.com/to8to_img/qcode_back.png?v=20161129) no-repeat;
     background-position: -332px -111px
 }
 
@@ -6761,7 +6761,7 @@ a.btn_login_no, a.btn_login_no:hover, input.btn_login_no, input.btn_login_no:hov
     position: absolute;
     width: 5px;
     height: 9px;
-    background: url(../image/icon_arrow.png) no-repeat;
+    background: url(https://img.test.com/to8to_img/qcode_back.png?v=20161129) no-repeat;
     background-position: -322px -254px;
     left: 140px;
     top: 5px
@@ -6802,7 +6802,7 @@ a.btn_login_no, a.btn_login_no:hover, input.btn_login_no, input.btn_login_no:hov
 .wechat-contain {
     width: 230px;
     height: 62px;
-    background: url(../image/icon_arrow.png) no-repeat -8px -171px
+    background: url(https://img.test.com/to8to_img/show_wechat.png) no-repeat -8px -171px
 }
 
 .wechat-contain div {
@@ -6835,7 +6835,7 @@ a.btn_login_no, a.btn_login_no:hover, input.btn_login_no, input.btn_login_no:hov
     display: block;
     width: 66px;
     height: 65px;
-    background: url(../image/icon_arrow.png) no-repeat -448px -288px
+    background: url(https://img.test.com/to8to_img/show_wechat.png) no-repeat -448px -288px
 }
 
 .wechat-contain em {
@@ -6845,7 +6845,7 @@ a.btn_login_no, a.btn_login_no:hover, input.btn_login_no, input.btn_login_no:hov
     height: 60px;
     margin-left: 10px;
     margin-top: 2px;
-    background: url(../image/icon_arrow.png) no-repeat -35px -31px
+    background: url(https://img.test.com/to8to_img/show_wechat.png) no-repeat -35px -31px
 }
 
 .wechat-result {
@@ -6869,7 +6869,7 @@ a.btn_login_no, a.btn_login_no:hover, input.btn_login_no, input.btn_login_no:hov
     position: relative;
     width: 260px;
     height: 144px;
-    background: url(../image/icon_arrow.png) no-repeat 7px 10px
+    background: url(https://img.test.com/to8to_img/show_wechat.png) no-repeat 7px 10px
 }
 
 .result-contain .result-head {
@@ -7026,8 +7026,8 @@ a.btn_login_no, a.btn_login_no:hover, input.btn_login_no, input.btn_login_no:hov
 .icon {
     position: absolute;
     font-size: 0;
-    background-image: url(../image/T8T.c6b367eb08c244e1efc76c70c288.png);
-    background-image: -webkit-image-set(url(../image/T8T.c6b367eb08c244e1efc76c70c288.png) 1x, url(//wbf1.t8tcdn.com/T8T.0fd20d0c03aa5077e42efe372aefc131.png) 2x);
+    background-image: url(https://wbf3.t8tcdn.com/T8T.c6b367eb08c244e1efc76c70c2886027.png);
+    background-image: -webkit-image-set(url(https://wbf3.t8tcdn.com/T8T.c6b367eb08c244e1efc76c70c2886027.png) 1x, url(//wbf1.t8tcdn.com/T8T.0fd20d0c03aa5077e42efe372aefc131.png) 2x);
     background-repeat: no-repeat
 }
 
@@ -7496,7 +7496,7 @@ body {
     margin-top: 10px;
     margin-right: 5px;
     background-position: -1px -37px;
-    background-image: url(../image/T8T.dcbd4c5805e542551f26b64e89d1.png);
+    background-image: url(https://wbf3.t8tcdn.com/T8T.dcbd4c5805e542551f26b64e89d15200.png);
     background-repeat: no-repeat
 }
 
@@ -9156,9 +9156,9 @@ body {
 
 .service-icons {
     position: absolute;
-    background: url(../image/service_s.png) no-repeat;
-    background-image: -webkit-image-set(url(../image/service_s.png) 1x, url(//wbf1.t8tcdn.com/T8T.4164f8bd4be84e79850fbd81d9370a25.png) 2x);
-    background-image: image-set(url(../image/service_s.png) 1x, url(//wbf1.t8tcdn.com/T8T.4164f8bd4be84e79850fbd81d9370a25.png) 2x);
+    background: url(https://wbf2.t8tcdn.com/T8T.b252872757a51b98b5be46c7ac2542c9.png) no-repeat;
+    background-image: -webkit-image-set(url(https://wbf2.t8tcdn.com/T8T.b252872757a51b98b5be46c7ac2542c9.png) 1x, url(//wbf1.t8tcdn.com/T8T.4164f8bd4be84e79850fbd81d9370a25.png) 2x);
+    background-image: image-set(url(https://wbf2.t8tcdn.com/T8T.b252872757a51b98b5be46c7ac2542c9.png) 1x, url(//wbf1.t8tcdn.com/T8T.4164f8bd4be84e79850fbd81d9370a25.png) 2x);
     background-repeat: no-repeat;
     left: 50%
 }
@@ -9167,9 +9167,9 @@ body {
     position: absolute;
     left: 0;
     bottom: 0;
-    background: url(../image/service_s.png) no-repeat;
-    background-image: -webkit-image-set(url(../image/service_s.png) 1x, url(//wbf1.t8tcdn.com/T8T.4164f8bd4be84e79850fbd81d9370a25.png) 2x);
-    background-image: image-set(url(../image/service_s.png) 1x, url(//wbf1.t8tcdn.com/T8T.4164f8bd4be84e79850fbd81d9370a25.png) 2x);
+    background: url(https://wbf2.t8tcdn.com/T8T.b252872757a51b98b5be46c7ac2542c9.png) no-repeat;
+    background-image: -webkit-image-set(url(https://wbf2.t8tcdn.com/T8T.b252872757a51b98b5be46c7ac2542c9.png) 1x, url(//wbf1.t8tcdn.com/T8T.4164f8bd4be84e79850fbd81d9370a25.png) 2x);
+    background-image: image-set(url(https://wbf2.t8tcdn.com/T8T.b252872757a51b98b5be46c7ac2542c9.png) 1x, url(//wbf1.t8tcdn.com/T8T.4164f8bd4be84e79850fbd81d9370a25.png) 2x);
     background-repeat: no-repeat
 }
 
@@ -9425,9 +9425,9 @@ body {
     width: 101px;
     height: 101px;
     margin: 0 auto;
-    background: url(../image/T8T.c6b367eb08c244e1efc76c70c288.png) no-repeat -353px -3px;
-    background-image: -webkit-image-set(url(../image/T8T.c6b367eb08c244e1efc76c70c288.png) 1x, url(//wbf1.t8tcdn.com/T8T.0fd20d0c03aa5077e42efe372aefc131.png) 2x);
-    background-image: image-set(url(../image/T8T.c6b367eb08c244e1efc76c70c288.png) 1x, url(//wbf1.t8tcdn.com/T8T.0fd20d0c03aa5077e42efe372aefc131.png) 2x)
+    background: url(https://wbf3.t8tcdn.com/T8T.c6b367eb08c244e1efc76c70c2886027.png) no-repeat -353px -3px;
+    background-image: -webkit-image-set(url(https://wbf3.t8tcdn.com/T8T.c6b367eb08c244e1efc76c70c2886027.png) 1x, url(//wbf1.t8tcdn.com/T8T.0fd20d0c03aa5077e42efe372aefc131.png) 2x);
+    background-image: image-set(url(https://wbf3.t8tcdn.com/T8T.c6b367eb08c244e1efc76c70c2886027.png) 1x, url(//wbf1.t8tcdn.com/T8T.0fd20d0c03aa5077e42efe372aefc131.png) 2x)
 }
 
 .attention__item__img__app {
@@ -9774,9 +9774,9 @@ body {
     position: absolute;
     left: 50%;
     top: 50%;
-    background: url(../image/T8T.c6b367eb08c244e1efc76c70c288.png) no-repeat;
-    background-image: -webkit-image-set(url(../image/T8T.c6b367eb08c244e1efc76c70c288.png) 1x, url(//wbf1.t8tcdn.com/T8T.0fd20d0c03aa5077e42efe372aefc131.png) 2x);
-    background-image: image-set(url(../image/T8T.c6b367eb08c244e1efc76c70c288.png) 1x, url(//wbf1.t8tcdn.com/T8T.0fd20d0c03aa5077e42efe372aefc131.png) 2x)
+    background: url(https://wbf3.t8tcdn.com/T8T.c6b367eb08c244e1efc76c70c2886027.png) no-repeat;
+    background-image: -webkit-image-set(url(https://wbf3.t8tcdn.com/T8T.c6b367eb08c244e1efc76c70c2886027.png) 1x, url(//wbf1.t8tcdn.com/T8T.0fd20d0c03aa5077e42efe372aefc131.png) 2x);
+    background-image: image-set(url(https://wbf3.t8tcdn.com/T8T.c6b367eb08c244e1efc76c70c2886027.png) 1x, url(//wbf1.t8tcdn.com/T8T.0fd20d0c03aa5077e42efe372aefc131.png) 2x)
 }
 
 .slide-help-new .help-icon .help-icon-hover {
@@ -9867,9 +9867,9 @@ body {
 .slide-help-new i.icon-rongcloud-im {
     margin-left: -23px;
     margin-top: -23px;
-    background: url(../image/T8T.a969b98fd55d753fbe515f5b6a40.png) no-repeat;
-    background-image: -webkit-image-set(url(../image/T8T.a969b98fd55d753fbe515f5b6a40.png) 1x, url(../image/T8T.a969b98fd55d753fbe515f5b6a40.png) 2x);
-    background-image: image-set(url(../image/T8T.a969b98fd55d753fbe515f5b6a40.png) 1x, url(../image/T8T.a969b98fd55d753fbe515f5b6a40.png) 2x);
+    background: url(https://wbf3.t8tcdn.com/T8T.a969b98fd55d753fbe515f5b6a40b256.png) no-repeat;
+    background-image: -webkit-image-set(url(https://wbf3.t8tcdn.com/T8T.a969b98fd55d753fbe515f5b6a40b256.png) 1x, url(https://wbf3.t8tcdn.com/T8T.a969b98fd55d753fbe515f5b6a40b256.png) 2x);
+    background-image: image-set(url(https://wbf3.t8tcdn.com/T8T.a969b98fd55d753fbe515f5b6a40b256.png) 1x, url(https://wbf3.t8tcdn.com/T8T.a969b98fd55d753fbe515f5b6a40b256.png) 2x);
     width: 48px;
     height: 48px;
     background-size: 48px
@@ -9945,9 +9945,9 @@ body {
     width: 101px;
     height: 101px;
     margin: 0 auto;
-    background: url(../image/T8T.c6b367eb08c244e1efc76c70c288.png) no-repeat -353px -3px;
-    background-image: -webkit-image-set(url(../image/T8T.c6b367eb08c244e1efc76c70c288.png) 1x, url(//wbf1.t8tcdn.com/T8T.0fd20d0c03aa5077e42efe372aefc131.png) 2x);
-    background-image: image-set(url(../image/T8T.c6b367eb08c244e1efc76c70c288.png) 1x, url(//wbf1.t8tcdn.com/T8T.0fd20d0c03aa5077e42efe372aefc131.png) 2x)
+    background: url(https://wbf3.t8tcdn.com/T8T.c6b367eb08c244e1efc76c70c2886027.png) no-repeat -353px -3px;
+    background-image: -webkit-image-set(url(https://wbf3.t8tcdn.com/T8T.c6b367eb08c244e1efc76c70c2886027.png) 1x, url(//wbf1.t8tcdn.com/T8T.0fd20d0c03aa5077e42efe372aefc131.png) 2x);
+    background-image: image-set(url(https://wbf3.t8tcdn.com/T8T.c6b367eb08c244e1efc76c70c2886027.png) 1x, url(//wbf1.t8tcdn.com/T8T.0fd20d0c03aa5077e42efe372aefc131.png) 2x)
 }
 
 .attention-box .attention-item .attention-item-img.attention-item-img-app {
@@ -10724,7 +10724,7 @@ body {
     width: 20px;
     height: 20px;
     float: left;
-    background: url(../image/footer_110-20180201.png) 50% no-repeat
+    background: url(https://wbf2.t8tcdn.com/T8T.d0289dc0a46fc5b15b3363ffa78cf6c7.png) 50% no-repeat
 }
 
 .footer_new_ga span {
@@ -10734,7 +10734,7 @@ body {
 }
 
 .footer .index-icon {
-    background-image: url(../image/T8T.82fb0a7baca7c8ebcb8d57ff4ff5.png)
+    background-image: url(https://wbf3.t8tcdn.com/T8T.82fb0a7baca7c8ebcb8d57ff4ff5ebbb.png)
 }
 
 .footer .fbc-iocn1 {
@@ -10793,7 +10793,7 @@ body {
     bottom: 0;
     width: 34px;
     height: 24px;
-    background-image: url(../image/ad_flag.png)
+    background-image: url(https://wbf2.t8tcdn.com/T8T.fb44427572e804e8c4c1d4958975bd82.png)
 }
 
 .advertising-flag-new .advertising-flag-banner {
@@ -10802,7 +10802,7 @@ body {
     right: 0;
     width: 38px;
     height: 26px;
-    background-image: url(../image/ad_flag_banner.png)
+    background-image: url(https://wbf3.t8tcdn.com/T8T.993911b6cbdd522869b6a042ad1b05b4.png)
 }
 
 .new_xgt_slider .advertising-flag-banner {

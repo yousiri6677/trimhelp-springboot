@@ -1,10 +1,6 @@
 <!DOCTYPE html>
-<!--[if IE 8 ]>
-<html lang="en" class="ie8 ielt9 ielt10 en"><![endif]-->
-<!--[if IE 9 ]>
-<html lang="en" class="ie9 ielt10 en"  xmlns:th="http://www.thymeleaf.org"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
-<html lang="en" class="en "><!--<![endif]-->
+<html lang="en" class="en " xmlns:th="http://www.thymeleaf.org"><!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -16,19 +12,11 @@
     <link rel="stylesheet" type="text/css" href="css/vendor.77aefd7a.css">
     <link rel="stylesheet" type="text/css" href="css/commonChunk.ffa504e9.css">
     <link rel="stylesheet" type="text/css" href="css/companyList.28e13f0a.css">
-    <link href="css/layui.css" rel="stylesheet" type="text/css"/>
 
     <!--脚部css Begin-->
     <link rel="stylesheet" type="text/css" href="css/footer-0bf5e5a4f3.css" charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/Gd_common-6515590370.css" charset="utf-8">
     <!--脚部css End-->
-    <script src="layui.js" type="text/javascript"></script>
-    <script>
-        //注意：导航 依赖 element 模块，否则无法进行功能性操作
-        layui.use('element', function () {
-            var element = layui.element;
-        });
-    </script>
     <script type='text/javascript'>window.BWEUM || (BWEUM = {});
     BWEUM.info = {
         "stand": true,
@@ -39,16 +27,23 @@
         "applicationID": 9990143
     };</script>
     <script type="text/javascript" src="js/bw-loader-415.6.31.js"></script>
-    <script src="js/jquery-1.9.1.js"></script>
-    <script src="js/jquery.cros.min.js"></script>
+    <script type="text/javascript" src="webjars/jquery/3.1.1/jquery.js"></script>
     <![endif]-->
-    <script src="js/jquery-1.10.2.js"></script><!--<![endif]-->
     <script src="js/clickStream-4d542fe875.js" type="text/javascript"></script>
     <script src="js/t8t_count.min-20180820.js"></script>
+    <link href="css/list.896ef529.css" rel="stylesheet" type="text/css"/>
+    <link href="css/layui.css" rel="stylesheet" type="text/css"/>
     <script>
         window.t8tc = new T8TCount({
             app: 'to8to_pc' //应用名称1
         })
+    </script>
+    <script src="layui.js" type="text/javascript"></script>
+    <script>
+        //注意：导航 依赖 element 模块，否则无法进行功能性操作
+        layui.use('element', function () {
+            var element = layui.element;
+        });
     </script>
 </head>
 <body>
@@ -63,179 +58,154 @@
 <div class="container clearfix">
     <div class="content">
         <div class="content--left">
-            <div class="content--left__filter">
+            <div style="height:261px" class="content--left__filter">
+                <input style="width: 958px" type="text" name="title" id="company_sousuo" lay-verify="title"
+                       autocomplete="off"
+                       placeholder="请输入公司名"
+                       class="layui-input">
                 <div class="filter--nav__box">
                     <ul>
                         <li class="box-item">
-                            <a href="index.html">深圳装修</a>
+                            <a href="index.html">郑州装修</a>
                         </li>
                         <li class="box-item">
-                            <a href="">深圳装修公司</a>
+                            <a href="">装修公司</a>
                         </li>
                     </ul>
                     <em class="box-total">
-                        共&nbsp;<b>7203</b>&nbsp;结果
+                        共&nbsp;<b>3</b>&nbsp;结果
                     </em>
                 </div>
                 <div class="filter--nav__list">
-                    <dl class="list-item">
-                        <dt>施工方式</dt>
-                        <dd>
-                            <a href="javascript:void(0)" class="filter--item choose--item active"
-                               data-key="construction" data-value="0" data-widget_uid="select_decorate_way"
-                               data-widget_value="全部">全部</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item" data-key="construction"
-                               data-value="1" data-widget_uid="select_decorate_way" data-widget_value="半包装修">半包装修</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item" data-key="construction"
-                               data-value="2" data-widget_uid="select_decorate_way" data-widget_value="全包装修">全包装修</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item" data-key="construction"
-                               data-value="3" data-widget_uid="select_decorate_way" data-widget_value="纯设计">纯设计</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item" data-key="construction"
-                               data-value="4" data-widget_uid="select_decorate_way" data-widget_value="软装">软装</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item" data-key="construction"
-                               data-value="5" data-widget_uid="select_decorate_way" data-widget_value="全屋装修">全屋装修</a>
-                        </dd>
-                    </dl>
-                    <dl class="list-item">
-                        <dt>类型</dt>
-                        <dd class="decoration-type">
-                            <a class="top-type active">全部</a>
-                            <a class="top-type type-build">家装</a>
-                            <a class="top-type type-build">工装</a>
-                            <div class="type-select ">
-                                <a href="javascript:void(0)" class="filter--item type--item active" data-key="homeType"
-                                   data-value="-1" data-widget_uid="select_decorate_type" data-widget_value="全部">全部</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="homeType"
-                                   data-value="1" data-widget_uid="select_decorate_type" data-widget_value="小户型">小户型</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="homeType"
-                                   data-value="4" data-widget_uid="select_decorate_type"
-                                   data-widget_value="普通住宅">普通住宅</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="homeType"
-                                   data-value="19" data-widget_uid="select_decorate_type" data-widget_value="复式">复式</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="homeType"
-                                   data-value="3" data-widget_uid="select_decorate_type" data-widget_value="别墅">别墅</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="homeType"
-                                   data-value="5" data-widget_uid="select_decorate_type"
-                                   data-widget_value="局部装修">局部装修</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="homeType"
-                                   data-value="0" data-widget_uid="select_decorate_type" data-widget_value="其他">其他</a>
-                            </div>
-                            <div class="type-select ">
-                                <a href="javascript:void(0)" class="filter--item type--item active"
-                                   data-key="publicType" data-value="-1" data-widget_uid="select_decorate_type"
-                                   data-widget_value="全部">全部</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="publicType"
-                                   data-value="3" data-widget_uid="select_decorate_type" data-widget_value="餐厅">餐厅</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="publicType"
-                                   data-value="2" data-widget_uid="select_decorate_type" data-widget_value="商铺">商铺</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="publicType"
-                                   data-value="7" data-widget_uid="select_decorate_type" data-widget_value="展厅">展厅</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="publicType"
-                                   data-value="8" data-widget_uid="select_decorate_type" data-widget_value="办公室">办公室</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="publicType"
-                                   data-value="5" data-widget_uid="select_decorate_type"
-                                   data-widget_value="休闲娱乐">休闲娱乐</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="publicType"
-                                   data-value="6" data-widget_uid="select_decorate_type" data-widget_value="酒店">酒店</a>
-                                <a href="javascript:void(0)" class="filter--item type--item" data-key="publicType"
-                                   data-value="0" data-widget_uid="select_decorate_type" data-widget_value="其他">其他</a>
-                            </div>
-                        </dd>
-                    </dl>
-                    <dl class="list-item">
-                        <dt>商户位置</dt>
-                        <dd>
-                            <a href="javascript:void(0)" class="choose--item area--item active" data-value=""
-                               data-widget_uid="company_location" data-widget_value="全部">全部</a>
-                            <a href="javascript:void(0)" class="choose--item area--item" data-value="nanshanqu"
-                               data-widget_uid="company_location" data-widget_value="南山区">南山区</a>
-                            <a href="javascript:void(0)" class="choose--item area--item" data-value="baoanqu"
-                               data-widget_uid="company_location" data-widget_value="宝安区">宝安区</a>
-                            <a href="javascript:void(0)" class="choose--item area--item" data-value="futianqu"
-                               data-widget_uid="company_location" data-widget_value="福田区">福田区</a>
-                            <a href="javascript:void(0)" class="choose--item area--item" data-value="longgangqu"
-                               data-widget_uid="company_location" data-widget_value="龙岗区">龙岗区</a>
-                            <a href="javascript:void(0)" class="choose--item area--item" data-value="luohuqu"
-                               data-widget_uid="company_location" data-widget_value="罗湖区">罗湖区</a>
-                            <a href="javascript:void(0)" class="choose--item area--item" data-value="yantianqu"
-                               data-widget_uid="company_location" data-widget_value="盐田区">盐田区</a>
-                            <a href="javascript:void(0)" class="choose--item area--item" data-value="longhuaqu"
-                               data-widget_uid="company_location" data-widget_value="龙华区">龙华区</a>
-                            <a href="javascript:void(0)" class="choose--item area--item" data-value="guangmingqu"
-                               data-widget_uid="company_location" data-widget_value="光明区">光明区</a>
-                            <a href="javascript:void(0)" class="choose--item area--item" data-value="pingshanqu"
-                               data-widget_uid="company_location" data-widget_value="坪山区">坪山区</a>
-                        </dd>
-                    </dl>
-                    <dl class="list-item">
-                        <dt>服务保障</dt>
-                        <dd>
-                            <a href="javascript:void(0)" class="filter--item choose--item active" data-key="label"
-                               data-value="0" data-widget_uid="service_guarantee" data-widget_value="全部">全部</a>
-                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="label" data-value="18"
-                               data-widget_uid="service_guarantee" data-widget_value="先装修后支付">先装修后支付</a>
-                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="label" data-value="21"
-                               data-widget_uid="service_guarantee" data-widget_value="延期保赔">延期保赔</a>
-                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="label" data-value="20"
-                               data-widget_uid="service_guarantee" data-widget_value="免息分期">免息分期</a>
-                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="label" data-value="4"
-                               data-widget_uid="service_guarantee" data-widget_value="土巴兔质检">土巴兔质检</a>
-                        </dd>
-                    </dl>
-                    <dl class="list-item more">
-                        <dt>承接价位</dt>
-                        <dd>
-                            <a href="javascript:void(0)" class="filter--item choose--item active" data-key="price"
-                               data-value="0" data-widget_uid="service_budget" data-widget_value="全部">全部</a>
-                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="price" data-value="1"
-                               data-widget_uid="service_budget" data-widget_value="3万以下">3万以下</a>
-                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="price" data-value="2"
-                               data-widget_uid="service_budget" data-widget_value="3-5万">3-5万</a>
-                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="price" data-value="3"
-                               data-widget_uid="service_budget" data-widget_value="5-8万">5-8万</a>
-                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="price" data-value="4"
-                               data-widget_uid="service_budget" data-widget_value="8-12万">8-12万</a>
-                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="price" data-value="5"
-                               data-widget_uid="service_budget" data-widget_value="12-18万">12-18万</a>
-                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="price" data-value="6"
-                               data-widget_uid="service_budget" data-widget_value="18-30万">18-30万</a>
-                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="price" data-value="7"
-                               data-widget_uid="service_budget" data-widget_value="30-100万">30-100万</a>
-                            <a href="javascript:void(0)" class="filter--item checkbox" data-key="price" data-value="8"
-                               data-widget_uid="service_budget" data-widget_value="100万以上">100万以上</a>
-                        </dd>
-                    </dl>
-                    <dl class="list-item more">
-                        <dt>服务区域</dt>
-                        <dd>
-                            <a href="javascript:void(0)" class="filter--item choose--item  active"
-                               data-key="serviceArea" data-value="0" data-widget_uid="service_district"
-                               data-widget_value="全部">全部</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea"
-                               data-value="1124" data-widget_uid="service_district" data-widget_value="南山区">南山区</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea"
-                               data-value="1125" data-widget_uid="service_district" data-widget_value="宝安区">宝安区</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea"
-                               data-value="1126" data-widget_uid="service_district" data-widget_value="福田区">福田区</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea"
-                               data-value="1127" data-widget_uid="service_district" data-widget_value="龙岗区">龙岗区</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea"
-                               data-value="1128" data-widget_uid="service_district" data-widget_value="罗湖区">罗湖区</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea"
-                               data-value="1129" data-widget_uid="service_district" data-widget_value="盐田区">盐田区</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea"
-                               data-value="3162" data-widget_uid="service_district" data-widget_value="龙华区">龙华区</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea"
-                               data-value="3163" data-widget_uid="service_district" data-widget_value="光明区">光明区</a>
-                            <a href="javascript:void(0)" class="filter--item choose--item " data-key="serviceArea"
-                               data-value="3164" data-widget_uid="service_district" data-widget_value="坪山区">坪山区</a>
-                        </dd>
-                    </dl>
-                    <p class="more-type"><a href="javascript:void(0)">
-                        <sapn>更多<em></em></sapn>
-                    </a></p>
+                    <div class="xgt_select_type">
+                        <dl class="xgt_st_dl">
+                            <dt>全部需求</dt>
+                            <dd id="demandAll">
+                                <a title="显示全部" class="on"> 显示全部
+                                </a>
+                            </dd>
+                        </dl>
+                        <dl class="xgt_st_dl">
+                            <dt>装修类型</dt>
+                            <dd id="demandTypes" enable="true">
+                                <a title="全包" typeId="1"> 全包
+                                </a>
+                                <a title="半包" typeId="2"> 半包
+                                </a>
+                                <a title="纯设计" typeId="3"> 纯设计
+                                </a>
+                            </dd>
+                        </dl>
+                        <dl class="xgt_st_dl">
+                            <dt>风格</dt>
+                            <dd id="decoratestyles" enable="true">
+                                <a href="javascript:;" title="不限" styleId="9">不限
+                                </a>
+                                <a href="javascript:;" title="现代简约" styleId="1">现代简约
+                                </a>
+                                <a href="javascript:;" title="中式现代" styleId="2">中式现代
+                                </a>
+                                <a href="javascript:;" title="美式田园" styleId="3">美式田园
+                                </a>
+                                <a href="javascript:;" title="美式经典" styleId="4">美式经典
+                                </a>
+                                <a href="javascript:;" title="其他" styleId="8">其他
+                                </a>
+                            </dd>
+                        </dl>
+                        <dl class="xgt_st_dl">
+                            <dt>公司位置</dt>
+                            <dd id="address" enable="true">
+                                <a href="javascript:;" title="郑州市" addressId="1">郑州市
+                                </a>
+                                <a href="javascript:;" title="二七区" addressId="2">二七区
+                                </a>
+                                <a href="javascript:;" title="管城区" addressId="3">管城区
+                                </a>
+                                <a href="javascript:;" title="金水区" addressId="4">金水区
+                                </a>
+                                <a href="javascript:;" title="中原区" addressId="5">中原区
+                                </a>
+                            </dd>
+                        </dl>
+
+                        <input id="demandTypeName" hidden="hidden" name="demandTypeName" value=""/>
+
+                        <input id="decoratestyleName" hidden="hidden" name="decoratestyleName"
+                               value=""/>
+                    </div>
                 </div>
+                <!--点击选择筛选内容 Begin-->
+                <script>
+                    var $addressId = 1;
+                    var $companyTypeId = 1;
+                    var $companyStyleId = 9;
+
+                    /*点击显示全部更改标签选中效果 Begin*/
+                    function clickAll() {
+                        $("#demandAll a").addClass("on");
+                        $("#demandTypes a").removeClass("on");
+                        $("#decoratestyles a").removeClass("on");
+                        $("#address a").removeClass("on");
+                        $addressId = 0;
+                        $companyTypeId = 0;
+                        $companyStyleId = 0;
+                    }
+
+                    $("#demandAll a").click(function () {
+                        clickAll();
+                        getCompanyAll();
+                    });
+
+
+                    /*点击显示全部更改标签选中效果 End*/
+
+                    /*点击装修类型更改标签选中效果 Begin*/
+                    function clickType(t) {
+                        $("#demandAll a").removeClass("on");
+                        $("#demandTypes a").removeClass("on");
+                        $(t).addClass("on");
+                    }
+
+                    $("#demandTypes a").click(function () {
+                        clickType(this);
+                        $companyTypeId = $(this).attr("typeId");
+                        getCompanyAll();
+                    });
+                    /*点击装修类型更改标签选中效果 End*/
+
+                    /*点击装修风格更改标签选中效果 Begin*/
+                    function clickStyle(t) {
+                        $("#demandAll a").removeClass("on");
+                        $("#decoratestyles a").removeClass("on");
+                        $(t).addClass("on");
+                    }
+
+                    $("#decoratestyles a").click(function () {
+                        clickStyle(this);
+                        $companyStyleId = $(this).attr("styleId");
+                        getCompanyAll();
+                    });
+                    /*点击装修风格更改标签选中效果 End*/
+
+                    /*点击商户地址更改标签选中效果 Begin*/
+                    function clickAddress(t) {
+                        $("#demandAll a").removeClass("on");
+                        $("#address a").removeClass("on");
+                        $(t).addClass("on");
+                    }
+
+                    $("#address a").click(function () {
+                        clickAddress(this);
+                        $addressId = $(this).attr("addressId");
+                        getCompanyAll();
+                    });
+                    /*点击商户地址更改标签选中效果 End*/
+                </script>
+                <!--点击选择筛选内容 End-->
+
             </div>
+
             <div class="content--left__sort">
                 <ul>
                     <li class="filter--item choose--item sort-item active" data-key="sortType" data-value="8"
@@ -258,224 +228,223 @@
                     </li>
                 </ul>
             </div>
+
+            <!--公司列表 Begin-->
             <div class="company__list">
                 <div class="company__list--content">
-                    <ul>
-                        <li>
-                            <a class="company-item" target="_blank" href="#" tracker-widget=""
-                               data-widget_uid="cmp_list" data-widget_index="0" data-cmp_type="cmp"
-                               data-cmp_id="11062226" data-cmp_title="深圳市居众装饰设计工程有限公司" data-cmp_sort_method="综合排序"
-                               data-cmp_sort_index="0" data-ad_tag="cpt" data-ad_type="cmp1" data-ad_id="310">
-                                <div class="contents--item clearfix fantastic" >
-                                    <div class="company__logo">
-                                        <img data-original="static/picture/headphoto_s_11081906_s-156033242.jpg"
-                                             class="img--lazy">
-                                    </div>
-                                    <div class="company__info">
-                                        <div class="company__info--top">
-                                            <p class="company__info--name">深圳市居众装饰设计工程有限公司</p>
-                                            <img src="static/picture/3fb052d624e15ff0d126bdb436750fdc.png"
-                                                 class="img--lazy top-chain">
-                                        </div>
-                                        <div class="company__info--all">
-<span class="tag-star">
-<i class="ystar_fill_four"></i>
-<i class="ystar_fill_four"></i>
-<i class="ystar_fill_four"></i>
-<i class="ystar_fill_four"></i>
-<i class="ystar_fill_four"></i>
-</span>
-                                            <span class="comment-count">69条</span>
-                                            <span class="owner-diary">日记43篇</span>
-                                        </div>
-                                        <div class="company__info--tag">
-                                            <span class="tag-rank"
-                                                  style="color:#FF5921;background:#FFF0EC">深圳本地人气商家榜</span>
-                                            <span>工地参观</span>
-                                        </div>
-                                        <div class="company__info--activity">
-                                            <p><i class="icon-coupon"></i>预约送专业监理服务</p>
-                                            <p><i class="icon-coupon"></i>预约送全局验房、方案</p>
-                                        </div>
-                                        <!--信息-->
-                                        <div class="company__info--contact company__data__btn js-list-contact__btn"
-                                             data-cid="11062226"
-                                             data-logo="http://pic.to8to.com//user/26/headphoto_s_11062226_s.jpg?v=1560137642?v=1583845718"
-                                             data-cname="深圳" data-url="http://sz.to8to.com/zs/11062226"
-                                             data-type="forever" data-phone="171-5087-3740">
-                                            <div class="contact-bth contact__btn">
-                                                <span><em class="icon-contact"></em>联系商家</span></div>
-                                        </div>
-                                        <div class="company__info--case clearfix">
-                                            <div class="case-item">
-                                                <img data-original="static/picture/fc61619210c0bb1501d73857252b861d.jpg"
-                                                     class="img--lazy case-img">
-                                            </div>
-                                            <div class="case-item">
-                                                <img data-original="static/picture/21f340492b711f407be669e10b6af724.jpg"
-                                                     class="img--lazy case-img">
-                                            </div>
-                                            <div class="case-item">
-                                                <img data-original="static/picture/be749a622cd25185ceb245b1e05beab8.jpg"
-                                                     class="img--lazy case-img">
-                                            </div>
-                                            <div class="case-item">
-                                                <img data-original="static/picture/0d1a0240ddc431061556cf0a5277973b.jpg"
-                                                     class="img--lazy case-img">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <span class="tag fantastic">广告</span>
-                            <a class="company-item" target="_blank" href="#" tracker-widget=""
-                               data-widget_uid="cmp_list" data-widget_index="3" data-cmp_type="cmp" data-cmp_id="804636"
-                               data-cmp_title="深圳市圳星装饰设计工程有限公司" data-cmp_sort_method="综合排序" data-cmp_sort_index="3"
-                               data-ad_tag="cpt" data-ad_type="cmp1" data-ad_id="367">
-                                <div class="contents--item clearfix fantastic">
-                                    <div class="company__logo">
-                                        <img data-original="static/picture/headphoto_s_804636_s-1574670571v.jpg"
-                                             class="img--lazy">
-                                    </div>
-                                    <div class="company__info">
-                                        <div class="company__info--top">
-                                            <p class="company__info--name">深圳市圳星装饰设计工程有限公司</p>
-                                        </div>
-                                        <div class="company__info--all">
-<span class="tag-star">
-<i class="ystar_fill_three"></i>
-<i class="ystar_fill_three"></i>
-<i class="ystar_fill_three"></i>
-<i class="ystar_fill_three"></i>
-<i class="ystar_half_three"></i>
-</span>
-                                            <span class="comment-count">6583条</span>
-                                            <div class="info-num">
-                                                <span class="recent-signing">近期签约691户</span>
-                                                <span class="average-price">均价5-9万</span>
-                                            </div>
-                                            <span class="owner-diary">日记170篇</span>
-                                        </div>
-                                        <div class="company__info--tag">
-                                            <span class="tag-rank"
-                                                  style="color:#FF5921;background:#FFF0EC">深圳本地人气商家榜</span>
-                                            <span>先装修后支付</span>
-                                            <span>无接触量房</span>
-                                            <span>全程管家</span>
-                                            <span>多方案对比</span>
-                                        </div>
-                                        <div class="company__info--contact company__data__btn js-list-contact__btn"
-                                             data-cid="804636"
-                                             data-logo="http://pic.to8to.com//user/36/headphoto_s_804636_s.jpg?v=1574670571?v=1583846411"
-                                             data-cname="圳星装饰" data-url="http://sz.to8to.com/zs/804636"
-                                             data-type="forever" data-phone="171-5489-2036">
-                                            <div class="contact-bth contact__btn">
-                                                <span><em class="icon-contact"></em>联系商家</span></div>
-                                        </div>
-                                        <div class="company__info--case clearfix">
-                                            <div class="case-item">
-                                                <img data-original="static/picture/05a4d22c84d7ac576f9b581b24e485a7.jpg"
-                                                     class="img--lazy case-img">
-                                            </div>
-                                            <div class="case-item">
-                                                <img data-original="static/picture/0689efbb1ac3852a67aebeb9f86e55aa.jpg"
-                                                     class="img--lazy case-img">
-                                            </div>
-                                            <div class="case-item">
-                                                <img data-original="static/picture/66bf5906fca448860d4f199dc0dd0bd6.jpg"
-                                                     class="img--lazy case-img">
-                                            </div>
-                                            <div class="case-item">
-                                                <img data-original="static/picture/301568cdec5f963f7859a9881d04425b.jpg"
-                                                     class="img--lazy case-img">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <span class="tag list">推荐商家</span>
-                            <a class="company-item" target="_blank" href="#" tracker-widget=""
-                               data-widget_uid="cmp_list" data-widget_index="10" data-cmp_type="cmp"
-                               data-cmp_id="5676390" data-cmp_title="深圳市叁品空间设计装饰工程有限公司" data-cmp_sort_method="综合排序"
-                               data-cmp_sort_index="10" data-ad_tag="" data-ad_type="" data-ad_id="">
-                                <div class="contents--item clearfix" >
-                                    <div class="company__logo">
-                                        <img data-original="static/picture/headphoto_5676390_s-1583846375.jpg"
-                                             class="img--lazy">
-                                    </div>
-                                    <div class="company__info">
-                                        <div class="company__info--top">
-                                            <p class="company__info--name">深圳市叁品空间设计装饰工程有限公司</p>
-                                        </div>
-                                        <div class="company__info--all">
-<span class="tag-star">
-<i class="ystar_fill_three"></i>
-<i class="ystar_fill_three"></i>
-<i class="ystar_fill_three"></i>
-<i class="ystar_fill_three"></i>
-<i class="ystar_half_three"></i>
-</span>
-                                            <span class="comment-count">851条</span>
-                                            <div class="info-num">
-                                                <span class="recent-signing">近期签约78户</span>
-                                                <span class="average-price">均价6-9万</span>
-                                            </div>
-                                            <span class="owner-diary">日记19篇</span>
-                                        </div>
-                                        <div class="company__info--tag">
-                                            <span class="tag-rank"
-                                                  style="color:#FF5921;background:#FFF0EC">深圳健康守护承诺商家</span>
-                                            <span>先装修后支付</span>
-                                            <span>无接触量房</span>
-                                            <span>环保严选材料</span>
-                                            <span>多方案对比</span>
-                                        </div>
-                                        <div class="company__info--activity">
-                                            <p><i class="icon-promotion"></i>交1000抵3500</p>
-                                            <p><i class="icon-promotion"></i>满100000减5000</p>
-                                        </div>
-                                        <div class="company__info--contact company__data__btn js-list-contact__btn"
-                                             data-cid="5676390"
-                                             data-logo="http://pic.to8to.com//user/90/headphoto_5676390_s.jpg?v=1583846375"
-                                             data-cname="叁品空间" data-url="http://sz.to8to.com/zs/5676390"
-                                             data-type="forever" data-phone="171-5489-0428">
-                                            <div class="contact-bth contact__btn">
-                                                <span><em class="icon-contact"></em>联系商家</span></div>
-                                        </div>
-                                        <div class="company__info--case clearfix">
-                                            <div class="case-item">
-                                                <img data-original="static/picture/a9bc71636ce184ab1caa48590cb6a06b.png"
-                                                     class="img--lazy case-img">
-                                            </div>
-                                            <div class="case-item">
-                                                <img data-original="static/picture/b98aa83ef8565dedaff94e6e6253a9f4.png"
-                                                     class="img--lazy case-img">
-                                            </div>
-                                            <div class="case-item">
-                                                <img data-original="static/picture/eca73a0ede276d68c0d7d2b17926e174.png"
-                                                     class="img--lazy case-img">
-                                            </div>
-                                            <div class="case-item">
-                                                <img data-original="static/picture/5fb046b7553c5028fafbec301dcdea3b.png"
-                                                     class="img--lazy case-img">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
+                    <ul id="companyList">
+                        <!-- <li>
+                             <a class="company-item" data-cmp_title="游氏有限公司">
+                                 <div class="contents&#45;&#45;item clearfix fantastic">
+                                     <div class="company__logo">
+                                         <img data-original="imgs/login.png"
+                                              class="img&#45;&#45;lazy">
+                                     </div>
+                                     <div class="company__info">
+                                         <div class="company__info&#45;&#45;top">
+                                             <p class="company__info&#45;&#45;name">游氏有限公司</p>
+                                         </div>
+                                         <div class="company__info&#45;&#45;tag">
+                                             <span class="tag-rank"
+                                                   style="color:#FF5921;background:#FFF0EC">全包</span>
+                                             <span>现代简约</span>
+                                         </div>
+                                         <div class="company__info&#45;&#45;activity">
+                                             <p><i class="icon-coupon"></i>预约送专业监理服务</p>
+                                             <p><i class="icon-coupon"></i>预约送全局验房、方案</p>
+                                         </div>
+                                         &lt;!&ndash;信息&ndash;&gt;
+                                         <div class="company__info&#45;&#45;contact company__data__btn js-list-contact__btn"
+                                              data-cid="11062226"
+                                              data-logo="imgs/login.png"
+                                              data-cname="游氏有限公司" data-url=""
+                                              data-type="forever" data-phone="171-5087-3740">
+                                             <div class="contact-bth contact__btn">
+                                                 <span><em class="icon-contact"></em>联系商家</span></div>
+                                         </div>
+                                         <div class="company__info&#45;&#45;case clearfix">
+                                             <div class="case-item">
+                                                 <img data-original="imgs/zhuangxiutu/z2.jpg"
+                                                      class="img&#45;&#45;lazy case-img">
+                                             </div>
+                                             <div class="case-item">
+                                                 <img data-original="imgs/zhuangxiutu/z1.jpg"
+                                                      class="img&#45;&#45;lazy case-img">
+                                             </div>
+                                             <div class="case-item">
+                                                 <img data-original="imgs/zhuangxiutu/z3.jpg"
+                                                      class="img&#45;&#45;lazy case-img">
+                                             </div>
+                                             <div class="case-item">
+                                                 <img data-original="imgs/zhuangxiutu/z4.jpg"
+                                                      class="img&#45;&#45;lazy case-img">
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </a>
+                         </li>
+                         <li>
+                             <a class="company-item" data-cmp_title="游氏有限公司">
+                                 <div class="contents&#45;&#45;item clearfix fantastic">
+                                     <div class="company__logo">
+                                         <img data-original="imgs/login.png"
+                                              class="img&#45;&#45;lazy">
+                                     </div>
+                                     <div class="company__info">
+                                         <div class="company__info&#45;&#45;top">
+                                             <p class="company__info&#45;&#45;name">游氏有限公司</p>
+                                         </div>
+                                         <div class="company__info&#45;&#45;tag">
+                                             <span class="tag-rank"
+                                                   style="color:#FF5921;background:#FFF0EC">全包</span>
+                                             <span>现代简约</span>
+                                         </div>
+                                         <div class="company__info&#45;&#45;activity">
+                                             <p><i class="icon-coupon"></i>预约送专业监理服务</p>
+                                             <p><i class="icon-coupon"></i>预约送全局验房、方案</p>
+                                         </div>
+                                         &lt;!&ndash;信息&ndash;&gt;
+                                         <div class="company__info&#45;&#45;contact company__data__btn js-list-contact__btn"
+                                              data-cid="11062226"
+                                              data-logo="imgs/login.png"
+                                              data-cname="游氏有限公司" data-url=""
+                                              data-type="forever" data-phone="171-5087-3740">
+                                             <div class="contact-bth contact__btn">
+                                                 <span><em class="icon-contact"></em>联系商家</span></div>
+                                         </div>
+                                         <div class="company__info&#45;&#45;case clearfix">
+                                             &lt;!&ndash; <div class="case-item">
+                                                  <img data-original="static/picture/fc61619210c0bb1501d73857252b861d.jpg"
+                                                       class="img&#45;&#45;lazy case-img">
+                                              </div>&ndash;&gt;
+                                         </div>
+                                     </div>
+                                 </div>
+                             </a>
+                         </li>-->
                     </ul>
                 </div>
-                <div class="pages"><em>共有<b>7203</b>条</em><strong>1</strong><a href="javascript:;">2</a><a
-                        href="javascript:;">3</a><a href="javascript:;">4</a><a href="javascript:;">5</a><i>...</i> <a
-                        href="javascript:;" class="last">481</a><a href="javascript:;" class="next"
-                                                                   id="nextpageid">下一页<b></b></a></div>
+                <!--分页 Begin-->
+                <div id="demo1"></div>
+                <!--分页 End-->
+                <script>
+                    function addcompanyList(data, obj) {
+                        var htmlText = []
+                            , thisData = data.concat().splice(obj.curr * obj.limit - obj.limit, obj.limit);
+                        layui.each(thisData, function (index, item) {
+                            htmlText.push('<li>\n' +
+                                '                            <a class="company-item" data-cmp_title="' + item.companyProfile + '">\n' +
+                                '                                <div class="contents--item clearfix fantastic">\n' +
+                                '                                    <div class="company__logo">\n' +
+                                '                                        <img data-original="https://trimhelp-img.oss-cn-beijing.aliyuncs.com/th-img/login.png"\n' +
+                                '                                             class="img--lazy" src="https://trimhelp-img.oss-cn-beijing.aliyuncs.com/th-img/login.png">\n' +
+                                '                                    </div>\n' +
+                                '                                    <div class="company__info">\n' +
+                                '                                        <div class="company__info--top">\n' +
+                                '                                            <p class="company__info--name">' + item.companyProfile + '</p>\n' +
+                                '                                        </div>\n' +
+                                '                                        <div class="company__info--tag">\n' +
+                                '                                            <span class="tag-rank"\n' +
+                                '                                                  style="color:#FF5921;background:#FFF0EC">全包</span>\n' +
+                                '                                            <span>现代简约</span>\n' +
+                                '                                        </div>\n' +
+                                '                                        <div class="company__info--activity">\n' +
+                                '                                            <p><i class="icon-coupon"></i>预约送专业监理服务</p>\n' +
+                                '                                            <p><i class="icon-coupon"></i>预约送全局验房、方案</p>\n' +
+                                '                                        </div>\n' +
+                                '                                        <!--信息-->\n' +
+                                '                                        <div class="company__info--contact company__data__btn js-list-contact__btn"\n' +
+                                '                                             data-cid="11062226"\n' +
+                                '                                             data-logo="imgs/login.png"\n' +
+                                '                                             data-cname="' + item.companyProfile + '" data-url=""\n' +
+                                '                                             data-type="forever" data-phone="171-5087-3740">\n' +
+                                '                                            <div class="contact-bth contact__btn">\n' +
+                                '                                                <span><em class="icon-contact"></em>联系商家</span></div>\n' +
+                                '                                        </div>\n' +
+                                '                                        <div class="company__info--case clearfix" id="an_li' + item.id + '" >\n' +
+                                '                                        </div>\n' +
+                                '                                    </div>\n' +
+                                '                                </div>\n' +
+                                '                            </a>\n' +
+                                '                        </li>')
+                        });
+                        return htmlText.join('');
+                    };
+
+                    function addDecorateList(data, obj) {
+                        var htmlText = []
+                            , thisData = data.concat().splice(obj.curr * obj.limit - obj.limit, obj.limit);
+                        layui.each(thisData, function (index, item) {
+                            htmlText.push('<div class="case-item">\n' +
+                                '<img data-original="https://trimhelp-img.oss-cn-beijing.aliyuncs.com/th-img/z1.jpg"\n' +
+                                'class="img--lazy case-img" src="https://trimhelp-img.oss-cn-beijing.aliyuncs.com/th-img/z1.jpg">\n' +
+                                '</div>\n'
+                            );
+                        });
+                        return htmlText.join('');
+                    }
+
+                    /*查询所有公司*/
+                    function getCompanyAll() {
+                        $.ajax({
+                            type: "get",
+                            dataType: "json",//预期服务器返回的数据类型
+                            url: "getCompanyInfo",//url
+                            async: false,
+                            data: {
+                                companyProfile: $("#company_sousuo").val() + " "
+                                , addressId: $addressId
+                                , companyTypeId: $companyTypeId
+                                , companyStyleId: $companyStyleId
+                            },
+                            success: function (result) {
+                                layui.use(['laypage', 'layer'], function () {
+                                    var laypage = layui.laypage
+                                        , layer = layui.layer;
+                                    var thisdata = result.companys;
+                                    laypage.render({
+                                        elem: 'demo1'
+                                        , count: thisdata.length //数据总数
+                                        , limit: result.pageSize
+                                        , jump: function (obj) {
+                                            var htmlText1 = '';
+                                            document.getElementById('companyList').innerHTML = htmlText1;
+                                            document.getElementById('companyList').innerHTML = addcompanyList(thisdata, obj);
+                                            layui.each(thisdata, function (index, item) {
+                                                document.getElementById('an_li' + item.id + '').innerHTML = addDecorateList(thisdata, obj);
+                                            }); //layui End
+                                        }
+                                    });
+                                });
+                            },
+                            error: function () {
+                                layui.use('layer', function () {
+                                    var layer = layui.layer;
+                                    layer.close(jiazai);
+                                    layer.msg('网络异常！', {icon: 5});
+                                });
+                            }
+                        });
+                    }
+
+                    $("#company_sousuo").on('input propertychange', function () {
+                        getCompanyAll();
+                    });
+                    onload = function () {
+                        clickAll();
+                        $addressId = 0;
+                        $companyTypeId = 0;
+                        $companyStyleId = 0;
+                        getCompanyAll();
+                    }
+
+
+                </script>
             </div>
+            <!--公司列表 End-->
         </div>
+
         <div class="content--right">
             <div class="recommended">
                 <div class="recommended--banner">
@@ -514,13 +483,6 @@
         </div>
     </div>
 </div>
-<!--<div class="bottom_slide_box" style="left:0;">
-    <div class="bottom_slide_content"></div>
-</div>-->
-<!--<input type="hidden" id="cityId" value="1130">
-<input type="hidden" id="cityCode" value="sz">
-<input type="hidden" id="listPage" value="1">
-<input type="hidden" id="keyword" value="">-->
 <script src="js/vendor.4b524a09.js"></script>
 <script src="js/commonChunk.595031d2.js"></script>
 <script src="js/companyList.e74f8f03.js"></script>

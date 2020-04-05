@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class VieListServiceImpl implements VieListService {
@@ -20,6 +21,7 @@ public class VieListServiceImpl implements VieListService {
     private VieListMapper vieListMapper;
     @Autowired
     private UserMapper userMapper;
+
 
     @Override
     public VieListEx selectVieListUsersByDemandId(long id) {
@@ -38,5 +40,18 @@ public class VieListServiceImpl implements VieListService {
             vieList.setList(users);
         }
         return vieList;
+    }
+
+    @Override
+    public int addVie(VieList vieList) {
+        QueryWrapper<VieList> wrapper = new QueryWrapper<>();
+        wrapper.eq("demandId", vieList.getDemandId());
+        List<VieList> vieLists = vieListMapper.selectList(wrapper);
+        for (VieList list : vieLists) {
+            if (list.getVieUserId()==vieList.getVieUserId()){
+                return -1;
+            }
+        }
+        return vieListMapper.insert(vieList);
     }
 }

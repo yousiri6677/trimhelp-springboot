@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int addUser(User user) {
-        user.setUserState(1);
+        user.setUserState(0);
         user.setUserTypeId(4);
         user.setUserName(user.getAccount());
         user.setIdNumber("241242142141");

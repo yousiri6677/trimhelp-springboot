@@ -19,5 +19,7 @@ public class Companyinfo {
     private String companyProfile;
     private long companyLogo;
     private double regCapital;
-    private String address;
+    private long addressId;
+    private long companyTypeId;
+    private long companyStyleId;
 }
