@@ -20,7 +20,7 @@ spring:
       maximum-pool-size: 20
       auto-commit: true
       pool-name: MyhikariCP
-      max-lifetime: 1800000
+      max-lifetime: 30000
       connection-timeout: 30000
       connection-test-query: SELECT 1
 
@@ -38,3 +38,8 @@ spring:
 
 
 pageSize: 5
+endpoint: oss-cn-beijing.aliyuncs.com
+keyid: LTAI4FoKr9XUMcABqMidR6Ep
+keysecret: 6sURs6Y5S9PsUyuODu8iosVoDSxreG
+bucketname1: th-images1
+filehost: img/

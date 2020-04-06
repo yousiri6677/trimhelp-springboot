@@ -6,6 +6,7 @@ import cn.youfull.trimhelp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
@@ -22,11 +23,18 @@ public class UserController {
     public String login(String account, String passWord, HttpSession session) {
         User user = userService.loginByAccountAndPassWord(account, passWord);
         if (user != null) {
-            session.setAttribute("user",user);
+            session.setAttribute("user", user);
             return "SUCCESS";
         } else {
             return "ERROR";
         }
+    }
+
+    @ResponseBody
+    @RequestMapping("/loginOut")
+    public String loginOut(HttpSession session) {
+        session.removeAttribute("user");
+        return "success";
     }
 
 

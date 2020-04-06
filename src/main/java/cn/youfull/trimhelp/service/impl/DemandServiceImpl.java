@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.HashOperations;
+import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -20,6 +21,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Service
@@ -46,6 +48,7 @@ public class DemandServiceImpl implements DemandService {
     @Resource(name = "redisTemplate")
     private HashOperations<String, String, DemandEx> redisHash;
 
+    private String keyName = "demandEx";
 
     @Override
     public int addDemandInfo(DemandEx demandEx) {
@@ -64,6 +67,8 @@ public class DemandServiceImpl implements DemandService {
                 demand.setDecoratestyleId(styleid);
                 demand.setReleaseTime(new Date());
                 int insert = demandMapper.insert(demand);
+                redisHash.put(keyName, String.valueOf(demandEx.getId()), demandEx);
+                log.info("向redis新增一条需求");
                 return insert;
             }
             return 0;
@@ -75,6 +80,10 @@ public class DemandServiceImpl implements DemandService {
     @Override
     public DemandEx selectDemandById(long id) {
         if (redisHash.hasKey("demandEx", id + "")) {
+            if (redisHash.get("demandEx", id + "") == null) {
+                log.info("------>redis中不存杂需求id为" + id + "的信息!!");
+                return null;
+            }
             log.info("------>从redis查询出需求id为" + id + "的信息!!");
             return (DemandEx) redisHash.get("demandEx", id + "");
         }
@@ -84,8 +93,12 @@ public class DemandServiceImpl implements DemandService {
             BeanUtils.copyProperties(demand, demandEx);
             demandEx.setDecoratestyleName(decoratestyleMapper.selectById(demand.getDecoratestyleId()).getDecorateStyleName());
             demandEx.setDemandTypeName(demandTypeMapper.selectById(demand.getDemandTypeId()).getTypeName());
+            redisHash.put(keyName, String.valueOf(id), demandEx);
+            log.info("---->向redis中插入一条需求信息");
             return demandEx;
         }
+        redisHash.put(keyName, String.valueOf(id), null);
+        log.info("---->向redis中插入一条需求信息");
         return null;
     }
 
@@ -103,6 +116,23 @@ public class DemandServiceImpl implements DemandService {
 
     @Override
     public List<DemandEx> selectAllDemands(int typleId, int styleId, String demandtitle) {
+        if (redisTemplate.hasKey(keyName)) {
+            List<DemandEx> values = redisHash.values(keyName);
+            List<DemandEx> collect = values.stream().filter(v -> {
+                if (styleId == 9 && demandtitle != null && !"".equals(demandtitle.trim())) {
+                    return v.getTitle().contains(demandtitle.trim()) && v.getDemandTypeId() == typleId;
+                } else if (styleId != 9 && demandtitle != null && !"".equals(demandtitle.trim())) {
+                    return v.getTitle().contains(demandtitle.trim()) && v.getDemandTypeId() == typleId && v.getDecoratestyleId() == styleId;
+                } else if (styleId != 9 && (demandtitle == null || "".equals(demandtitle.trim()))) {
+                    return v.getDemandTypeId() == typleId && v.getDecoratestyleId() == styleId;
+                } else {
+                    return v.getDemandTypeId() == typleId;
+                }
+            })
+                    .collect(Collectors.toList());
+            log.info("从redis中读取所有公司信息");
+            return collect;
+        }
         List<DemandEx> demands = new ArrayList<>();
         QueryWrapper<Demand> wrapper = new QueryWrapper<>();
         wrapper.eq("demandTypeId", typleId)
@@ -121,16 +151,26 @@ public class DemandServiceImpl implements DemandService {
                 BeanUtils.copyProperties(demand1, demand);
                 demand.setDecoratestyleName(decoratestyleMapper.selectById(demand1.getDecoratestyleId()).getDecorateStyleName());
                 demand.setDemandTypeName(demandTypeMapper.selectById(demand1.getDemandTypeId()).getTypeName());
-                redisHash.put("demandEx", String.valueOf(demand.getId()), demand);
-                log.info("---->向redis中插入一条需求信息");
                 demands.add(demand);
+                redisHash.put(keyName, String.valueOf(demand.getId()), demand);
+                log.info("---->向redis中插入一条需求信息");
             }
+        } else {
         }
         return demands;
     }
 
     @Override
     public List<DemandEx> selectAllDemands(String demandtitle) {
+        if (redisTemplate.hasKey(keyName)) {
+            List<DemandEx> values = redisHash.values(keyName);
+            log.info("从redis中读取所有公司信息");
+            if (demandtitle != null && !"".equals(demandtitle.trim())) {
+                values = values.stream().filter(v -> v.getTitle().contains(demandtitle.trim()))
+                        .collect(Collectors.toList());
+            }
+            return values;
+        }
         List<DemandEx> demands = new ArrayList<>();
         QueryWrapper<Demand> wrapper = new QueryWrapper<>();
         wrapper.eq("state", 0);
@@ -145,7 +185,7 @@ public class DemandServiceImpl implements DemandService {
                 BeanUtils.copyProperties(d, demand);
                 demand.setDecoratestyleName(decoratestyleMapper.selectById(d.getDecoratestyleId()).getDecorateStyleName());
                 demand.setDemandTypeName(demandTypeMapper.selectById(d.getDemandTypeId()).getTypeName());
-                redisHash.put("demandEx", demand.getId() + "", demand);
+                redisHash.put(keyName, demand.getId() + "", demand);
                 log.info("---->向redis中插入一条需求信息");
                 demands.add(demand);
             }
