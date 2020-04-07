@@ -9,6 +9,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
@@ -21,6 +22,7 @@ import java.util.List;
 
 @Service
 @Slf4j
+@EnableCaching
 public class CompanyServiceImpl implements CompanyService {
 
     @Autowired
@@ -56,8 +58,8 @@ public class CompanyServiceImpl implements CompanyService {
         for (Companyinfo companyinfo : companyinfos) {
             companyinfoEx = new CompanyinfoEx();
             BeanUtils.copyProperties(companyinfo, companyinfoEx);
-            redisHash.put(redisName,companyinfoEx.getId()+"",companyinfoEx);
-            log.info("-------------------->向redis中插入id为" + companyinfoEx.getId() + "的公司信息！");
+          //  redisHash.put(redisName,companyinfoEx.getId()+"",companyinfoEx);
+           // log.info("-------------------->向redis中插入id为" + companyinfoEx.getId() + "的公司信息！");
             exList.add(companyinfoEx);
         }
         return exList;
