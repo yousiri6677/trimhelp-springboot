@@ -41,6 +41,10 @@ public class NavController {
         return "projectHallInfo";
     }
 
+    @RequestMapping("/todecoration")
+    public String toDecoration() {
+        return "decoration";
+    }
 
     @RequestMapping("/toCompanyInfo")
     public String toCompanyInfo(){

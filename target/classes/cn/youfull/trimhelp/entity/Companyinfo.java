@@ -25,4 +25,5 @@ public class Companyinfo implements Serializable {
     private long addressId;
     private long companyTypeId;
     private long companyStyleId;
+    private String companyJianjie;
 }

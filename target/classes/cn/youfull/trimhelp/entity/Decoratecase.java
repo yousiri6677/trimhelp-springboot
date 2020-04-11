@@ -21,5 +21,7 @@ public class Decoratecase {
     private double area;
     private int browseNum;
     private long demandTypeId;
+    private long decorateStyleId;
+    private double turnover;
 
 }

@@ -4,12 +4,14 @@ import cn.youfull.trimhelp.entity.User;
 import cn.youfull.trimhelp.mapper.UserMapper;
 import cn.youfull.trimhelp.service.UserService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
 
 @Service
+@EnableCaching
 public class UserServiceImpl implements UserService {
 
     @Resource

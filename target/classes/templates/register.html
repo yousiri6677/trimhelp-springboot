@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  xmlns:th="http://www.thymeleaf.org" >
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta name="renderer" content="webkit">
@@ -34,16 +34,19 @@
         }
     </style>
     <style>
-        .service-bar{
+        .service-bar {
             display: none;
         }
-        .merchant-pop-up .mod_pagetip{
+
+        .merchant-pop-up .mod_pagetip {
             margin-top: 50px;
         }
-        .merchant-pop-up  .mod_pagetip_bd {
+
+        .merchant-pop-up .mod_pagetip_bd {
             margin-top: 10px;
         }
-        .merchant-pop-up .go-merchant-btn{
+
+        .merchant-pop-up .go-merchant-btn {
             display: block;
             width: 200px;
             height: 36px;
@@ -57,62 +60,171 @@
             cursor: pointer;
             margin-top: 45px;
         }
-    </style> <div id="small_window"></div>
-  <!--  <style type="text/css">#YSF-BTN-HOLDER{position: fixed;max-width:70px;max-height:70px;right: 30px; bottom: 24px; cursor: pointer; overflow: visible; filter: alpha(opacity=100);opacity:1;z-index: 9990} #YSF-BTN-HOLDER:hover{filter: alpha(opacity=95);opacity:.95} #YSF-BTN-HOLDER img{ display: block;overflow: hidden; } #YSF-BTN-CIRCLE{display: none;position: absolute;right: -5px;top: -6px;width: auto;min-width: 12px;height: 20px;padding: 0 4px;background-color: #f00;font-size: 12px;line-height: 20px;color: #fff;text-align: center;white-space: nowrap;font-family: sans-serif;border-radius: 10px;z-index:1;} #YSF-BTN-BUBBLE{display: none;position: absolute;left: -274px;bottom:-15px;width: 278px;height: 80px;box-sizing: border-box;padding: 14px 22px;filter: alpha(opacity=100);opacity:1;background: url(https://qiyukf.com/sdk//res/img/sdk/bg_floatMsg2x.png) no-repeat;background:url(https://qiyukf.com/sdk//res/img/sdk/bg_floatMsg.png)9; background-size: 278px 80px; z-index: 1;} #YSF-BTN-HOLDER.layer-6{bottom:0;} #YSF-BTN-HOLDER.layer-1 #YSF-BTN-BUBBLE{top:0} #YSF-BTN-HOLDER.layer-6 #YSF-BTN-BUBBLE{bottom:-6px;} #YSF-BTN-BUBBLE:hover{filter: alpha(opacity=95);opacity:.95} #YSF-BTN-CONTENT{height:45px;padding: 0;white-space: normal;word-break: break-all;text-align: left;font-size: 14px;line-height: 1.6;color: #222;overflow: hidden;z-index: 0;} #YSF-BTN-ARROW{ display: none; } #YSF-BTN-CLOSE{position: absolute; width:15px; height:15px;right: 4px;top: -3px; filter: alpha(opacity=90); opacity:.9; cursor: pointer; background: url(https://qiyukf.com/sdk//res/img/sdk/btn-close.png) no-repeat;z-index: 1} #YSF-BTN-CLOSE:hover{filter: alpha(opacity=100); opacity: 1;} #YSF-PANEL-CORPINFO.ysf-chat-layeropen{ width: 511px; height: 500px; border-radius: 8px; box-shadow: 0 0 20px 0 rgba(0, 0, 0, .15);} #YSF-PANEL-CORPINFO{ position: fixed; bottom: 0px; right: 20px; width: 0; height: 0; z-index: 99999; } #YSF-PANEL-INFO.ysf-chat-layeropen{ width: 360px; height: 500px; border-radius: 8px; filter: alpha(opacity=100);opacity:1; box-shadow: 0 0 20px 0 rgba(0, 0, 0, .15);} #YSF-PANEL-INFO{ position: fixed; bottom: 0px; right: 20px; width: 0px; height: 0px; filter: alpha(opacity=0);opacity:0;z-index: 99999;} #YSF-PANEL-INFO .u-btn{background-color: #46be8a} #YSF-CUSTOM-ENTRY{background-color: #F96868;} #YSF-CUSTOM-ENTRY-0{position: relative;width:auto;background-color: #46be8a;box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-1{position: relative;width:auto;background-color: #46be8a;border-radius: 14px; box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-2{position: relative;width:auto;background-color: #46be8a;border-radius: 8px;box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-3{position: relative;width:auto;background-color: #46be8a;border-radius: 50%;box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-4{position: relative;width:auto;background-color: #46be8a;border-radius: 50%;box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-5{position: relative;width:auto;background-color: #46be8a;border-radius: 8px;box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-6{position: relative;width:auto;background-color: #46be8a;border-radius: 8px;box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-7{position: relative;width:auto;background-color: #46be8a;border-radius: 50%;box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-8{position: relative;width:auto;background-color: #46be8a;border-radius: 8px;box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-0 img{max-width: 300px;height:auto;} #YSF-CUSTOM-ENTRY-1 img{width:28px;height:auto;} #YSF-CUSTOM-ENTRY-2 img{width:58px;height:auto;} #YSF-CUSTOM-ENTRY-3 img{width:60px;height:auto;} #YSF-CUSTOM-ENTRY-4 img{width:60px;height:auto;} #YSF-CUSTOM-ENTRY-5 img{width:60px;height:auto;} #YSF-CUSTOM-ENTRY-6 img{width:58px;height:auto;} #YSF-CUSTOM-ENTRY-7 img{width:60px;height:auto;} #YSF-CUSTOM-ENTRY-8 img{width:60px;height:auto;} #YSF-IFRAME-LAYER{ border:0; outline:none; } .ysf-online-invite-wrap{z-index:10001;position:fixed;_position:absolute;top:50%;left:50%;} .ysf-online-invite{position:relative;top:-50%;left:-50%;cursor:pointer;} .ysf-online-invite img{display:block;width:250px;} .ysf-online-invite .ysf-online-invite-img{width:100%;height:100%} .ysf-online-invite .text{position:absolute;top:-11px;left:0;right:0;overflow:hidden;margin: 36px 20px 0 67px;line-height:140%;color:#526069;font-size:14px;font-family:"Microsoft YaHei","微软雅黑",tahoma,arial,simsun,"宋体";text-align:left;white-space:normal;word-wrap:break-word;} .ysf-online-invite .close{position:absolute;top:-6px;right:-6px;width:32px;height:32px;background:url(https://qiyukf.com/sdk/res/img/invite-close.png) no-repeat;cursor:pointer;} .ysf-online-invite .close.custom{top:-16px;right:-16px;} #YSF-PANEL-MOBILE{ background: rgba(46,47,49,0.7); position: fixed; bottom: 0px; right: 0px; width: 100%; height: 0px; transition-property: height,bottom; transition-duration: 0.3s; transition-timing-function: ease; transition-delay: 0s; z-index: 99999; } #YSF-PANEL-MOBILE.ysf-chat-layeropen{ width: 100%; height: 100%; transition-property:height,bottom; transition-duration: 0.3s; transition-timing-function: ease; transition-delay: 0s; } #YSF-IFRAME-LAYER.ysf-chat-mobile-layeropen{ height: 90% !important; transition-property: height,bottom; transition-duration: 0.3s; transition-timing-function: ease; transition-delay: 0s; } #YSF-IFRAME-LAYER{ position: absolute; bottom: 0px;left: 0; right: 0px; width: 0px; height: 0px; transition-property: height,bottom; transition-duration: 0.3s; transition-timing-function: ease; transition-delay: 0s; z-index: 9999; } .YSF-PANEL-BODY-FIXED{ position: fixed !important; left: 0; right: 0;}</style>
---></head>
+    </style>
+    <div id="small_window"></div>
+    <!--  <style type="text/css">#YSF-BTN-HOLDER{position: fixed;max-width:70px;max-height:70px;right: 30px; bottom: 24px; cursor: pointer; overflow: visible; filter: alpha(opacity=100);opacity:1;z-index: 9990} #YSF-BTN-HOLDER:hover{filter: alpha(opacity=95);opacity:.95} #YSF-BTN-HOLDER img{ display: block;overflow: hidden; } #YSF-BTN-CIRCLE{display: none;position: absolute;right: -5px;top: -6px;width: auto;min-width: 12px;height: 20px;padding: 0 4px;background-color: #f00;font-size: 12px;line-height: 20px;color: #fff;text-align: center;white-space: nowrap;font-family: sans-serif;border-radius: 10px;z-index:1;} #YSF-BTN-BUBBLE{display: none;position: absolute;left: -274px;bottom:-15px;width: 278px;height: 80px;box-sizing: border-box;padding: 14px 22px;filter: alpha(opacity=100);opacity:1;background: url(https://qiyukf.com/sdk//res/img/sdk/bg_floatMsg2x.png) no-repeat;background:url(https://qiyukf.com/sdk//res/img/sdk/bg_floatMsg.png)9; background-size: 278px 80px; z-index: 1;} #YSF-BTN-HOLDER.layer-6{bottom:0;} #YSF-BTN-HOLDER.layer-1 #YSF-BTN-BUBBLE{top:0} #YSF-BTN-HOLDER.layer-6 #YSF-BTN-BUBBLE{bottom:-6px;} #YSF-BTN-BUBBLE:hover{filter: alpha(opacity=95);opacity:.95} #YSF-BTN-CONTENT{height:45px;padding: 0;white-space: normal;word-break: break-all;text-align: left;font-size: 14px;line-height: 1.6;color: #222;overflow: hidden;z-index: 0;} #YSF-BTN-ARROW{ display: none; } #YSF-BTN-CLOSE{position: absolute; width:15px; height:15px;right: 4px;top: -3px; filter: alpha(opacity=90); opacity:.9; cursor: pointer; background: url(https://qiyukf.com/sdk//res/img/sdk/btn-close.png) no-repeat;z-index: 1} #YSF-BTN-CLOSE:hover{filter: alpha(opacity=100); opacity: 1;} #YSF-PANEL-CORPINFO.ysf-chat-layeropen{ width: 511px; height: 500px; border-radius: 8px; box-shadow: 0 0 20px 0 rgba(0, 0, 0, .15);} #YSF-PANEL-CORPINFO{ position: fixed; bottom: 0px; right: 20px; width: 0; height: 0; z-index: 99999; } #YSF-PANEL-INFO.ysf-chat-layeropen{ width: 360px; height: 500px; border-radius: 8px; filter: alpha(opacity=100);opacity:1; box-shadow: 0 0 20px 0 rgba(0, 0, 0, .15);} #YSF-PANEL-INFO{ position: fixed; bottom: 0px; right: 20px; width: 0px; height: 0px; filter: alpha(opacity=0);opacity:0;z-index: 99999;} #YSF-PANEL-INFO .u-btn{background-color: #46be8a} #YSF-CUSTOM-ENTRY{background-color: #F96868;} #YSF-CUSTOM-ENTRY-0{position: relative;width:auto;background-color: #46be8a;box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-1{position: relative;width:auto;background-color: #46be8a;border-radius: 14px; box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-2{position: relative;width:auto;background-color: #46be8a;border-radius: 8px;box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-3{position: relative;width:auto;background-color: #46be8a;border-radius: 50%;box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-4{position: relative;width:auto;background-color: #46be8a;border-radius: 50%;box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-5{position: relative;width:auto;background-color: #46be8a;border-radius: 8px;box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-6{position: relative;width:auto;background-color: #46be8a;border-radius: 8px;box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-7{position: relative;width:auto;background-color: #46be8a;border-radius: 50%;box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-8{position: relative;width:auto;background-color: #46be8a;border-radius: 8px;box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);} #YSF-CUSTOM-ENTRY-0 img{max-width: 300px;height:auto;} #YSF-CUSTOM-ENTRY-1 img{width:28px;height:auto;} #YSF-CUSTOM-ENTRY-2 img{width:58px;height:auto;} #YSF-CUSTOM-ENTRY-3 img{width:60px;height:auto;} #YSF-CUSTOM-ENTRY-4 img{width:60px;height:auto;} #YSF-CUSTOM-ENTRY-5 img{width:60px;height:auto;} #YSF-CUSTOM-ENTRY-6 img{width:58px;height:auto;} #YSF-CUSTOM-ENTRY-7 img{width:60px;height:auto;} #YSF-CUSTOM-ENTRY-8 img{width:60px;height:auto;} #YSF-IFRAME-LAYER{ border:0; outline:none; } .ysf-online-invite-wrap{z-index:10001;position:fixed;_position:absolute;top:50%;left:50%;} .ysf-online-invite{position:relative;top:-50%;left:-50%;cursor:pointer;} .ysf-online-invite img{display:block;width:250px;} .ysf-online-invite .ysf-online-invite-img{width:100%;height:100%} .ysf-online-invite .text{position:absolute;top:-11px;left:0;right:0;overflow:hidden;margin: 36px 20px 0 67px;line-height:140%;color:#526069;font-size:14px;font-family:"Microsoft YaHei","微软雅黑",tahoma,arial,simsun,"宋体";text-align:left;white-space:normal;word-wrap:break-word;} .ysf-online-invite .close{position:absolute;top:-6px;right:-6px;width:32px;height:32px;background:url(https://qiyukf.com/sdk/res/img/invite-close.png) no-repeat;cursor:pointer;} .ysf-online-invite .close.custom{top:-16px;right:-16px;} #YSF-PANEL-MOBILE{ background: rgba(46,47,49,0.7); position: fixed; bottom: 0px; right: 0px; width: 100%; height: 0px; transition-property: height,bottom; transition-duration: 0.3s; transition-timing-function: ease; transition-delay: 0s; z-index: 99999; } #YSF-PANEL-MOBILE.ysf-chat-layeropen{ width: 100%; height: 100%; transition-property:height,bottom; transition-duration: 0.3s; transition-timing-function: ease; transition-delay: 0s; } #YSF-IFRAME-LAYER.ysf-chat-mobile-layeropen{ height: 90% !important; transition-property: height,bottom; transition-duration: 0.3s; transition-timing-function: ease; transition-delay: 0s; } #YSF-IFRAME-LAYER{ position: absolute; bottom: 0px;left: 0; right: 0px; width: 0px; height: 0px; transition-property: height,bottom; transition-duration: 0.3s; transition-timing-function: ease; transition-delay: 0s; z-index: 9999; } .YSF-PANEL-BODY-FIXED{ position: fixed !important; left: 0; right: 0;}</style>
+  --></head>
 <body class="narrow_980" style="">
 <div class="global_wrap" id="gloWrap">
 
     <ul th:replace="Navigation::nav"></ul>
-<div class="login_img fl">
-    <img src="imgs/login.png" width="196" height="160" alt="美好生活从这里开始">
-</div>
-<div class="login_box reg_box fl new-login-box">
-    <div class="reg_tab">
-        <ul>
-            <li class="on">
-                <a href="javascript:void(0)">用户注册</a>
-            </li>
-   <!--         <li>
-                <a href="javascript:void(0)">商家<b></b></a>
-            </li>-->
-        </ul>
+    <div class="login_img fl">
+        <img src="imgs/login.png" width="196" height="160" alt="美好生活从这里开始">
     </div>
-    <form method="post" action="/register" class="new_reg_form reg_form yezhu_reg" id="reg_form">
-        <input type="hidden" value="" name="indentity" id="indentity">
-        <div class="weixin-reg-boxer" style="display: block;">
-            <div class="login_wrap" style="display: block;">
-                <div class="login_select cl height_auto">
-                    <input type="text" name="" id="emailAndPhone" autocomplete="off" value="" style="border-color: rgb(255, 103, 103);">
-                    <input type="hidden" id="" name="mobile">
-                    <span style="display: block;">手机号</span>
-                    <div class="index_check"><em class=""></em><!--请输入手机号码--></div></div>
-                <div class="login_select cl">
-                    <input type="text" id="account" name="account" autocomplete="off" value="" style="border-color: rgb(221, 221, 221);" placeholder="用户名">
-                </div>
-                <div class="login_select cl" style="margin-bottom: 20px;">
-                    <input type="password" id="useNum" name="passWord" value="" placeholder="密码" autocomplete="off" style="border-color: rgb(221, 221, 221);">
-                </div>
-                <div class="login_select cl ls_yzm">
-                    <input type="text" id="autoCode" class="autoCode" autocomplete="off" name="">
-                    <span>验证码</span>
-                    <input type="button" class="send_auto" value="发送验证码到手机" id="hqyzm">
-                </div>
+    <div class="login_box reg_box fl new-login-box">
+        <div class="reg_tab">
+            <ul>
+                <li class="on">
+                    <a href="javascript:void(0)">用户注册</a>
+                </li>
+                <!--         <li>
+                             <a href="javascript:void(0)">商家<b></b></a>
+                         </li>-->
+            </ul>
+        </div>
+        <form method="post" action="" class="new_reg_form reg_form yezhu_reg" id="reg_form">
+            <input type="hidden" value="" name="indentity" id="indentity">
+            <div class="weixin-reg-boxer" style="display: block;">
+                <div class="login_wrap" style="display: block;">
+                    <div class="login_select cl">
+                        <input type="text" id="account" name="account" autocomplete="off" value=""
+                               style="border-color: rgb(221, 221, 221);" placeholder="用户名">
+                    </div>
+                    <div class="login_select cl" style="margin-bottom: 20px;">
+                        <input type="password" id="useNum" name="passWord" value="" placeholder="密码" autocomplete="off"
+                               style="border-color: rgb(221, 221, 221);">
+                    </div>
+                    <div class="login_select cl height_auto">
+                        <input type="text" id="phone"
+                               name="phone" autocomplete="off" value=""
+                               style="border-color: rgb(221, 221, 221);" placeholder="手机号">
+                        <input type="hidden" id="" name="mobile">
+                        <div class="index_check"><em class=""></em><!--请输入手机号码--></div>
+                    </div>
+                    <div class="login_select cl ls_yzm">
+                        <input type="text" id="phone_code" th:name="phoneCode" class="autoCode"
+                               autocomplete="off" placeholder="验证码" name="">
+                        <input type="button" class="send_auto" value="获取验证码"
+                               id="fasong">
+                    </div>
+                    <script>
+                        var wait = 60;
 
-                <div class="safe accept_service cl">
+                        //倒计时
+                        function timer() {
+                            if (wait == 0) {
+                                $("#fasong").val("获取验证码");
+                                $("#fasong").removeAttr("disabled");
+                                $("#fasong").css("border-color", "1e9fff").css("background", "#ffffff").css("cursor", "pointer");
+                                wait = 60;
+                            } else {
+                                $("#fasong").attr("disabled", "true");
+                                $("#fasong").css("border-color", "fbfbfb").css("background", "#ccc").css("cursor", "not-allowed");
+                                $("#fasong").val(wait + "秒后重发");
+                                wait--;
+                                setTimeout(function () {
+                                    timer()
+                                }, 1000);
+                            }
+                            var wait = 60;
+
+                            //倒计时
+                            function timer() {
+                                if (wait == 0) {
+                                    $("#fasong").val("获取验证码");
+                                    $("#fasong").removeAttr("disabled");
+                                    $("#fasong").css("border-color", "1e9fff").css("background", "#ffffff").css("cursor", "pointer");
+                                    wait = 60;
+                                } else {
+                                    $("#fasong").attr("disabled", "true");
+                                    $("#fasong").css("border-color", "fbfbfb").css("background", "#ccc").css("cursor", "not-allowed");
+                                    $("#fasong").val(wait + "秒后重发");
+                                    wait--;
+                                    setTimeout(function () {
+                                        timer()
+                                    }, 1000);
+                                }
+                            }
+                        };
+
+                        layui.use('layer', function () {
+                            var layer = layui.layer;
+
+                            $("#fasong").click(function () {
+                                var phone = $("#phone").val();
+                                if (phone.length != 11) {
+                                    layer.msg('请输入正确的手机号');
+                                    return;
+                                }
+                                $(this).click(timer());
+
+                                $.get("phone", "phone=" + phone, function (data) {
+                                    if (data == false) {
+                                        //发送失败
+                                        layer.msg('网络异常,验证码发送失败,请刷新后重试！');
+                                    } else {
+                                        layer.msg('验证码发送成功!', {icon: 1});
+                                        /*  var code = data.code;
+                                          if ($("#phone_code").val() == code) {
+                                              //验证成功
+                                              $("#btn_register").removeClass("layui-btn-disabled");
+                                          } else {
+                                              layer.msg('验证码错误!');
+                                          }*/
+                                    }
+                                });
+                            });
+
+                            $("#btn_register").click(function () {
+                                var code = $("#phone_code").val();
+                                if (code==""){
+                                    layer.msg('请输入验证码');
+                                    return;
+                                }
+                                $.ajax({
+                                    type: "post",
+                                    dataType: "text",//预期服务器返回的数据类型
+                                    url: "register",//url
+                                    data: $('#reg_form').serialize(),
+                                    success: function (result) {
+                                        if (result=="CODE_ERROR") {
+                                            layer.msg('验证码输入错误', {icon: 5});
+                                        } else if (result == "SUCCESS") {
+                                            layer.msg('注册成功', {icon: 1}, function () {
+                                                window.location.replace("index");
+                                            });
+                                        } else if (result == "ERROR") {
+                                            layer.msg('账号或密码错误', {icon: 5});
+                                        }
+                                        ;
+                                    },
+                                    error: function () {
+                                        layer.msg('注册异常！', {icon: 5});
+                                    }
+                                });
+
+                            });
+
+                        });
+                    </script>
+
+                    <div class="safe accept_service cl">
 <span class="safe_login">
 <input type="checkbox" id="as_service" checked="checked">
-<label>我已阅读并接受<a href="//www.to8to.com/about/noticedetail.html?type=service" rel="nofollow" target="_blank">《装修邦用户服务协议》</a>、<a href="#" rel="nofollow" target="_blank">《隐私政策》</a></label>
+<label>我已阅读并接受<a href="//www.to8to.com/about/noticedetail.html?type=service" rel="nofollow"
+                 target="_blank">《装修邦用户服务协议》</a>、<a href="#" rel="nofollow" target="_blank">《隐私政策》</a></label>
 </span>
+                    </div>
+                    <!--   <button type="button"  class="btn_login" id="btn_register" disabled="true">立即注册</button>
+                     -->
+                    <button type="button" id="btn_register" class="layui-btn layui-btn-fluid ">立即注册
+                    </button>
                 </div>
-                <button type="submit"  class="btn_login">立即注册</button>
-
             </div>
-        </div>
-    </form>
+        </form>
 
 
-</div>
+    </div>
     <!--引入footer部分-->
     <div th:replace="footer::footer"></div>
 </div>

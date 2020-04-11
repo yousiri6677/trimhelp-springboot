@@ -233,96 +233,6 @@
             <div class="company__list">
                 <div class="company__list--content">
                     <ul id="companyList">
-                        <!-- <li>
-                             <a class="company-item" data-cmp_title="游氏有限公司">
-                                 <div class="contents&#45;&#45;item clearfix fantastic">
-                                     <div class="company__logo">
-                                         <img data-original="imgs/login.png"
-                                              class="img&#45;&#45;lazy">
-                                     </div>
-                                     <div class="company__info">
-                                         <div class="company__info&#45;&#45;top">
-                                             <p class="company__info&#45;&#45;name">游氏有限公司</p>
-                                         </div>
-                                         <div class="company__info&#45;&#45;tag">
-                                             <span class="tag-rank"
-                                                   style="color:#FF5921;background:#FFF0EC">全包</span>
-                                             <span>现代简约</span>
-                                         </div>
-                                         <div class="company__info&#45;&#45;activity">
-                                             <p><i class="icon-coupon"></i>预约送专业监理服务</p>
-                                             <p><i class="icon-coupon"></i>预约送全局验房、方案</p>
-                                         </div>
-                                         &lt;!&ndash;信息&ndash;&gt;
-                                         <div class="company__info&#45;&#45;contact company__data__btn js-list-contact__btn"
-                                              data-cid="11062226"
-                                              data-logo="imgs/login.png"
-                                              data-cname="游氏有限公司" data-url=""
-                                              data-type="forever" data-phone="171-5087-3740">
-                                             <div class="contact-bth contact__btn">
-                                                 <span><em class="icon-contact"></em>联系商家</span></div>
-                                         </div>
-                                         <div class="company__info&#45;&#45;case clearfix">
-                                             <div class="case-item">
-                                                 <img data-original="imgs/zhuangxiutu/z2.jpg"
-                                                      class="img&#45;&#45;lazy case-img">
-                                             </div>
-                                             <div class="case-item">
-                                                 <img data-original="imgs/zhuangxiutu/z1.jpg"
-                                                      class="img&#45;&#45;lazy case-img">
-                                             </div>
-                                             <div class="case-item">
-                                                 <img data-original="imgs/zhuangxiutu/z3.jpg"
-                                                      class="img&#45;&#45;lazy case-img">
-                                             </div>
-                                             <div class="case-item">
-                                                 <img data-original="imgs/zhuangxiutu/z4.jpg"
-                                                      class="img&#45;&#45;lazy case-img">
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
-                             </a>
-                         </li>
-                         <li>
-                             <a class="company-item" data-cmp_title="游氏有限公司">
-                                 <div class="contents&#45;&#45;item clearfix fantastic">
-                                     <div class="company__logo">
-                                         <img data-original="imgs/login.png"
-                                              class="img&#45;&#45;lazy">
-                                     </div>
-                                     <div class="company__info">
-                                         <div class="company__info&#45;&#45;top">
-                                             <p class="company__info&#45;&#45;name">游氏有限公司</p>
-                                         </div>
-                                         <div class="company__info&#45;&#45;tag">
-                                             <span class="tag-rank"
-                                                   style="color:#FF5921;background:#FFF0EC">全包</span>
-                                             <span>现代简约</span>
-                                         </div>
-                                         <div class="company__info&#45;&#45;activity">
-                                             <p><i class="icon-coupon"></i>预约送专业监理服务</p>
-                                             <p><i class="icon-coupon"></i>预约送全局验房、方案</p>
-                                         </div>
-                                         &lt;!&ndash;信息&ndash;&gt;
-                                         <div class="company__info&#45;&#45;contact company__data__btn js-list-contact__btn"
-                                              data-cid="11062226"
-                                              data-logo="imgs/login.png"
-                                              data-cname="游氏有限公司" data-url=""
-                                              data-type="forever" data-phone="171-5087-3740">
-                                             <div class="contact-bth contact__btn">
-                                                 <span><em class="icon-contact"></em>联系商家</span></div>
-                                         </div>
-                                         <div class="company__info&#45;&#45;case clearfix">
-                                             &lt;!&ndash; <div class="case-item">
-                                                  <img data-original="static/picture/fc61619210c0bb1501d73857252b861d.jpg"
-                                                       class="img&#45;&#45;lazy case-img">
-                                              </div>&ndash;&gt;
-                                         </div>
-                                     </div>
-                                 </div>
-                             </a>
-                         </li>-->
                     </ul>
                 </div>
                 <!--分页 Begin-->
@@ -334,7 +244,7 @@
                             , thisData = data.concat().splice(obj.curr * obj.limit - obj.limit, obj.limit);
                         layui.each(thisData, function (index, item) {
                             htmlText.push('<li>\n' +
-                                '                            <a class="company-item" data-cmp_title="' + item.companyProfile + '">\n' +
+                                '                            <a class="company-item" href="getCompany?id='+item.id+'" data-cmp_title="' + item.companyProfile + '">\n' +
                                 '                                <div class="contents--item clearfix fantastic">\n' +
                                 '                                    <div class="company__logo">\n' +
                                 '                                        <img data-original="https://trimhelp-img.oss-cn-beijing.aliyuncs.com/th-img/login.png"\n' +
@@ -357,7 +267,7 @@
                                 '                                        <div class="company__info--contact company__data__btn js-list-contact__btn"\n' +
                                 '                                             data-cid="11062226"\n' +
                                 '                                             data-logo="imgs/login.png"\n' +
-                                '                                             data-cname="' + item.companyProfile + '" data-url=""\n' +
+                                '                                             data-cname="' + item.companyProfile + '" data-url="getCompany?id='+item.id+'"\n' +
                                 '                                             data-type="forever" data-phone="171-5087-3740">\n' +
                                 '                                            <div class="contact-bth contact__btn">\n' +
                                 '                                                <span><em class="icon-contact"></em>联系商家</span></div>\n' +

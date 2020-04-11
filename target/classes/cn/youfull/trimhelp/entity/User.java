@@ -23,5 +23,6 @@ public class User implements Serializable  {
     private int userTypeId;
     private String address;
     private int userState;
+    private String phone;
 
 }

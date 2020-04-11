@@ -3,6 +3,12 @@
 *.idea
 *.project
 
+
+### IntelliJ IDEA ###
+*.iws
+*.iml
+*.ipr
+
 # Log file
 *.log
 
