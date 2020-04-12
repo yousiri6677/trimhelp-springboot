@@ -9,5 +9,12 @@ import java.util.List;
 @Data
 public class VieListEx extends VieList {
 
-    private List<User> list;
+    /*竞标人群*/
+    private List<UserEx> list;
+
+    private UserEx userEx;
+
+    private DecoratecaseEx decoratecaseExes1;
+    private DecoratecaseEx decoratecaseExes2;
+    private DecoratecaseEx decoratecaseExes3;
 }

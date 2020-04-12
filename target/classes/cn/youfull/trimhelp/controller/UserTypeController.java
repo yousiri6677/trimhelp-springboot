@@ -15,21 +15,21 @@ public class UserTypeController {
     private UserService userService;
 
     @RequestMapping("userTypeIs")
-    public String userTypeIs(long id){
+    public String userTypeIs(long id) {
         Usertype usertype = userTypeService.selectUserTypeByUserId(userService.selectUserById(id).getUserTypeId());
-        if (usertype!=null){
-            if (usertype.getUserType().equals("管理员")){
+        if (usertype != null) {
+            if (usertype.getUserType().equals("管理员")) {
                 return "ADMIN";
-            }else if (usertype.getUserType().equals("普通用户")){
+            } else if (usertype.getUserType().equals("普通用户")) {
                 return "USER";
-            }else if (usertype.getUserType().equals("商家")){
+            } else if (usertype.getUserType().equals("商家")) {
                 return "STORE";
-            }else if (usertype.getUserType().equals("公司")){
+            } else if (usertype.getUserType().equals("公司")) {
                 return "COMPANY";
-            }else {
+            } else {
                 return "";
             }
-        }else {
+        } else {
             return "ERROR";
         }
     }

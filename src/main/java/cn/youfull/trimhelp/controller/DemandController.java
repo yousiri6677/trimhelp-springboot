@@ -24,6 +24,17 @@ public class DemandController {
     @Value("${pageSize}")
     private String pageSize;
 
+
+    @RequestMapping("getVieListInfos")
+    @ResponseBody
+    public Map<String, Object> getDemandVieListInfosByDemandId(long id) throws InstantiationException, IllegalAccessException {
+        Map<String, Object> map = new HashMap<>();
+        DemandEx demandEx = demandService.selectAllDemandsVieListByDemandId(id);
+        map.put("demand_info",demandEx);
+        map.put("pageSize",pageSize);
+        return map;
+    }
+
     @PostMapping("addDemand")
     @ResponseBody
     public String addDemandInfo(DemandEx demandEx) {

@@ -11,11 +11,15 @@ import java.util.List;
 @Data
 public class DemandEx extends Demand implements Serializable {
 
-      private static final long serialVersionUID = -90000003L;
-      private String demandTypeName;
+    private static final long serialVersionUID = -90000003L;
+    private String demandTypeName;
+    private String decoratestyleName;
 
-      private String decoratestyleName;
+    /*竞标人群*/
+    private List<UserEx> userList;
 
-      /*竞标人群*/
-      private List<User> userList;
+
+    /*该需求的竞标列表*/
+    private List<VieListEx> vieListExes;
+
 }

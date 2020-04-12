@@ -48,7 +48,7 @@
             <a href="javascript:;">控制台<span class="layui-badge">9</span></a>
         </li>
         <li class="layui-nav-item" style="left: 340px" th:if="${not #strings.isEmpty(session.user?.userName)}">
-            <a href="javascript:;">个人中心<span class="layui-badge-dot"></span></a>
+            <a href="toPersonalDemands">个人中心<span class="layui-badge-dot"></span></a>
         </li>
         <li class="layui-nav-item" lay-unselect="" style="left: 360px"
             th:if="${not #strings.isEmpty(session.user?.userName)}">

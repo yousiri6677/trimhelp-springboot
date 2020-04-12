@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <link href="css/layui.css" rel="stylesheet" type="text/css"/>
+    <script src="layui.js" type="text/javascript"></script>
+    <script>
+        //注意：导航 依赖 element 模块，否则无法进行功能性操作
+        layui.use('element', function () {
+            var element = layui.element;
+
+            //…
+        });
+    </script>
+    <!--脚部css Begin-->
+    <link rel="stylesheet" type="text/css" href="css/footer-0bf5e5a4f3.css" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/Gd_common-6515590370.css" charset="utf-8">
+    <!--脚部css End-->
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script type="text/javascript" src="webjars/jquery/3.1.1/jquery.js"></script>
+</head>
+<body>
+<!--头部导航栏部分 Begin-->
+<ul th:replace="Navigation::nav"></ul>
+<!--头部导航栏部分 End-->
+
+<div>
+    <div class="main_con clearfix">
+        <!--左边功能导航 Begin-->
+        <div class="left_menu_con clearfix">
+            <h3>用户中心</h3>
+            <ul>
+                <li><a href="user_center_info.html">· 个人信息</a></li>
+                <li><a href="user_center_order.html" class="active">· 需求列表</a></li>
+                <li><a href="user_center_site.html">· 装修订单</a></li>
+            </ul>
+        </div>
+        <!--右边主体信息 End-->
+        <div class="right_content clearfix" >
+            <h3 class="common_title2">需求发布列表</h3>
+            <div id="demand_list">
+            </div>
+
+            <div id="demo1"></div>
+        </div>
+        <!--右边主体信息 End-->
+
+        <script>
+            function addDemandList(data, obj) {
+                var htmlText = []
+                    , thisData = data.concat().splice(obj.curr * obj.limit - obj.limit, obj.limit);
+                layui.each(thisData, function (index, item) {
+                    htmlText.push('  <ul class="order_list_th w978 clearfix">\n' +
+                        '                    <li class="col01"><span th:text="${#dates.format('+item.title+',\'yyyy-MM-dd hh:mm:ss\')}"></span> <!--2016-8-21 17:36:24--></li>\n' +
+                        '                    <li class="col01">'+item.title+'</li>\n' +
+                        '                    <li class="col01 stress">￥'+item.money+'</li>\n' +
+                        '                </ul>\n' +
+                        '                <table class="order_list_table w980">\n' +
+                        '                    <tbody>\n' +
+                        '                    <tr>\n' +
+                        '                        <td width="55%">\n' +
+                        '                            '+item.title+'\n' +
+                        '                        </td>\n' +
+                        '                        <td width="15%">'+item.demandTypeName+'</td>\n' +
+                        '                        <td width="15%">'+item.decoratestyleName+'</td>\n' +
+                        '                        <td width="15%"><a href="toPersonal?id='+item.id+'" class="oper_btn">查看详情</a></td>\n' +
+                        '                    </tr>\n' +
+                        '                    </tbody>\n' +
+                        '                </table>'
+                    )
+                });
+                return htmlText.join('');
+            };
+
+
+            onload=function(){
+                var $userID =$('#user_id').attr('USER_ID');
+                $.ajax({
+                    type: "get",
+                    dataType: "json",//预期服务器返回的数据类型
+                    url: "getPersonalDemandinfo",//url
+                    async: false,
+                    data: {id: $userID},
+                    success: function (result) {
+                        data = result.personal_demand_info.demandExes;
+                        layui.use(['laypage', 'layer'], function () {
+                            var laypage = layui.laypage
+                                , layer = layui.layer;
+                            laypage.render({
+                                elem: 'demo1'
+                                , count: data.length //数据总数
+                                , limit: result.pageSize
+                                , jump: function (obj, first) {
+                                    if (data.length==0){
+                                        var htmlText1 = '<span style="font-size: 20px;">您还未发布任何需求！您可以去&nbsp;&nbsp;' +
+                                            '<a href="toRelease">发布需求</a></span>';
+                                        document.getElementById('demand_list').innerHTML = htmlText1;
+                                    }else {
+                                        var htmlText1 = '';
+                                        document.getElementById('demand_list').innerHTML = htmlText1;
+                                        document.getElementById('demand_list').innerHTML = addDemandList(data, obj);
+                                    }
+                                  }
+                            });
+                        });
+                    },
+                    error: function () {
+                        layui.use('layer', function () {
+                            var layer = layui.layer;
+                            layer.msg('网络异常！', {icon: 5});
+                        });
+                    }
+                });
+
+            };
+        </script>
+    </div>
+</div>
+
+<!--引入footer部分-->
+<div th:replace="footer::footer"></div>
+</body>
+</html>

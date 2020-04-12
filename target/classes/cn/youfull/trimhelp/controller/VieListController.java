@@ -29,13 +29,13 @@ public class VieListController {
         return map;
     }
 
-    @RequestMapping(value = "addVieList",method = RequestMethod.PUT)
+    @RequestMapping(value = "addVieList", method = RequestMethod.PUT)
     @ResponseBody
-    public String addVieList(VieList vieList){
+    public String addVieList(VieList vieList) {
         int i = vieListService.addVie(vieList);
-        if (i==1){
+        if (i == 1) {
             return "SUCCESS";
-        }else if (i==-1){
+        } else if (i == -1) {
             return "EXIST";
         }
         return "ERROR";

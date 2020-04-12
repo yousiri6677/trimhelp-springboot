@@ -8,4 +8,6 @@ import java.util.List;
 public interface DecoratecaseService {
 
     List<DecoratecaseEx> getDecoratecaseByCompanyId(long companyId);
+
+    DecoratecaseEx getDecoratecaseInfoById(long id);
 }

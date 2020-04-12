@@ -7,6 +7,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.zhenzi.sms.ZhenziSmsClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Controller;
@@ -16,7 +17,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -34,6 +37,20 @@ public class UserController {
 
     @Resource(name = "redisTemplate")
     private ValueOperations<String, String> redisStr;
+
+    @Value("${pageSize}")
+    private String pageSize;
+
+    @RequestMapping("/getPersonalDemandinfo")
+    @ResponseBody
+    public Map<String,Object> getPersonaDemandlinfo(long id) throws InstantiationException, IllegalAccessException {
+        UserEx userEx = userService.getPersonalDemandByUserId(id);
+        Map<String, Object> map = new HashMap<>();
+        map.put("personal_demand_info",userEx);
+        map.put("pageSize",pageSize);
+        return map;
+    }
+
 
     @PostMapping("/login")
     @ResponseBody

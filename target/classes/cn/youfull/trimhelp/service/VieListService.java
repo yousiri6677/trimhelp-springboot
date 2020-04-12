@@ -10,4 +10,6 @@ public interface VieListService {
     VieListEx selectVieListUsersByDemandId(long id);
 
     int addVie(VieList vieList);
+
+    List<VieListEx> selectVieListByDemandId(long id) throws InstantiationException, IllegalAccessException;
 }

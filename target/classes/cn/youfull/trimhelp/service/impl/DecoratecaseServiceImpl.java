@@ -7,6 +7,7 @@ import cn.youfull.trimhelp.mapper.DecoratestyleMapper;
 import cn.youfull.trimhelp.mapper.DemandTypeMapper;
 import cn.youfull.trimhelp.service.CompanyService;
 import cn.youfull.trimhelp.service.DecoratecaseService;
+import cn.youfull.trimhelp.util.CopyListUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +44,14 @@ public class DecoratecaseServiceImpl implements DecoratecaseService {
             decoratecases.add(decoratecaseEx);
         }
         return decoratecases;
+    }
+
+    @Override
+    public DecoratecaseEx getDecoratecaseInfoById(long id) {
+        Decoratecase decoratecase = decoratecaseMapper.selectById(id);
+        DecoratecaseEx decoratecaseEx = CopyListUtil.copyJavaBean(decoratecase, DecoratecaseEx.class);
+        decoratecaseEx.setDecorateStyleName(decoratestyleMapper.selectById(decoratecaseEx.getDecorateStyleId()).getDecorateStyleName());
+        decoratecaseEx.setDemandTypeName(demandTypeMapper.selectById(decoratecaseEx.getDemandTypeId()).getTypeName());
+        return decoratecaseEx;
     }
 }

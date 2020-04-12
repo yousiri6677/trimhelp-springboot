@@ -10,4 +10,5 @@ public class DecoratecaseEx extends Decoratecase {
     private String decorateStyleName;
 
     private String demandTypeName;
+
 }

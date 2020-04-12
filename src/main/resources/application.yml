@@ -12,7 +12,7 @@ spring:
     mode: LEGACYHTML5
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://47.105.174.82:3306/decoratestate?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/decoratestate?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     username: root
     password: root
     hikari:
@@ -24,9 +24,9 @@ spring:
       max-lifetime: 30000
       connection-timeout: 30000
       connection-test-query: SELECT 1
-
+#39.105.162.7
   redis:
-    host: 39.105.162.7
+    host: 192.168.80.128
     port: 6379
     password: youzhilong6
     lettuce:
@@ -36,7 +36,11 @@ spring:
         max-idle: 8 #最大空闲连接数
         max-wait: -1
       shutdown-timeout: 1000
-    database: 1
+    database: 0
+    sentinel:
+      master: mymaster
+      nodes: 192.168.80.128:26379|192.168.80.128:26380|192.168.80.128:26381
+
 
 
 pageSize: 5

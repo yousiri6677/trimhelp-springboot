@@ -3,6 +3,7 @@ package cn.youfull.trimhelp.service.impl;
 import cn.youfull.trimhelp.entity.Usertype;
 import cn.youfull.trimhelp.mapper.UserTypeMapper;
 import cn.youfull.trimhelp.service.UserTypeService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.stereotype.Service;

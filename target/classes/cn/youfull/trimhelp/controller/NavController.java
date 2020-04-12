@@ -3,6 +3,8 @@ package cn.youfull.trimhelp.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class NavController {
 
@@ -44,6 +46,17 @@ public class NavController {
     @RequestMapping("/todecoration")
     public String toDecoration() {
         return "decoration";
+    }
+
+    @RequestMapping("/toPersonal")
+    public String toPersonal(long id, HttpServletRequest request) {
+        request.setAttribute("demandId",id);
+        return "personal";
+    }
+
+    @RequestMapping("/toPersonalDemands")
+    public String toPersonalDemands() {
+        return "personalDemands";
     }
 
     @RequestMapping("/toCompanyInfo")

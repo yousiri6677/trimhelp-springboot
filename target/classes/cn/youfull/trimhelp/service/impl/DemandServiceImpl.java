@@ -3,6 +3,8 @@ package cn.youfull.trimhelp.service.impl;
 import cn.youfull.trimhelp.entity.*;
 import cn.youfull.trimhelp.mapper.*;
 import cn.youfull.trimhelp.service.DemandService;
+import cn.youfull.trimhelp.service.VieListService;
+import cn.youfull.trimhelp.util.CopyListUtil;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
@@ -27,6 +29,7 @@ import java.util.stream.Stream;
 
 @Service
 @Slf4j
+@EnableCaching
 public class DemandServiceImpl implements DemandService {
 
     @Autowired
@@ -39,6 +42,9 @@ public class DemandServiceImpl implements DemandService {
     private UserMapper userMapper;
     @Autowired
     private VieListMapper vieListMapper;
+
+    @Autowired
+    private VieListService vieListService;
 
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
@@ -113,6 +119,14 @@ public class DemandServiceImpl implements DemandService {
             return 1;
         }
         return 0;
+    }
+
+    @Override
+    public DemandEx selectAllDemandsVieListByDemandId(long id) throws IllegalAccessException, InstantiationException {
+        Demand demand = demandMapper.selectById(id);
+        DemandEx demandEx = CopyListUtil.copyJavaBean(demand, DemandEx.class);
+        demandEx.setVieListExes(vieListService.selectVieListByDemandId(demandEx.getId()));
+        return demandEx;
     }
 
     @Override
@@ -192,5 +206,18 @@ public class DemandServiceImpl implements DemandService {
             }
         }
         return demands;
+    }
+
+    @Override
+    public List<DemandEx> selectDemandsByReleaseId(long userId) throws InstantiationException, IllegalAccessException {
+        QueryWrapper<Demand> wrapper = new QueryWrapper<>();
+        wrapper.eq("releaseId",userId);
+        List<Demand> demands = demandMapper.selectList(wrapper);
+        List<DemandEx> demandExes = CopyListUtil.copyList(demands, DemandEx.class);
+        for (DemandEx demandEx : demandExes) {
+            demandEx.setDecoratestyleName(decoratestyleMapper.selectById(demandEx.getDecoratestyleId()).getDecorateStyleName());
+            demandEx.setDemandTypeName(demandTypeMapper.selectById(demandEx.getDemandTypeId()).getTypeName());
+        }
+        return demandExes;
     }
 }

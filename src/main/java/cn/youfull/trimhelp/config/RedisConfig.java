@@ -8,6 +8,7 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalTimeSerializer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
@@ -17,6 +18,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.cache.RedisCacheWriter;
+import org.springframework.data.redis.connection.RedisNode;
+import org.springframework.data.redis.connection.RedisSentinelConfiguration;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -30,6 +33,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 @Configuration
 public class RedisConfig extends CachingConfigurerSupport {
@@ -103,5 +108,29 @@ public class RedisConfig extends CachingConfigurerSupport {
         template.afterPropertiesSet();
         return template;
     }
+    @Value("${spring.redis.sentinel.master}")
+    private String sentinelMaster;
+
+    @Value("${spring.redis.sentinel.nodes}")
+    private String  sentinelNodes;
+
+    @Value("${spring.redis.password}")
+    private String password;
+
+    @Bean
+    public RedisSentinelConfiguration sentinelConfig() {
+        RedisSentinelConfiguration sentinelConfig = new RedisSentinelConfiguration();
+        sentinelConfig.setMaster(sentinelMaster);
+        String[] sentinels = sentinelNodes.split("\\|");
+        List<RedisNode> list = new ArrayList<>();
+        for (String sentinel : sentinels) {
+            String[] nodes = sentinel.split(":");
+            list.add(new RedisNode(nodes[0], Integer.parseInt(nodes[1])));
+        }
+        sentinelConfig.setSentinels(list);
+        sentinelConfig.setPassword(password);
+        return sentinelConfig;
+    }
+
 
 }
