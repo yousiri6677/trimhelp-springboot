@@ -1,8 +1,11 @@
 # Compiled class file
 *.class
 *.idea
+.idea/*
 *.project
-
+target
+target/*
+*.iml
 
 ### IntelliJ IDEA ###
 *.iws
